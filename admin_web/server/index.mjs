@@ -13,12 +13,13 @@ import { randomUUID } from 'crypto';
 import { regenerateImage } from './regen_service.mjs';
 import { chat } from './chat_service.mjs';
 import { generateSocialContent, generateMultiPlatformContent } from './social_media_service.mjs';
+import { captureAndEditGameplay, checkToolsInstalled } from './gameplay_capture_service.mjs';
 
 const app = express();
 const PORT = 3001;
 
 // --- Middleware ---
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173'] }));
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173', 'http://localhost:5174'] }));
 app.use(express.json());
 
 // --- Store en mémoire des jobs actifs ---
@@ -211,10 +212,48 @@ app.post('/api/social-media/generate-multi', async (req, res) => {
     }
 });
 
+/**
+ * GET /api/gameplay/check-tools
+ * Vérifie si les outils nécessaires sont installés
+ */
+app.get('/api/gameplay/check-tools', async (_, res) => {
+    try {
+        const tools = await checkToolsInstalled();
+        res.json({ tools });
+    } catch (err) {
+        console.error('❌ Erreur check tools:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
+/**
+ * POST /api/gameplay/capture
+ * Body : { captureDuration, targetDuration, platform }
+ * Capture et monte le gameplay mobile
+ */
+app.post('/api/gameplay/capture', async (req, res) => {
+    const { captureDuration = 60, targetDuration = 30, platform = 'tiktok' } = req.body;
+
+    try {
+        console.log(`\n📱 [Gameplay Capture] Démarrage: ${platform} (${captureDuration}s capture → ${targetDuration}s cible)`);
+        const result = await captureAndEditGameplay({
+            captureDuration,
+            targetDuration,
+            platform
+        });
+        res.json(result);
+    } catch (err) {
+        console.error('❌ Erreur capture gameplay:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`\n🚀 Serveur Timalaus Admin démarré sur http://localhost:${PORT}`);
     console.log(`   → POST /api/regen/start`);
     console.log(`   → GET  /api/regen/stream/:jobId`);
     console.log(`   → POST /api/social-media/generate`);
-    console.log(`   → POST /api/social-media/generate-multi\n`);
+    console.log(`   → POST /api/social-media/generate-multi`);
+    console.log(`   → GET  /api/gameplay/check-tools`);
+    console.log(`   → POST /api/gameplay/capture\n`);
 });

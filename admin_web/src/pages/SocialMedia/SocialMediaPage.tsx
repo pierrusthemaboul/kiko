@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Smartphone, 
   Instagram, 
@@ -10,7 +10,7 @@ import {
   Download,
   Loader2,
   Check,
-  X
+  Video
 } from 'lucide-react';
 import './SocialMediaPage.css';
 
@@ -19,6 +19,14 @@ interface GeneratedContent {
   topic: string;
   content: any;
   rawResponse: string;
+  generatedAt: string;
+}
+
+interface CaptureResult {
+  success: boolean;
+  videoPath: string;
+  platform: string;
+  duration: number;
   generatedAt: string;
 }
 
@@ -31,6 +39,14 @@ const SocialMediaPage: React.FC = () => {
   const [generatedContent, setGeneratedContent] = useState<GeneratedContent[]>([]);
   const [loading, setLoading] = useState(false);
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
+  
+  // Gameplay capture states
+  const [captureLoading, setCaptureLoading] = useState(false);
+  const [captureResult, setCaptureResult] = useState<CaptureResult | null>(null);
+  const [toolsInstalled, setToolsInstalled] = useState<{ adb: boolean; scrcpy: boolean; ffmpeg: boolean } | null>(null);
+
+  // API URL - utilise variable d'environnement ou localhost
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
   const platforms = [
     { id: 'tiktok', name: 'TikTok', icon: Smartphone, color: '#FF0050' },
@@ -48,6 +64,57 @@ const SocialMediaPage: React.FC = () => {
     );
   };
 
+  // Vérifier les outils installés au chargement
+  useEffect(() => {
+    checkTools();
+  }, []);
+
+  const checkTools = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/api/gameplay/check-tools`);
+      const data = await response.json();
+      setToolsInstalled(data.tools);
+    } catch (error) {
+      console.error('Erreur check tools:', error);
+    }
+  };
+
+  const captureGameplay = async () => {
+    if (selectedPlatforms.length === 0) {
+      alert('Veuillez sélectionner au moins une plateforme');
+      return;
+    }
+
+    setCaptureLoading(true);
+    setCaptureResult(null);
+
+    try {
+      const platform = selectedPlatforms[0]; // Utiliser la première plateforme sélectionnée
+      const response = await fetch(`${apiUrl}/api/gameplay/capture`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          captureDuration: 60,
+          targetDuration: 30,
+          platform
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      setCaptureResult(data);
+    } catch (error) {
+      console.error('Erreur capture:', error);
+      alert('Erreur lors de la capture: ' + (error as Error).message);
+    } finally {
+      setCaptureLoading(false);
+    }
+  };
+
   const generateContent = async () => {
     if (!topic.trim()) {
       alert('Veuillez entrer un sujet');
@@ -63,7 +130,7 @@ const SocialMediaPage: React.FC = () => {
     setGeneratedContent([]);
 
     try {
-      const response = await fetch('http://localhost:3001/api/social-media/generate-multi', {
+      const response = await fetch(`${apiUrl}/api/social-media/generate-multi`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -187,8 +254,86 @@ const SocialMediaPage: React.FC = () => {
       </header>
 
       <main className="content">
+        {/* Section Capture Gameplay */}
         <div className="generator-section glass">
-          <h2>Configuration</h2>
+          <h2>📱 Capture Gameplay (One-Click)</h2>
+          
+          {toolsInstalled && (
+            <div className="tools-status">
+              <p className={`tool-status ${toolsInstalled.adb ? 'ok' : 'error'}`}>
+                ADB: {toolsInstalled.adb ? '✓ Installé' : '✗ Non installé'}
+              </p>
+              <p className={`tool-status ${toolsInstalled.scrcpy ? 'ok' : 'error'}`}>
+                scrcpy: {toolsInstalled.scrcpy ? '✓ Installé' : '✗ Non installé'}
+              </p>
+              <p className={`tool-status ${toolsInstalled.ffmpeg ? 'ok' : 'error'}`}>
+                FFmpeg: {toolsInstalled.ffmpeg ? '✓ Installé' : '✗ Non installé'}
+              </p>
+            </div>
+          )}
+
+          <div className="form-group">
+            <label>Plateforme cible *</label>
+            <div className="platforms-grid">
+              {platforms.map(platform => (
+                <button
+                  key={platform.id}
+                  className={`platform-chip ${selectedPlatforms.includes(platform.id) ? 'active' : ''}`}
+                  onClick={() => togglePlatform(platform.id)}
+                  style={selectedPlatforms.includes(platform.id) ? { 
+                    backgroundColor: platform.color + '20',
+                    borderColor: platform.color 
+                  } : {}}
+                >
+                  <platform.icon size={18} />
+                  {platform.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button 
+            className="generate-button capture-button"
+            onClick={captureGameplay}
+            disabled={captureLoading}
+          >
+            {captureLoading ? (
+              <>
+                <Loader2 className="spin" size={20} />
+                Capture en cours (60s)...
+              </>
+            ) : (
+              <>
+                <Video size={20} />
+                Capturer Gameplay
+              </>
+            )}
+          </button>
+
+          {captureResult && (
+            <div className="capture-result glass">
+              <h3>✅ Capture réussie!</h3>
+              <p>Plateforme: {captureResult.platform}</p>
+              <p>Durée: {captureResult.duration}s</p>
+              <p>Fichier: {captureResult.videoPath}</p>
+              <button 
+                className="download-button"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = `${apiUrl}/${captureResult.videoPath.replace(/\\/g, '/')}`;
+                  link.download = `${captureResult.platform}_gameplay.mp4`;
+                  link.click();
+                }}
+              >
+                <Download size={16} />
+                Télécharger la vidéo
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div className="generator-section glass">
+          <h2>Configuration (Génération Texte)</h2>
           
           <div className="form-group">
             <label>Sujet / Thème *</label>
