@@ -1,10 +1,5 @@
 // lib/config/adConfig.ts
-// import { TestIds } from 'react-native-google-mobile-ads';
-const TestIds = {
-  BANNER: 'test-banner',
-  INTERSTITIAL: 'test-interstitial',
-  REWARDED: 'test-rewarded',
-};
+import { TestIds } from 'react-native-google-mobile-ads';
 
 import Constants from 'expo-constants';
 

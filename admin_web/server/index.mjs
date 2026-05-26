@@ -19,7 +19,11 @@ const app = express();
 const PORT = 3001;
 
 // --- Middleware ---
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173', 'http://localhost:5174'] }));
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 // --- Store en mémoire des jobs actifs ---
@@ -229,23 +233,95 @@ app.get('/api/gameplay/check-tools', async (_, res) => {
 /**
  * POST /api/gameplay/capture
  * Body : { captureDuration, targetDuration, platform }
- * Capture et monte le gameplay mobile
+ * Démarre une capture gameplay et retourne un jobId
  */
 app.post('/api/gameplay/capture', async (req, res) => {
     const { captureDuration = 60, targetDuration = 30, platform = 'tiktok' } = req.body;
 
-    try {
-        console.log(`\n📱 [Gameplay Capture] Démarrage: ${platform} (${captureDuration}s capture → ${targetDuration}s cible)`);
-        const result = await captureAndEditGameplay({
-            captureDuration,
-            targetDuration,
-            platform
-        });
-        res.json(result);
-    } catch (err) {
-        console.error('❌ Erreur capture gameplay:', err.message);
-        res.status(500).json({ error: err.message });
+    const jobId = randomUUID();
+    const job = {
+        status: 'running',
+        steps: [],
+        clients: new Set(),
+        error: null,
+        result: null,
+    };
+    jobs.set(jobId, job);
+
+    // Lancer la capture en arrière-plan
+    (async () => {
+        try {
+            const step = { step: 'log', message: '📱 Démarrage de la capture...', ts: Date.now() };
+            job.steps.push(step);
+            for (const client of job.clients) {
+                client.write(`data: ${JSON.stringify(step)}\n\n`);
+            }
+
+            const result = await captureAndEditGameplay({
+                captureDuration,
+                targetDuration,
+                platform
+            });
+
+            job.status = 'done';
+            job.result = result;
+            const finalEvent = { step: 'complete', result, ts: Date.now() };
+            job.steps.push(finalEvent);
+            for (const client of job.clients) {
+                client.write(`data: ${JSON.stringify(finalEvent)}\n\n`);
+                client.end();
+            }
+        } catch (err) {
+            job.status = 'error';
+            job.error = err.message;
+            const errEvent = { step: 'error', message: `❌ Erreur: ${err.message}`, ts: Date.now() };
+            job.steps.push(errEvent);
+            for (const client of job.clients) {
+                client.write(`data: ${JSON.stringify(errEvent)}\n\n`);
+                client.end();
+            }
+        }
+    })();
+
+    res.json({ jobId });
+});
+
+/**
+ * GET /api/gameplay/stream/:jobId
+ * Stream SSE de la progression de la capture
+ */
+app.get('/api/gameplay/stream/:jobId', (req, res) => {
+    const { jobId } = req.params;
+    const job = jobs.get(jobId);
+
+    if (!job) {
+        return res.status(404).json({ error: 'Job introuvable.' });
     }
+
+    // Headers SSE
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    res.flushHeaders();
+
+    // Envoyer l'historique des étapes déjà passées
+    for (const step of job.steps) {
+        res.write(`data: ${JSON.stringify(step)}\n\n`);
+    }
+
+    // Si le job est déjà terminé, fermer immédiatement
+    if (job.status === 'done' || job.status === 'error') {
+        res.end();
+        return;
+    }
+
+    // Sinon, enregistrer ce client pour les événements futurs
+    job.clients.add(res);
+
+    // Nettoyer quand le client se déconnecte
+    req.on('close', () => {
+        job.clients.delete(res);
+    });
 });
 
 app.listen(PORT, () => {
@@ -255,5 +331,6 @@ app.listen(PORT, () => {
     console.log(`   → POST /api/social-media/generate`);
     console.log(`   → POST /api/social-media/generate-multi`);
     console.log(`   → GET  /api/gameplay/check-tools`);
-    console.log(`   → POST /api/gameplay/capture\n`);
+    console.log(`   → POST /api/gameplay/capture`);
+    console.log(`   → GET  /api/gameplay/stream/:jobId\n`);
 });

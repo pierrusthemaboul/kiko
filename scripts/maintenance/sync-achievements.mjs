@@ -134,32 +134,6 @@ const ACHIEVEMENTS = [
     xp_bonus: 5000,
     icon: '⭐',
   },
-
-  // Achievements de skill
-  {
-    achievement_key: 'speed_demon',
-    achievement_type: 'skill',
-    title: 'Éclair',
-    description: 'Répondre à 20 questions en moins de 3s chacune',
-    xp_bonus: 1000,
-    icon: '⚡',
-  },
-  {
-    achievement_key: 'ancient_master',
-    achievement_type: 'skill',
-    title: 'Maître Antique',
-    description: 'Répondre correctement à 50 événements avant l\'an 0',
-    xp_bonus: 1200,
-    icon: '🏛️',
-  },
-  {
-    achievement_key: 'precision_master',
-    achievement_type: 'skill',
-    title: 'Précision Absolue',
-    description: 'Deviner 10 dates à ±5 ans (mode Précision)',
-    xp_bonus: 2000,
-    icon: '🎯',
-  },
 ];
 
 async function syncAchievements() {

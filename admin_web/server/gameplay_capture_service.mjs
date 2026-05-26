@@ -5,10 +5,13 @@
  * et génère du contenu social media optimisé.
  */
 
-import { spawn } from 'child_process';
+import { spawn, exec } from 'child_process';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,48 +26,56 @@ await fs.mkdir(OUTPUT_DIR, { recursive: true });
  */
 async function checkDeviceConnected() {
   return new Promise((resolve) => {
-    const adb = spawn('adb', ['devices']);
+    const adbPath = 'C:\\Users\\pierr\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe\\scrcpy-win64-v4.0\\adb.exe';
+    const adb = spawn(adbPath, ['devices']);
     let output = '';
-    
+
     adb.stdout.on('data', (data) => {
       output += data.toString();
     });
-    
+
     adb.on('close', (code) => {
       const lines = output.split('\n').filter(line => line.trim());
       // Ignorer la ligne d'en-tête "List of devices attached"
       const devices = lines.slice(1).filter(line => line.includes('\tdevice'));
       resolve(devices.length > 0);
     });
-    
+
     adb.on('error', () => resolve(false));
   });
 }
 
 /**
- * Capture l'écran du mobile via scrcpy
+ * Capture l'écran du mobile via adb screenrecord
  * @param {number} duration - Durée de capture en secondes
  * @param {string} outputPath - Chemin de sortie de la vidéo
  */
 async function captureScreen(duration, outputPath) {
-  return new Promise((resolve, reject) => {
-    const scrcpy = spawn('scrcpy', [
-      '--record', outputPath,
-      '--no-display',
-      '--max-size', '1080',
-      '--time-limit', duration.toString()
-    ]);
+  const adbPath = 'C:\\Users\\pierr\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe\\scrcpy-win64-v4.0\\adb.exe';
+  const command = `"${adbPath}" shell screenrecord --time-limit ${duration} /sdcard/temp_gameplay.mp4`;
 
-    scrcpy.on('close', (code) => {
-      if (code === 0) {
-        resolve(outputPath);
-      } else {
-        reject(new Error(`scrcpy exited with code ${code}`));
-      }
+  console.log('Exécution adb screenrecord:', command);
+  try {
+    const { stdout, stderr } = await execAsync(command, {
+      windowsHide: true,
+      timeout: (duration + 10) * 1000
     });
+    console.log('adb screenrecord stdout:', stdout);
+    if (stderr) console.log('adb screenrecord stderr:', stderr);
 
-    scrcpy.on('error', reject);
-  });
+    // Copier le fichier depuis l'appareil vers le PC
+    const pullCommand = `"${adbPath}" pull /sdcard/temp_gameplay.mp4 "${outputPath}"`;
+    console.log('Copie du fichier:', pullCommand);
+    await execAsync(pullCommand);
+
+    // Nettoyer le fichier sur l'appareil
+    await execAsync(`"${adbPath}" shell rm /sdcard/temp_gameplay.mp4`);
+
+    return outputPath;
+  } catch (error) {
+    console.error('Erreur adb screenrecord:', error);
+    throw new Error(`adb screenrecord failed: ${error.message}`);
+  }
 }
 
 /**
@@ -81,6 +92,7 @@ async function editVideo(inputPath, outputPath, options = {}) {
     addMusic = false
   } = options;
 
+  const ffmpegPath = 'C:\\Users\\pierr\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe';
   const ffmpegArgs = [
     '-i', inputPath,
     '-t', duration.toString(),
@@ -96,7 +108,7 @@ async function editVideo(inputPath, outputPath, options = {}) {
   ];
 
   return new Promise((resolve, reject) => {
-    const ffmpeg = spawn('ffmpeg', ffmpegArgs);
+    const ffmpeg = spawn(ffmpegPath, ffmpegArgs);
     
     ffmpeg.on('close', (code) => {
       if (code === 0) {
@@ -152,7 +164,7 @@ export async function captureAndEditGameplay(options = {}) {
 
     return {
       success: true,
-      videoPath: editedVideoPath,
+      videoPath: path.join('gameplay_captures', path.basename(editedVideoPath)),
       platform,
       duration: targetDuration,
       generatedAt: new Date().toISOString()
@@ -183,9 +195,28 @@ export async function checkToolsInstalled() {
     ffmpeg: false
   };
 
+  // Chemins potentiels pour les outils
+  const adbPaths = [
+    'adb',
+    'C:\\Users\\pierr\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe',
+    'C:\\Users\\Pierre\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe'
+  ];
+  
+  const scrcpyPaths = [
+    'scrcpy',
+    'C:\\Users\\pierr\\AppData\\Local\\Programs\\scrcpy\\scrcpy.exe',
+    'C:\\Users\\Pierre\\AppData\\Local\\Programs\\scrcpy\\scrcpy.exe'
+  ];
+  
+  const ffmpegPaths = [
+    'ffmpeg',
+    'C:\\Users\\pierr\\AppData\\Local\\Programs\\FFmpeg\\bin\\ffmpeg.exe',
+    'C:\\Users\\Pierre\\AppData\\Local\\Programs\\FFmpeg\\bin\\ffmpeg.exe'
+  ];
+
   try {
     await new Promise((resolve, reject) => {
-      const adb = spawn('adb', ['version']);
+      const adb = spawn(adbPaths[0], ['version'], { shell: true });
       adb.on('close', (code) => code === 0 ? resolve(true) : reject());
       adb.on('error', reject);
     });
@@ -196,7 +227,7 @@ export async function checkToolsInstalled() {
 
   try {
     await new Promise((resolve, reject) => {
-      const scrcpy = spawn('scrcpy', ['--version']);
+      const scrcpy = spawn(scrcpyPaths[0], ['--version'], { shell: true });
       scrcpy.on('close', (code) => code === 0 ? resolve(true) : reject());
       scrcpy.on('error', reject);
     });
@@ -207,7 +238,7 @@ export async function checkToolsInstalled() {
 
   try {
     await new Promise((resolve, reject) => {
-      const ffmpeg = spawn('ffmpeg', ['-version']);
+      const ffmpeg = spawn(ffmpegPaths[0], ['-version'], { shell: true });
       ffmpeg.on('close', (code) => code === 0 ? resolve(true) : reject());
       ffmpeg.on('error', reject);
     });

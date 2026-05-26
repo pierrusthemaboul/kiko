@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Smartphone, 
   Instagram, 
@@ -43,7 +43,6 @@ const SocialMediaPage: React.FC = () => {
   // Gameplay capture states
   const [captureLoading, setCaptureLoading] = useState(false);
   const [captureResult, setCaptureResult] = useState<CaptureResult | null>(null);
-  const [toolsInstalled, setToolsInstalled] = useState<{ adb: boolean; scrcpy: boolean; ffmpeg: boolean } | null>(null);
 
   // API URL - utilise variable d'environnement ou localhost
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
@@ -64,21 +63,6 @@ const SocialMediaPage: React.FC = () => {
     );
   };
 
-  // Vérifier les outils installés au chargement
-  useEffect(() => {
-    checkTools();
-  }, []);
-
-  const checkTools = async () => {
-    try {
-      const response = await fetch(`${apiUrl}/api/gameplay/check-tools`);
-      const data = await response.json();
-      setToolsInstalled(data.tools);
-    } catch (error) {
-      console.error('Erreur check tools:', error);
-    }
-  };
-
   const captureGameplay = async () => {
     if (selectedPlatforms.length === 0) {
       alert('Veuillez sélectionner au moins une plateforme');
@@ -90,7 +74,9 @@ const SocialMediaPage: React.FC = () => {
 
     try {
       const platform = selectedPlatforms[0]; // Utiliser la première plateforme sélectionnée
-      const response = await fetch(`${apiUrl}/api/gameplay/capture`, {
+
+      // Étape 1: Démarrer la capture (POST)
+      const startResponse = await fetch(`${apiUrl}/api/gameplay/capture`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -100,13 +86,47 @@ const SocialMediaPage: React.FC = () => {
         }),
       });
 
-      const data = await response.json();
-      
-      if (data.error) {
-        throw new Error(data.error);
+      if (!startResponse.ok) {
+        throw new Error(`HTTP error! status: ${startResponse.status}`);
       }
 
-      setCaptureResult(data);
+      const { jobId } = await startResponse.json();
+
+      // Étape 2: Streamer la progression (GET SSE)
+      const streamResponse = await fetch(`${apiUrl}/api/gameplay/stream/${jobId}`);
+
+      if (!streamResponse.ok) {
+        throw new Error(`HTTP error! status: ${streamResponse.status}`);
+      }
+
+      // Lire le flux SSE
+      const reader = streamResponse.body?.getReader();
+      const decoder = new TextDecoder();
+
+      if (!reader) {
+        throw new Error('Impossible de lire le flux de réponse');
+      }
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n');
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = JSON.parse(line.slice(6));
+            console.log('SSE Event:', data);
+
+            if (data.step === 'complete') {
+              setCaptureResult(data.result);
+            } else if (data.step === 'error') {
+              throw new Error(data.message);
+            }
+          }
+        }
+      }
     } catch (error) {
       console.error('Erreur capture:', error);
       alert('Erreur lors de la capture: ' + (error as Error).message);
@@ -257,20 +277,6 @@ const SocialMediaPage: React.FC = () => {
         {/* Section Capture Gameplay */}
         <div className="generator-section glass">
           <h2>📱 Capture Gameplay (One-Click)</h2>
-          
-          {toolsInstalled && (
-            <div className="tools-status">
-              <p className={`tool-status ${toolsInstalled.adb ? 'ok' : 'error'}`}>
-                ADB: {toolsInstalled.adb ? '✓ Installé' : '✗ Non installé'}
-              </p>
-              <p className={`tool-status ${toolsInstalled.scrcpy ? 'ok' : 'error'}`}>
-                scrcpy: {toolsInstalled.scrcpy ? '✓ Installé' : '✗ Non installé'}
-              </p>
-              <p className={`tool-status ${toolsInstalled.ffmpeg ? 'ok' : 'error'}`}>
-                FFmpeg: {toolsInstalled.ffmpeg ? '✓ Installé' : '✗ Non installé'}
-              </p>
-            </div>
-          )}
 
           <div className="form-group">
             <label>Plateforme cible *</label>
@@ -316,11 +322,11 @@ const SocialMediaPage: React.FC = () => {
               <p>Plateforme: {captureResult.platform}</p>
               <p>Durée: {captureResult.duration}s</p>
               <p>Fichier: {captureResult.videoPath}</p>
-              <button 
+              <button
                 className="download-button"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = `${apiUrl}/${captureResult.videoPath.replace(/\\/g, '/')}`;
+                  link.href = `/${captureResult.videoPath}`;
                   link.download = `${captureResult.platform}_gameplay.mp4`;
                   link.click();
                 }}

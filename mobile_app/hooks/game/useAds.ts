@@ -1,37 +1,10 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-// import {
-//   InterstitialAd,
-//   RewardedAd,
-//   AdEventType,
-//   RewardedAdEventType,
-// } from 'react-native-google-mobile-ads';
-
-const InterstitialAd = {
-  createForAdRequest: () => ({
-    addAdEventListener: () => () => {},
-    load: () => {},
-    show: () => {},
-    loaded: false,
-  }),
-};
-const RewardedAd = {
-  createForAdRequest: () => ({
-    addAdEventListener: () => () => {},
-    load: () => {},
-    show: () => {},
-    loaded: false,
-  }),
-};
-enum AdEventType {
-  LOADED = 'loaded',
-  ERROR = 'error',
-  OPENED = 'opened',
-  CLOSED = 'closed',
-}
-enum RewardedAdEventType {
-  LOADED = 'loaded',
-  EARNED_REWARD = 'earned_reward',
-}
+import {
+  InterstitialAd,
+  RewardedAd,
+  AdEventType,
+  RewardedAdEventType,
+} from 'react-native-google-mobile-ads';
 
 import { getAdRequestOptions, getAdUnitId } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';

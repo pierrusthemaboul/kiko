@@ -3,3 +3,8 @@ packages:
   - 'mobile_app'
   - 'admin_web'
   - 'admin_option_workspace'
+allowBuilds:
+  '@firebase/util': true
+  esbuild: true
+  protobufjs: true
+  sharp: true

@@ -118,7 +118,7 @@
   margin-bottom: 1.5rem;
 }
 
-.btn-creative, .btn-retouche, .btn-primary {
+.btn-creative, .btn-retouche, .btn-restore, .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,12 +139,16 @@
   background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
 }
+.btn-restore {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+}
 .btn-primary {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
 }
 
-.btn-creative:hover, .btn-retouche:hover, .btn-primary:hover {
+.btn-creative:hover, .btn-retouche:hover, .btn-restore:hover, .btn-primary:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
 }

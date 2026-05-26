@@ -154,16 +154,16 @@ export function useAchievements(userId: string | undefined) {
     try {
       if (!userId) return unlockedKeys;
 
-      // Parcourir tous les achievements et v�rifier les conditions
+      // Parcourir tous les achievements et vrifier les conditions
       for (const [key, achievement] of Object.entries(ACHIEVEMENTS)) {
-        // V�rifier si d�j� d�bloqu�
+        // Vrifier si dj dbloqu
         const isAlreadyUnlocked = achievements.find(
-          a => a.key === key && a.unlocked
+          a => a.achievement_key === key && a.unlocked
         );
 
         if (isAlreadyUnlocked) continue;
 
-        // V�rifier si les conditions sont remplies
+        // Vrifier si les conditions sont remplies
         if (shouldUnlockAchievement(key, userData)) {
           const result = await unlockAchievement(key);
           if (result.success) {

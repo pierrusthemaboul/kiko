@@ -25,9 +25,7 @@ import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif
 import { User } from '@supabase/supabase-js';
 import { useAudioContext } from '../../contexts/AudioContext';
 import { Ionicons } from '@expo/vector-icons';
-// import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
-const BannerAd = () => null;
-const BannerAdSize = { ANCHORED_ADAPTIVE_BANNER: 'ANCHORED_ADAPTIVE_BANNER' };
+import { BannerAd, BannerAdSize } from '../../components/ads/BannerAd';
 
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { useAdConsent } from '../../hooks/useAdConsent';
@@ -38,6 +36,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TouchableOpacity } from 'react-native';
 import AdminPanel from '../admin/admin-panel';
+import * as WebBrowser from 'expo-web-browser';
 
 const { width, height } = Dimensions.get('window');
 
@@ -844,6 +843,29 @@ export default function HomeScreen() {
                   </View>
                   <Ionicons name="chevron-forward-outline" size={18} color={COLORS.textSecondary} />
                 </Pressable>
+
+                <Pressable 
+                  style={styles.modalItem} 
+                  onPress={() => WebBrowser.openBrowserAsync('https://adminweb-ruddy.vercel.app/terms.html')}
+                >
+                  <View style={styles.modalItemContent}>
+                    <Text style={styles.modalItemText}>Conditions d'Utilisation</Text>
+                    <Text style={styles.modalItemSubText}>Consulter les CGU de l'application</Text>
+                  </View>
+                  <Ionicons name="document-text-outline" size={18} color={COLORS.textSecondary} />
+                </Pressable>
+
+                <Pressable 
+                  style={styles.modalItem} 
+                  onPress={() => WebBrowser.openBrowserAsync('https://adminweb-ruddy.vercel.app/privacy.html')}
+                >
+                  <View style={styles.modalItemContent}>
+                    <Text style={styles.modalItemText}>Charte de Confidentialité</Text>
+                    <Text style={styles.modalItemSubText}>Consulter la politique de protection des données</Text>
+                  </View>
+                  <Ionicons name="shield-checkmark-outline" size={18} color={COLORS.textSecondary} />
+                </Pressable>
+
                 <Pressable style={styles.modalCloseButton} onPress={handleCloseSettings}>
                   <Text style={styles.modalCloseText}>Fermer</Text>
                 </Pressable>

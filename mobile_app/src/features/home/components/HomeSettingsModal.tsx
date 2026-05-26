@@ -142,7 +142,7 @@ export function HomeSettingsModal({
           <TouchableOpacity
             style={styles.modalItem}
             onPress={() => {
-              WebBrowser.openBrowserAsync('https://timalaus.fr/terms');
+              WebBrowser.openBrowserAsync('https://adminweb-ruddy.vercel.app/terms.html');
             }}
           >
             <View style={styles.modalItemIcon}>
@@ -154,7 +154,7 @@ export function HomeSettingsModal({
           <TouchableOpacity
             style={styles.modalItem}
             onPress={() => {
-              WebBrowser.openBrowserAsync('https://timalaus.fr/privacy');
+              WebBrowser.openBrowserAsync('https://adminweb-ruddy.vercel.app/privacy.html');
             }}
           >
             <View style={styles.modalItemIcon}>

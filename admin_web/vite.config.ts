@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_APP_BASE || '/',
   server: {
+    host: '127.0.0.1',
     proxy: {
       '/auth': {
         target: 'https://cehqcehqsupabase.supabase.co',

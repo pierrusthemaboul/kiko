@@ -1,26 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import {
-//   AdsConsent,
-//   AdsConsentStatus,
-//   AdsConsentDebugGeography,
-// } from 'react-native-google-mobile-ads';
-const AdsConsent = {
-  requestInfoUpdate: async () => ({ isConsentFormAvailable: false, status: 0 }),
-  showForm: async () => ({ status: 0 }),
-  reset: async () => {},
-};
-enum AdsConsentStatus {
-  UNKNOWN = 0,
-  REQUIRED = 1,
-  NOT_REQUIRED = 2,
-  OBTAINED = 3,
-}
-enum AdsConsentDebugGeography {
-  DISABLED = 0,
-  EEA = 1,
-  NOT_EEA = 2,
-}
+import {
+  AdsConsent,
+  AdsConsentStatus,
+  AdsConsentDebugGeography,
+} from 'react-native-google-mobile-ads';
 
 import { FirebaseAnalytics } from '../lib/firebase';
 import { setAdPersonalization } from '../lib/config/adConfig';

@@ -20,7 +20,10 @@ import {
   Sparkles,
   X,
   ArrowUpCircle,
-  Dices
+  Dices,
+  Copy,
+  Check,
+  ChevronRight as ChevronRightIcon
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ChatPanel from '../components/ChatPanel';
@@ -71,6 +74,11 @@ const EventsPage: React.FC = () => {
   const [randomOffset, setRandomOffset] = useState(0);
   const [sortField, setSortField] = useState<'date' | 'notoriete_fr'>('date');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  
+  // --- Sélection multiple d'événements ---
+  const [selectedEventIds, setSelectedEventIds] = useState<Set<string>>(new Set());
+  const [lastSelectedIndex, setLastSelectedIndex] = useState<number | null>(null);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   // Restore state from sessionStorage
   useEffect(() => {
@@ -96,6 +104,28 @@ const EventsPage: React.FC = () => {
       }
     }
 
+    // Restore selected event IDs
+    const savedSelection = sessionStorage.getItem('selectedEventIds');
+    const selectionContext = sessionStorage.getItem('selectionContext');
+    
+    if (selectionContext) {
+      // Priorité au contexte de sélection (mode navigation)
+      try {
+        const context = JSON.parse(selectionContext);
+        setSelectedEventIds(new Set(context.selectedIds));
+      } catch (err) {
+        console.error('Failed to parse selection context', err);
+      }
+    } else if (savedSelection) {
+      // Fallback à l'ancien système
+      try {
+        const selection = JSON.parse(savedSelection);
+        setSelectedEventIds(new Set(selection));
+      } catch (err) {
+        console.error('Failed to parse selection state', err);
+      }
+    }
+
     // Restore scroll position securely after a short delay
     const scrollPos = sessionStorage.getItem('eventsScrollPos');
     if (scrollPos) {
@@ -117,6 +147,15 @@ const EventsPage: React.FC = () => {
       isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax, isRandomMode, sortField, sortOrder
     }));
   }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax, isRandomMode, sortField, sortOrder]);
+
+  // Save selected event IDs to sessionStorage
+  useEffect(() => {
+    // Sauvegarder dans selectedEventIds pour compatibilité, mais aussi dans selectionContext si on n'est pas en mode navigation
+    const selectionContext = sessionStorage.getItem('selectionContext');
+    if (!selectionContext) {
+      sessionStorage.setItem('selectedEventIds', JSON.stringify(Array.from(selectedEventIds)));
+    }
+  }, [selectedEventIds]);
 
   
   const [categories, setCategories] = useState<string[]>([]);
@@ -463,6 +502,82 @@ const EventsPage: React.FC = () => {
     });
   };
 
+  // --- Handlers pour la sélection multiple ---
+  const handleEventClick = (event: Event, index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    
+    if (e.ctrlKey || e.metaKey) {
+      // Ctrl+clic: toggle la sélection
+      setSelectedEventIds(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(event.id)) {
+          newSet.delete(event.id);
+        } else {
+          newSet.add(event.id);
+        }
+        return newSet;
+      });
+      setLastSelectedIndex(index);
+    } else if (e.shiftKey && lastSelectedIndex !== null) {
+      // Shift+clic: sélectionner la plage
+      const start = Math.min(lastSelectedIndex, index);
+      const end = Math.max(lastSelectedIndex, index);
+      const eventsToSelect = displayedEvents.slice(start, end + 1);
+      setSelectedEventIds(prev => {
+        const newSet = new Set(prev);
+        eventsToSelect.forEach(ev => newSet.add(ev.id));
+        return newSet;
+      });
+    } else {
+      // Clic simple: sélectionner cet événement
+      setSelectedEventIds(new Set([event.id]));
+      setLastSelectedIndex(index);
+    }
+  };
+
+  const handleEventDoubleClick = (event: Event, e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigate(`/edit-event/${event.id}?source=${aiEvents ? 'evenements' : source}`);
+  };
+
+  const clearSelection = () => {
+    setSelectedEventIds(new Set());
+    setLastSelectedIndex(null);
+  };
+
+  const copySelectedTitles = async () => {
+    const selectedEvents = displayedEvents.filter(ev => selectedEventIds.has(ev.id));
+    const titles = selectedEvents.map(ev => {
+      const year = ev.date ? ev.date.substring(0, 4) : 'N/A';
+      return `- ${ev.titre} (${year})`;
+    }).join('\n');
+    
+    try {
+      await navigator.clipboard.writeText(titles);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      alert('Erreur lors de la copie');
+    }
+  };
+
+  // --- Handlers pour le mode navigation ---
+  const startSelectionMode = () => {
+    const selectedEvents = displayedEvents.filter(ev => selectedEventIds.has(ev.id));
+    if (selectedEvents.length > 0) {
+      // Naviguer directement vers le premier événement sélectionné
+      const firstEvent = selectedEvents[0];
+      // Sauvegarder la sélection et l'index pour la page d'édition
+      sessionStorage.setItem('selectionContext', JSON.stringify({
+        selectedIds: Array.from(selectedEventIds),
+        currentIndex: 0,
+        source: aiEvents ? 'evenements' : source
+      }));
+      navigate(`/edit-event/${firstEvent.id}?source=${aiEvents ? 'evenements' : source}`);
+    }
+  };
+
   const renderPagination = (extraClass: string = "") => (
     totalPages > 1 && !loading && !aiEvents && (
       <div className={`pagination-container glass ${extraClass}`}>
@@ -694,6 +809,36 @@ const EventsPage: React.FC = () => {
 
         <div className="content-header">
           <p className="stats">{totalCount} événements trouvés</p>
+          <div className="selection-actions">
+            {selectedEventIds.size > 0 && (
+              <>
+                <span className="selection-count">{selectedEventIds.size} sélectionné(s)</span>
+                <button 
+                  className="nav-selection-btn"
+                  onClick={startSelectionMode}
+                  title="Naviguer dans la sélection"
+                >
+                  <ChevronRightIcon size={16} />
+                  Naviguer
+                </button>
+                <button 
+                  className="copy-titles-btn"
+                  onClick={copySelectedTitles}
+                  title="Copier les titres"
+                >
+                  {copySuccess ? <Check size={16} /> : <Copy size={16} />}
+                  {copySuccess ? 'Copié !' : 'Copier les titres'}
+                </button>
+                <button 
+                  className="clear-selection-btn"
+                  onClick={clearSelection}
+                  title="Effacer la sélection"
+                >
+                  <X size={16} />
+                </button>
+              </>
+            )}
+          </div>
           <div className="view-toggle">
             <button 
               className={viewMode === 'grid' ? 'active' : ''} 
@@ -730,8 +875,9 @@ const EventsPage: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`event-card glass ${viewMode}`}
-                  onClick={() => navigate(`/edit-event/${event.id}?source=${aiEvents ? 'evenements' : source}`)}
+                  className={`event-card glass ${viewMode} ${selectedEventIds.has(event.id) ? 'selected' : ''}`}
+                  onClick={(e) => handleEventClick(event, index, e)}
+                  onDoubleClick={(e) => handleEventDoubleClick(event, e)}
                 >
                   <div className="event-image">
                     {event.illustration_url ? (

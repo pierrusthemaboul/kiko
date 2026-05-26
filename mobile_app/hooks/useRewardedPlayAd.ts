@@ -1,24 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-// import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
-
-const RewardedAd = {
-  createForAdRequest: () => ({
-    addAdEventListener: () => () => {},
-    load: () => {},
-    show: () => {},
-    loaded: false,
-  }),
-};
-enum AdEventType {
-  LOADED = 'loaded',
-  ERROR = 'error',
-  OPENED = 'opened',
-  CLOSED = 'closed',
-}
-enum RewardedAdEventType {
-  LOADED = 'loaded',
-  EARNED_REWARD = 'earned_reward',
-}
+import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
 
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';

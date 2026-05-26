@@ -743,3 +743,105 @@
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
 }
+
+/* Sélection multiple d'événements */
+.event-card.selected {
+  border: 3px solid #22c55e !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2) !important;
+}
+
+.event-card.selected.grid {
+  background: #f0fdf4;
+}
+
+.event-card.selected.list {
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.selection-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selection-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #22c55e;
+  padding: 4px 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.copy-titles-btn,
+.clear-selection-btn,
+.nav-selection-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+}
+
+.copy-titles-btn {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.copy-titles-btn:hover {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.clear-selection-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.clear-selection-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+.nav-selection-btn {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.nav-selection-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}
+
+@media (max-width: 600px) {
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .selection-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .view-toggle {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

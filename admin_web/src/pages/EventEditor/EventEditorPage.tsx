@@ -30,17 +30,33 @@ const EventEditorPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [isRegenPanelOpen, setIsRegenPanelOpen] = useState(false);
+  const [previousImageUrl, setPreviousImageUrl] = useState<string | null>(null);
   
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [cachedIds, setCachedIds] = useState<string[]>([]);
+  const [selectionContext, setSelectionContext] = useState<{selectedIds: string[], currentIndex: number, source: string} | null>(null);
 
   useEffect(() => {
-    const list = sessionStorage.getItem('currentEventsIdsList');
-    if (list) {
+    // Priorité au contexte de sélection
+    const selection = sessionStorage.getItem('selectionContext');
+    if (selection) {
       try {
-        const ids = JSON.parse(list) as string[];
-        setCachedIds(ids);
-      } catch(e) {}
+        const context = JSON.parse(selection);
+        setSelectionContext(context);
+        setCachedIds(context.selectedIds);
+        setCurrentIndex(context.currentIndex);
+      } catch(e) {
+        console.error('Failed to parse selection context', e);
+      }
+    } else {
+      // Fallback à l'ancien système
+      const list = sessionStorage.getItem('currentEventsIdsList');
+      if (list) {
+        try {
+          const ids = JSON.parse(list) as string[];
+          setCachedIds(ids);
+        } catch(e) {}
+      }
     }
   }, []);
 
@@ -48,19 +64,46 @@ const EventEditorPage: React.FC = () => {
     if (id && cachedIds.length > 0) {
       const idx = cachedIds.indexOf(id);
       setCurrentIndex(idx !== -1 ? idx : null);
+      
+      // Mettre à jour le contexte de sélection si on est en mode sélection
+      if (selectionContext && idx !== -1) {
+        sessionStorage.setItem('selectionContext', JSON.stringify({
+          ...selectionContext,
+          currentIndex: idx
+        }));
+      }
     }
-  }, [id, cachedIds]);
+  }, [id, cachedIds, selectionContext]);
 
   const goNext = () => {
     if (currentIndex !== null && currentIndex < cachedIds.length - 1) {
-      navigate(`/edit-event/${cachedIds[currentIndex + 1]}?source=${source}`, { replace: true });
+      const nextId = cachedIds[currentIndex + 1];
+      if (selectionContext) {
+        sessionStorage.setItem('selectionContext', JSON.stringify({
+          ...selectionContext,
+          currentIndex: currentIndex + 1
+        }));
+      }
+      navigate(`/edit-event/${nextId}?source=${source}`, { replace: true });
     }
   };
 
   const goPrev = () => {
     if (currentIndex !== null && currentIndex > 0) {
-      navigate(`/edit-event/${cachedIds[currentIndex - 1]}?source=${source}`, { replace: true });
+      const prevId = cachedIds[currentIndex - 1];
+      if (selectionContext) {
+        sessionStorage.setItem('selectionContext', JSON.stringify({
+          ...selectionContext,
+          currentIndex: currentIndex - 1
+        }));
+      }
+      navigate(`/edit-event/${prevId}?source=${source}`, { replace: true });
     }
+  };
+
+  const exitSelectionMode = () => {
+    sessionStorage.removeItem('selectionContext');
+    setSelectionContext(null);
   };
 
   useEffect(() => {
@@ -75,6 +118,7 @@ const EventEditorPage: React.FC = () => {
       
       if (!error && data) {
         setEventData(data as EventData);
+        setPreviousImageUrl((data as EventData).illustration_url || null);
       }
       setLoading(false);
     };
@@ -110,7 +154,30 @@ const EventEditorPage: React.FC = () => {
     setSaving(true);
     const { error } = await supabase.from(source).delete().eq('id', eventData.id);
     if (!error) {
-      navigate(-1);
+      // Si on est en mode sélection, naviguer vers l'événement suivant/précédent
+      if (selectionContext && cachedIds.length > 1) {
+        const currentIndexInSelection = cachedIds.indexOf(eventData.id);
+        const newSelectionIds = cachedIds.filter(id => id !== eventData.id);
+        
+        sessionStorage.setItem('selectionContext', JSON.stringify({
+          ...selectionContext,
+          selectedIds: newSelectionIds,
+          currentIndex: Math.max(0, currentIndexInSelection)
+        }));
+        
+        // Naviguer vers l'événement suivant ou précédent
+        if (currentIndexInSelection < newSelectionIds.length) {
+          navigate(`/edit-event/${newSelectionIds[currentIndexInSelection]}?source=${source}`);
+        } else if (currentIndexInSelection > 0) {
+          navigate(`/edit-event/${newSelectionIds[currentIndexInSelection - 1]}?source=${source}`);
+        } else {
+          // Plus d'événements dans la sélection
+          sessionStorage.removeItem('selectionContext');
+          navigate('/events');
+        }
+      } else {
+        navigate(-1);
+      }
     } else {
       alert("Erreur: " + error.message);
       setSaving(false);
@@ -148,6 +215,9 @@ const EventEditorPage: React.FC = () => {
   const handleManualUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file || !eventData) return;
+    
+    // Sauvegarder l'image précédente
+    setPreviousImageUrl(eventData.illustration_url || null);
     
     setSaving(true);
     try {
@@ -188,13 +258,21 @@ const EventEditorPage: React.FC = () => {
     setSaving(false);
   };
 
+  const handleRestorePreviousImage = () => {
+    if (!eventData || !previousImageUrl) return;
+    setEventData({...eventData, illustration_url: previousImageUrl});
+  };
+
   if (loading) return <div className="editor-loading">Chargement...</div>;
   if (!eventData) return <div className="editor-loading">Événement introuvable.</div>;
 
   return (
     <div className="event-editor-fullpage">
       <header className="editor-header glass">
-        <button className="back-btn" onClick={() => navigate('/events')} style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', background: 'var(--bg-secondary)' }}>
+        <button className="back-btn" onClick={() => {
+          // Ne pas supprimer selectionContext lors du retour
+          navigate('/events');
+        }} style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', background: 'var(--bg-secondary)' }}>
           <ArrowLeft size={20} /> Retour
         </button>
         <div className="header-info">
@@ -202,6 +280,19 @@ const EventEditorPage: React.FC = () => {
           <span className="source-badge">{source.toUpperCase()}</span>
         </div>
         <div className="header-actions">
+          {selectionContext && (
+            <div className="selection-indicator">
+              <span className="selection-badge">Mode sélection: {currentIndex !== null ? currentIndex + 1 : 0} / {cachedIds.length}</span>
+              <button 
+                className="btn-secondary btn-exit-selection"
+                onClick={exitSelectionMode}
+                title="Quitter le mode sélection"
+                style={{marginLeft: '8px', padding: '4px 8px', fontSize: '0.8rem'}}
+              >
+                Quitter
+              </button>
+            </div>
+          )}
           <button
             className="btn-secondary btn-copy-title"
             onClick={handleCopyTitle}
@@ -245,6 +336,11 @@ const EventEditorPage: React.FC = () => {
             )}
             
             <div className="image-tools">
+              {previousImageUrl && previousImageUrl !== eventData.illustration_url && (
+                <button className="btn-restore" onClick={handleRestorePreviousImage} title="Restaurer l'image précédente">
+                  <ArrowLeft size={18} /> Restaurer
+                </button>
+              )}
               <button className="btn-creative" onClick={() => setIsRegenPanelOpen(true)}>
                 <Wand2 size={18} /> Lab Créatif Rapide
               </button>
@@ -267,7 +363,13 @@ const EventEditorPage: React.FC = () => {
                 <input 
                   type="text" 
                   value={eventData.illustration_url || ''} 
-                  onChange={e => setEventData({...eventData, illustration_url: e.target.value})} 
+                  onChange={e => {
+                    // Sauvegarder l'image précédente avant le changement
+                    if (eventData.illustration_url && eventData.illustration_url !== e.target.value) {
+                      setPreviousImageUrl(eventData.illustration_url);
+                    }
+                    setEventData({...eventData, illustration_url: e.target.value});
+                  }} 
                 />
             </div>
           </div>
