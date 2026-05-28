@@ -2,6 +2,7 @@
 .git/
 **/.git/
 ../.git/
+../node_modules/
 node_modules/
 **/node_modules/
 android/
@@ -18,3 +19,14 @@ dist/
 !google-services.json
 !GoogleService-Info.plist
 !assets/**/*.json
+
+# Exclude parent monorepo folders to keep the build archive small
+../docs/
+../tools/
+../admin_web/
+../screenshots/
+../dist/
+../imagesint/
+../scratch/
+../*.tar.gz
+
