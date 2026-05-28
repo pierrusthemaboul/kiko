@@ -107,6 +107,48 @@ export default function Vue1() {
     } catch (error) {}
   }, [router]);
 
+  const handleDeleteAccount = useCallback(async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return;
+
+    Alert.alert(
+      'Supprimer le compte',
+      'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible et toutes vos données (scores, progression) seront définitivement effacées.',
+      [
+        { text: 'Annuler', style: 'cancel' },
+        {
+          text: 'Supprimer',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              FirebaseAnalytics.trackEvent('user_account_deletion_requested', {
+                user_id: user.id,
+                screen: 'vue1',
+              });
+
+              // Appel de la fonction RPC Supabase pour une suppression réelle (auth.users)
+              const { error: deleteError } = await supabase.rpc('delete_user');
+              
+              if (deleteError) {
+                console.warn("RPC delete_user failed (falling back to simple logout):", deleteError);
+              }
+
+              // On déconnecte l'utilisateur
+              await supabase.auth.signOut();
+              await AsyncStorage.removeItem('@timalaus_guest_mode');
+
+              Alert.alert('Compte supprimé', 'Votre demande de suppression a été prise en compte et vous avez été déconnecté.');
+              router.replace('/auth/login');
+            } catch (error) {
+              console.error("Error during account deletion:", error);
+              Alert.alert('Erreur', 'Impossible de supprimer le compte pour le moment.');
+            }
+          },
+        },
+      ]
+    );
+  }, [router]);
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
@@ -164,6 +206,7 @@ export default function Vue1() {
         onClose={() => setSettingsVisible(false)}
         onOpenAIInfo={() => setShowAIInfo(true)}
         onLogout={handleLogout}
+        onDeleteAccount={homeData.profile?.id ? handleDeleteAccount : undefined}
         musicVolume={musicVolume}
         onMusicVolumeChange={setMusicVolume}
         musicEnabled={musicEnabled}

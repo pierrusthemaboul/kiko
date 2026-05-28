@@ -22,6 +22,7 @@ import { AudioProvider } from '../contexts/AudioContext';
 import { MusicProvider } from '../contexts/MusicContext';
 import { useBackgroundMusic } from '../hooks/useBackgroundMusic';
 import { AdService } from '@/src/features/ads/AdService';
+import MockATTModal from '../components/modals/MockATTModal';
 
 if (__DEV__ && Platform.OS !== 'web') {
   require('../ReactotronConfig');
@@ -59,6 +60,7 @@ export default function RootLayout() {
   const [session, setSession] = useState<Session | null>(null);
   const [splashShown, setSplashShown] = useState(false);
   const [guestMode, setGuestMode] = useState(false);
+  const [showMockATT, setShowMockATT] = useState(false);
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
@@ -151,6 +153,17 @@ export default function RootLayout() {
     if (Platform.OS !== 'web') {
       AdService.initializeMobileAds().catch(err => {
         console.warn('[RootLayout] AdMob init error (non-blocking):', err);
+      });
+    }
+  }, []);
+
+  // --- Mock ATT for video recording ---
+  useEffect(() => {
+    if (Platform.OS === 'android' && __DEV__) {
+      AsyncStorage.getItem('@mock_att_shown').then((value) => {
+        if (value !== 'true') {
+          setShowMockATT(true);
+        }
       });
     }
   }, []);
@@ -365,6 +378,13 @@ export default function RootLayout() {
               <Stack.Screen name="game" />
               <Stack.Screen name="+not-found" />
             </Stack>
+            <MockATTModal
+              visible={showMockATT}
+              onClose={async () => {
+                await AsyncStorage.setItem('@mock_att_shown', 'true');
+                setShowMockATT(false);
+              }}
+            />
           </View>
         </MusicProvider>
       </AudioProvider>

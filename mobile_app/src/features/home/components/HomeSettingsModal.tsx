@@ -9,6 +9,7 @@ interface Props {
   onClose: () => void;
   onOpenAIInfo: () => void;
   onLogout: () => void;
+  onDeleteAccount?: () => void;
   musicVolume: number;
   onMusicVolumeChange: (volume: number) => void;
   musicEnabled: boolean;
@@ -20,6 +21,7 @@ export function HomeSettingsModal({
   onClose,
   onOpenAIInfo,
   onLogout,
+  onDeleteAccount,
   musicVolume,
   onMusicVolumeChange,
   musicEnabled,
@@ -177,6 +179,21 @@ export function HomeSettingsModal({
             </View>
             <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Déconnexion</Text>
           </TouchableOpacity>
+
+          {onDeleteAccount && (
+            <TouchableOpacity
+              style={[styles.modalItem, { marginTop: 4 }]}
+              onPress={() => {
+                onClose();
+                onDeleteAccount();
+              }}
+            >
+              <View style={styles.modalItemIcon}>
+                <Ionicons name="trash-outline" size={20} color="#DC3545" />
+              </View>
+              <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Supprimer mon compte</Text>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </Modal>

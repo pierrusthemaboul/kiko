@@ -377,8 +377,8 @@ export default function SignUp() {
               onPress={signInWithApple}
               disabled={isSigningUp || isGoogleSigningUp || isAppleLoading}
               style={styles.appleButton}
-              buttonType={1} // SIGN_IN (En fait SIGN_UP n'existe pas en enum standard Expo 1 pour Apple but SIGN_IN is used for both)
-              buttonStyle={0} // BLACK
+              buttonType={2} // SIGN_UP
+              buttonStyle={2} // BLACK
             />
 
             <View style={styles.divider}>

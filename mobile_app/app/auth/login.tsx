@@ -390,8 +390,8 @@ export default function Login() {
               onPress={signInWithApple}
               disabled={isLoggingIn || isGoogleLoggingIn || isAppleLoading}
               style={styles.appleButton}
-              buttonType={1} // SIGN_IN
-              buttonStyle={0} // BLACK
+              buttonType={0} // SIGN_IN
+              buttonStyle={2} // BLACK
             />
 
             <View style={styles.divider}>
