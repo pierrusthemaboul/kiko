@@ -9,7 +9,8 @@ import {
 import { FirebaseAnalytics } from '../lib/firebase';
 import { setAdPersonalization } from '../lib/config/adConfig';
 import Constants from 'expo-constants';
-import { Platform } from 'react-native';
+import { Platform, AppState } from 'react-native';
+import { requestTrackingPermissionsAsync, getTrackingPermissionsAsync } from 'expo-tracking-transparency';
 
 const AD_CONSENT_LOG_ENABLED = (() => {
   try {
@@ -64,15 +65,7 @@ const requestTrackingPermissionsSafely = async (): Promise<string> => {
   if (Platform.OS !== 'ios') return 'not_applicable';
 
   try {
-    const trackingTransparency = require('expo-tracking-transparency') as {
-      requestTrackingPermissionsAsync?: () => Promise<{ status?: string }>;
-    };
-
-    if (typeof trackingTransparency.requestTrackingPermissionsAsync !== 'function') {
-      return 'unavailable';
-    }
-
-    const result = await trackingTransparency.requestTrackingPermissionsAsync();
+    const result = await requestTrackingPermissionsAsync();
     return result?.status ?? 'unavailable';
   } catch (attModuleError) {
     consentLog('warn', 'ExpoTrackingTransparency unavailable on this build', attModuleError);
@@ -147,16 +140,6 @@ export function useAdConsent() {
           testDeviceIdentifiers: __DEV__ ? ['TEST_DEVICE_ID'] : [],
         });
 
-        // NOUVEAU: Prompt ATT pour iOS (Requis par Apple pour AdMob)
-        if (Platform.OS === 'ios') {
-          try {
-            const attStatus = await requestTrackingPermissionsSafely();
-            consentLog('log', 'ATT status', attStatus);
-            FirebaseAnalytics.trackEvent('att_prompt_result', { status: attStatus });
-          } catch (attError) {
-            consentLog('warn', 'Failed to request ATT permission', attError);
-          }
-        }
 
         consentLog('log', 'Consent info', consentInfo);
 
@@ -207,8 +190,94 @@ export function useAdConsent() {
     }
   }, [requestConsent]);
 
+  // Demande d'autorisation ATT indépendante sur iOS
+  // Améliorée pour s'assurer que la pop-up s'affiche correctement même en mode letterbox sur iPad
   useEffect(() => {
+    if (Platform.OS !== 'ios') return;
+    let active = true;
+    let retryCount = 0;
+    const maxRetries = 2;
+
+    const requestATT = async () => {
+      if (!active) return;
+
+      try {
+        const currentStatus = await getTrackingPermissionsAsync();
+        consentLog('log', 'Current ATT status before request:', currentStatus?.status);
+        
+        // Si déjà déterminé (authorized/denied), ne pas redemander
+        if (currentStatus?.status === 'authorized' || currentStatus?.status === 'denied') {
+          consentLog('log', 'ATT already determined, skipping request');
+          FirebaseAnalytics.trackEvent('att_already_determined', { status: currentStatus.status });
+          return;
+        }
+
+        consentLog('log', 'Independent ATT request started...');
+        const result = await requestTrackingPermissionsAsync();
+        consentLog('log', 'Independent ATT result status:', result?.status);
+        FirebaseAnalytics.trackEvent('att_prompt_result', { status: result?.status ?? 'unknown', retry_count: retryCount });
+      } catch (attError) {
+        consentLog('error', 'Independent ATT request failed:', attError);
+        FirebaseAnalytics.trackEvent('att_request_error', { error: String(attError), retry_count: retryCount });
+        
+        // Réessayer si erreur et qu'on n'a pas dépassé le nombre de tentatives
+        if (retryCount < maxRetries) {
+          retryCount++;
+          consentLog('log', `Retrying ATT request (${retryCount}/${maxRetries})...`);
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await requestATT();
+        }
+      }
+    };
+
     (async () => {
+      // Attendre que l'app soit active et stable
+      // Délai augmenté à 3 secondes pour s'assurer que l'app est complètement chargée
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      
+      // Vérifier que l'app est active avant de demander ATT
+      if (AppState.currentState !== 'active') {
+        consentLog('log', 'App not active, waiting for active state...');
+        
+        // Attendre que l'app devienne active
+        const waitForActive = () => {
+          return new Promise<void>((resolve) => {
+            const subscription = AppState.addEventListener('change', (nextAppState) => {
+              if (nextAppState === 'active') {
+                subscription.remove();
+                resolve();
+              }
+            });
+            // Timeout de 5 secondes si l'app ne devient jamais active
+            setTimeout(() => {
+              subscription.remove();
+              resolve();
+            }, 5000);
+          });
+        };
+        
+        await waitForActive();
+      }
+      
+      if (!active) return;
+      consentLog('log', 'App is active, requesting ATT...');
+      await requestATT();
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      // Sur iOS, on attend 1.5s pour s'assurer que la fenêtre de l'app est active
+      // afin que la pop-up système ATT apparaisse correctement.
+      if (Platform.OS === 'ios') {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+      if (!active) return;
       try {
         await restoreConsent();
         await requestConsent('auto');
@@ -216,6 +285,9 @@ export function useAdConsent() {
         consentLog('warn', 'Automatic consent request failed', autoError);
       }
     })();
+    return () => {
+      active = false;
+    };
   }, [restoreConsent, requestConsent]);
 
   const statusLabel = useMemo(() => consentStatusLabel(consentStatus), [consentStatus]);

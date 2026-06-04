@@ -21,7 +21,7 @@ module.exports = ({ config }) => {
       supportsTablet: false,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       appleTeamId: "RBH23M8YUV",
-      buildNumber: "13",
+      buildNumber: "17",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
@@ -62,7 +62,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10130,
+      versionCode: 10170,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
