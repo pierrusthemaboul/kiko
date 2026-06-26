@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutGrid, Database, Image as ImageIcon, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft, Users, BarChart, Orbit, MailWarning, Smartphone } from 'lucide-react';
+import { LayoutGrid, Database, Image as ImageIcon, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft, Users, BarChart, Orbit, MailWarning, Smartphone, Trophy } from 'lucide-react';
 import { VERSION } from '../../version';
 import './MainLayout.css';
 
@@ -22,6 +22,7 @@ const MainLayout: React.FC = () => {
     { to: "/signalements", icon: <MailWarning size={20} />, label: "Signalements" },
     { to: "/one-by-one", icon: <ListChecks size={20} />, label: "1 par 1" },
     { to: "/users", icon: <Users size={20} />, label: "Utilisateurs" },
+    { to: "/daily-scores", icon: <Trophy size={20} />, label: "Scores du Jour" },
     { to: "/analytics", icon: <BarChart size={20} />, label: "Diagnostic" },
     { to: "/viz-3d", icon: <Orbit size={20} />, label: "Explorateur 3D" },
     { to: "/social-media", icon: <Smartphone size={20} />, label: "Social Media" },
