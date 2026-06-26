@@ -7,8 +7,7 @@ import {
   X,
   TrendingUp,
   Gamepad2,
-  Calendar,
-  CheckCircle
+  Calendar
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../../lib/supabase';
@@ -40,20 +39,25 @@ const DailyScoresPage: React.FC = () => {
     setLoading(true);
     setMessage(null);
     try {
-      const { data, error } = await supabase.rpc('get_daily_scores', {
-        p_offset: pageToFetch * ITEMS_PER_PAGE,
-        p_limit: ITEMS_PER_PAGE
-      });
+      // Get total count first
+      const { count, error: countError } = await supabase
+        .from('game_scores')
+        .select('user_id', { count: 'exact', head: true })
+        .gte('created_at', new Date().toISOString().split('T')[0]);
+
+      if (countError) throw countError;
+      setTotalCount(count || 0);
+
+      // Get daily scores from view
+      const { data, error } = await supabase
+        .from('daily_scores_view')
+        .select('*')
+        .order('daily_score', { ascending: false })
+        .range(pageToFetch * ITEMS_PER_PAGE, (pageToFetch + 1) * ITEMS_PER_PAGE - 1);
 
       if (error) throw error;
       
-      if (data && data.length > 0) {
-        setScores(data);
-        setTotalCount(Number(data[0].total_count));
-      } else {
-        setScores([]);
-        setTotalCount(0);
-      }
+      setScores(data || []);
     } catch (err: unknown) {
       console.error('Error fetching daily scores:', err);
       const errorMessage = err instanceof Error ? err.message : String(err);
