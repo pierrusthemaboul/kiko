@@ -16,6 +16,12 @@ import iconv from 'iconv-lite';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+let overviewCache = null;
+let overviewCacheAt = 0;
+let overviewCacheIsError = false;
+const OVERVIEW_CACHE_TTL_OK_MS = 120_000; // 2 min
+const OVERVIEW_CACHE_TTL_ERR_MS = 60_000; // 1 min
+
 // ─────────────────────────────────────────────────────────
 // BUFFER
 // ─────────────────────────────────────────────────────────
@@ -90,14 +96,16 @@ export async function getBufferOverview() {
   );
   const channels = channelsData.channels;
 
+  // Un seul appel posts pour tous les canaux : évite le rate limit
   const postsQuery = `
-    query($input: PostsInput!) {
-      posts(input: $input, first: 1) {
+    query($input: PostsInput!, $first: Int) {
+      posts(input: $input, first: $first) {
         edges {
           node {
             id
             text
             dueAt
+            channelService
             metrics { name value unit }
           }
         }
@@ -105,46 +113,41 @@ export async function getBufferOverview() {
     }
   `;
 
-  const results = await Promise.all(
-    channels.map(async (ch) => {
-      try {
-        const postsData = await bufferGraphQL(postsQuery, {
-          input: {
-            organizationId: orgId,
-            filter: { channelIds: [ch.id], status: ['sent'] },
-          },
-        });
-        const edges = postsData.posts.edges;
-        const lastPost = edges.length > 0 ? edges[0].node : null;
+  const postsData = await bufferGraphQL(postsQuery, {
+    input: {
+      organizationId: orgId,
+      filter: { channelIds: channels.map((c) => c.id), status: ['sent'] },
+    },
+    first: channels.length * 5,
+  });
 
-        return {
-          id: ch.id,
-          name: ch.name,
-          service: ch.service,
-          avatar: ch.avatar,
-          lastPost: lastPost
-            ? {
-                text: fixMojibake(lastPost.text),
-                dueAt: lastPost.dueAt,
-                metrics: extractMetrics(lastPost.metrics),
-              }
-            : null,
-          error: null,
-        };
-      } catch (e) {
-        return {
-          id: ch.id,
-          name: ch.name,
-          service: ch.service,
-          avatar: ch.avatar,
-          lastPost: null,
-          error: e.message,
-        };
-      }
-    })
-  );
+  const posts = postsData.posts.edges.map((e) => e.node);
+  const latestByService = {};
+  for (const post of posts) {
+    const svc = post.channelService;
+    if (!svc) continue;
+    if (!latestByService[svc] || new Date(post.dueAt) > new Date(latestByService[svc].dueAt)) {
+      latestByService[svc] = post;
+    }
+  }
 
-  return results;
+  return channels.map((ch) => {
+    const lastPost = latestByService[ch.service] || null;
+    return {
+      id: ch.id,
+      name: ch.name,
+      service: ch.service,
+      avatar: ch.avatar,
+      lastPost: lastPost
+        ? {
+            text: fixMojibake(lastPost.text),
+            dueAt: lastPost.dueAt,
+            metrics: extractMetrics(lastPost.metrics),
+          }
+        : null,
+      error: null,
+    };
+  });
 }
 
 // ─────────────────────────────────────────────────────────
@@ -303,16 +306,31 @@ export async function getGooglePlayStats() {
 // ─────────────────────────────────────────────────────────
 
 export async function getMarketingOverview() {
+  const now = Date.now();
+  const ttl = overviewCacheIsError ? OVERVIEW_CACHE_TTL_ERR_MS : OVERVIEW_CACHE_TTL_OK_MS;
+  if (overviewCache && now - overviewCacheAt < ttl) {
+    return overviewCache;
+  }
+
   const [buffer, appStore, googlePlay] = await Promise.all([
     getBufferOverview().catch((e) => ({ error: e.message })),
     getAppStoreStats().catch((e) => ({ error: e.message })),
     getGooglePlayStats().catch((e) => ({ error: e.message })),
   ]);
 
-  return {
+  const cacheIsError =
+    (!Array.isArray(buffer) && !!buffer.error) ||
+    !!appStore.error ||
+    !!googlePlay.error;
+
+  overviewCache = {
     buffer,
     appStore,
     googlePlay,
     fetchedAt: new Date().toISOString(),
   };
+  overviewCacheAt = now;
+  overviewCacheIsError = cacheIsError;
+
+  return overviewCache;
 }
