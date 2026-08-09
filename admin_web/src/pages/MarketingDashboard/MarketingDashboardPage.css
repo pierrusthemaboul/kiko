@@ -169,10 +169,14 @@
 }
 .marketing-dashboard-page .metric {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   color: #d1d5db;
   font-size: 13px;
   font-weight: 600;
+  text-align: center;
 }
 .marketing-dashboard-page .metric svg { color: #6366f1; flex-shrink: 0; }
+.marketing-dashboard-page .metric-value { font-size: 13px; font-weight: 600; }
+.marketing-dashboard-page .metric-label { font-size: 10px; color: #9ca3af; font-weight: 400; }

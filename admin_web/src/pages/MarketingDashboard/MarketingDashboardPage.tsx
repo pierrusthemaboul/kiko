@@ -118,6 +118,21 @@ class DebugBoundary extends React.Component<{ children: React.ReactNode }, { err
   }
 }
 
+const MetricItem: React.FC<{
+  icon: React.FC<any>;
+  value: number | null | undefined;
+  label: string;
+  suffix?: string;
+}> = ({ icon: Icon, value, label, suffix }) => (
+  <div className="metric" title={label}>
+    <Icon size={16} />
+    <span className="metric-value">
+      {value != null && suffix ? `${value.toFixed(1)}${suffix}` : formatNumber(value)}
+    </span>
+    <span className="metric-label">{label}</span>
+  </div>
+);
+
 const MarketingDashboardPageInner: React.FC = () => {
   const [data, setData] = useState<MarketingOverview | null>(null);
   const [loading, setLoading] = useState(true);
@@ -193,34 +208,17 @@ const MarketingDashboardPageInner: React.FC = () => {
               <p className="post-date">{formatDate(channel.lastPost.dueAt)}</p>
 
               <div className="metrics-grid">
-                <div className="metric">
-                  <Eye size={16} />
-                  <span>{formatNumber(channel.lastPost.metrics.views)}</span>
-                </div>
-                <div className="metric">
-                  <Heart size={16} />
-                  <span>{formatNumber(channel.lastPost.metrics.likes)}</span>
-                </div>
-                <div className="metric">
-                  <MessageCircle size={16} />
-                  <span>{formatNumber(channel.lastPost.metrics.comments)}</span>
-                </div>
-                <div className="metric">
-                  <Share2 size={16} />
-                  <span>{formatNumber(channel.lastPost.metrics.shares)}</span>
-                </div>
-                <div className="metric">
-                  <Users size={16} />
-                  <span>{formatNumber(channel.lastPost.metrics.reach)}</span>
-                </div>
-                <div className="metric">
-                  <TrendingUp size={16} />
-                  <span>
-                    {channel.lastPost.metrics.engagementRate != null
-                      ? `${channel.lastPost.metrics.engagementRate.toFixed(1)}%`
-                      : '—'}
-                  </span>
-                </div>
+                <MetricItem icon={Eye} value={channel.lastPost.metrics.views} label="vues" />
+                <MetricItem icon={Heart} value={channel.lastPost.metrics.likes} label="j'aime" />
+                <MetricItem icon={MessageCircle} value={channel.lastPost.metrics.comments} label="commentaires" />
+                <MetricItem icon={Share2} value={channel.lastPost.metrics.shares} label="partages" />
+                <MetricItem icon={Users} value={channel.lastPost.metrics.reach} label="portée" />
+                <MetricItem
+                  icon={TrendingUp}
+                  value={channel.lastPost.metrics.engagementRate}
+                  label="engagement"
+                  suffix="%"
+                />
               </div>
             </>
           )}
