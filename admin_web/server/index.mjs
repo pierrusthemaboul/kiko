@@ -9,11 +9,18 @@
 
 import express from 'express';
 import cors from 'cors';
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { randomUUID } from 'crypto';
 import { regenerateImage } from './regen_service.mjs';
 import { chat } from './chat_service.mjs';
 import { generateSocialContent, generateMultiPlatformContent } from './social_media_service.mjs';
 import { captureAndEditGameplay, checkToolsInstalled } from './gameplay_capture_service.mjs';
+import { getMarketingOverview } from './marketing_dashboard_service.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = 3001;
@@ -324,6 +331,21 @@ app.get('/api/gameplay/stream/:jobId', (req, res) => {
     });
 });
 
+/**
+ * GET /api/marketing/overview
+ * Agrège Buffer (dernier post + métriques par réseau), App Store Connect
+ * et Google Play Console en une seule réponse pour le dashboard marketing.
+ */
+app.get('/api/marketing/overview', async (_, res) => {
+    try {
+        const overview = await getMarketingOverview();
+        res.json(overview);
+    } catch (err) {
+        console.error('❌ Erreur marketing overview:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`\n🚀 Serveur Timalaus Admin démarré sur http://localhost:${PORT}`);
     console.log(`   → POST /api/regen/start`);
@@ -332,5 +354,6 @@ app.listen(PORT, () => {
     console.log(`   → POST /api/social-media/generate-multi`);
     console.log(`   → GET  /api/gameplay/check-tools`);
     console.log(`   → POST /api/gameplay/capture`);
-    console.log(`   → GET  /api/gameplay/stream/:jobId\n`);
+    console.log(`   → GET  /api/gameplay/stream/:jobId`);
+    console.log(`   → GET  /api/marketing/overview\n`);
 });

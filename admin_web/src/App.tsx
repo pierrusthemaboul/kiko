@@ -17,6 +17,7 @@ import UserProfilePage from './pages/UsersPage/UserProfilePage';
 import AnalyticsPage from './pages/Analytics/AnalyticsPage';
 import Visualisation3DPage from './pages/Visualisation3D/Visualisation3DPage';
 import SocialMediaPage from './pages/SocialMedia/SocialMediaPage';
+import MarketingDashboardPage from './pages/MarketingDashboard/MarketingDashboardPage';
 import DailyScoresPage from './pages/DailyScoresPage/DailyScoresPage';
 import type { Session } from '@supabase/supabase-js';
 import { Loader2 } from 'lucide-react';
@@ -81,6 +82,7 @@ const App: React.FC = () => {
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="viz-3d" element={<Visualisation3DPage />} />
           <Route path="social-media" element={<SocialMediaPage />} />
+          <Route path="marketing-dashboard" element={<MarketingDashboardPage />} />
           <Route path="daily-scores" element={<DailyScoresPage />} />
         </Route>
 
