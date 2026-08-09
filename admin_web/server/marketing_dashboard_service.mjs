@@ -44,7 +44,7 @@ async function bufferGraphQL(query, variables) {
  * posts historiques créés par un script de publication à l'encodage défaillant.
  */
 function fixMojibake(text) {
-  if (!text || !/Ã|Â|â€/.test(text)) return text;
+  if (!text || !/[ÃÂâ€ðŸï¿½]/.test(text)) return text;
   try {
     const fixed = iconv.decode(iconv.encode(text, 'win1252'), 'utf8');
     if (fixed.includes('\uFFFD')) return text;
