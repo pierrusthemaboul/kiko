@@ -20,7 +20,7 @@ let overviewCache = null;
 let overviewCacheAt = 0;
 let overviewCacheIsError = false;
 const OVERVIEW_CACHE_TTL_OK_MS = 120_000; // 2 min
-const OVERVIEW_CACHE_TTL_ERR_MS = 60_000; // 1 min
+const OVERVIEW_CACHE_TTL_ERR_MS = 180_000; // 3 min
 
 // ─────────────────────────────────────────────────────────
 // BUFFER
@@ -30,19 +30,27 @@ async function bufferGraphQL(query, variables) {
   const token = process.env.BUFFER_ACCESS_TOKEN;
   if (!token) throw new Error('BUFFER_ACCESS_TOKEN manquant');
 
-  const res = await fetch('https://api.buffer.com', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query, variables }),
-  });
-  const data = await res.json();
-  if (data.errors) {
-    throw new Error(data.errors.map((e) => e.message).join('; '));
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+
+  try {
+    const res = await fetch('https://api.buffer.com', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+    const data = await res.json();
+    if (data.errors) {
+      throw new Error(data.errors.map((e) => e.message).join('; '));
+    }
+    return data.data;
+  } finally {
+    clearTimeout(timeout);
   }
-  return data.data;
 }
 
 /**
