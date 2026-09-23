@@ -5,7 +5,7 @@ module.exports = ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus: History Timeline Quiz",
     slug: "kiko",
-    version: "1.7.7",
+    version: "1.8.0",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -21,7 +21,7 @@ module.exports = ({ config }) => {
       supportsTablet: false,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       appleTeamId: "RBH23M8YUV",
-      buildNumber: "31",
+      buildNumber: "32",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         CFBundleDevelopmentRegion: "fr",
@@ -65,7 +65,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10272,
+      versionCode: 11000,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -79,12 +79,6 @@ module.exports = ({ config }) => {
         "expo-build-properties",
         {
           android: {
-            kotlinVersion: "1.9.25",
-            compileSdkVersion: 36,
-            targetSdkVersion: 36,
-            buildToolsVersion: "36.0.0",
-            gradleVersion: "8.10.2",
-            ndkVersion: "27.1.12297006",
             packagingOptions: {
               jniLibs: {
                 useLegacyPackaging: false
@@ -97,6 +91,7 @@ module.exports = ({ config }) => {
         }
       ],
       "expo-asset",
+      "expo-font",
       "expo-router",
       "expo-navigation-bar",
       "expo-tracking-transparency",
@@ -125,7 +120,7 @@ module.exports = ({ config }) => {
       "@react-native-firebase/app",
       [
         function withForceAdIdPermission(config) {
-          const { withAndroidManifest } = require('@expo/config-plugins');
+          const { withAndroidManifest } = require('expo/config-plugins');
 
           return withAndroidManifest(config, config => {
             const androidManifest = config.modResults;
@@ -157,29 +152,10 @@ module.exports = ({ config }) => {
         },
         'force-ad-id-permission'
       ],
-      [
-        function withKotlinVersionFix(config) {
-          const { withGradleProperties } = require('@expo/config-plugins');
 
-          return withGradleProperties(config, config => {
-            config.modResults.push({
-              type: 'property',
-              key: 'org.jetbrains.kotlin.gradle.compiler.suppressKotlinVersionCompatibilityCheck',
-              value: 'true'
-            });
-            config.modResults.push({
-              type: 'property',
-              key: 'kotlin.version',
-              value: '1.9.25'
-            });
-            return config;
-          });
-        },
-        'kotlin-version-fix'
-      ],
       [
         function withAndroidQueries(config) {
-          const { withAndroidManifest } = require('@expo/config-plugins');
+          const { withAndroidManifest } = require('expo/config-plugins');
           return withAndroidManifest(config, config => {
             const androidManifest = config.modResults;
             const manifest = androidManifest.manifest;
@@ -225,7 +201,7 @@ module.exports = ({ config }) => {
     },
     // RuntimeVersion basé sur la version majeure.minor pour supporter les updates sur plusieurs versions
     // Cela permet aux versions 1.7.1, 1.7.2, 1.7.3, 1.7.4, 1.7.5 de recevoir les mêmes updates OTA
-    runtimeVersion: "1.7",
+    runtimeVersion: "1.8",
     extra: {
       ...(config.extra || {}),
       eas: {

@@ -340,7 +340,7 @@ export default function Login() {
               guest_name: name,
               screen: 'login',
             });
-            router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
+            router.push('/(tabs)'); // Navigue vers la vue du jeu
           }
         },
         {

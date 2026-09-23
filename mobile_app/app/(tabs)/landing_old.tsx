@@ -592,7 +592,7 @@ export default function HomeScreen() {
 
     if (Platform.OS === 'web') {
       console.log('[Guest Mode] Welcome Explorateur');
-      router.push('/(tabs)/vue1');
+      router.push('/(tabs)');
     } else {
       Alert.alert(
         'Mode Exploration',
@@ -605,7 +605,7 @@ export default function HomeScreen() {
                 guest_name: name,
                 screen: 'home',
               });
-              router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
+              router.push('/(tabs)'); // Navigue vers la vue du jeu
             }
           },
           {
@@ -632,7 +632,7 @@ export default function HomeScreen() {
         user_type: guestDisplayName ? 'guest' : (user ? 'registered' : 'unknown'),
         from_screen: 'home'
     });
-    router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
+    router.push('/(tabs)'); // Navigue vers la vue du jeu
   };
 
   const handleLoginPress = () => {

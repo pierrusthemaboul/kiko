@@ -7,8 +7,6 @@
       "@/*": ["./*"]
     },
     "jsx": "react-native",
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
     "isolatedModules": true,

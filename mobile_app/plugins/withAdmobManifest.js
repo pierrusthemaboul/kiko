@@ -1,4 +1,4 @@
-const { withAndroidManifest, createRunOncePlugin } = require('@expo/config-plugins');
+const { withAndroidManifest, createRunOncePlugin } = require('expo/config-plugins');
 
 function withAdmobManifest(config) {
   return withAndroidManifest(config, config => {

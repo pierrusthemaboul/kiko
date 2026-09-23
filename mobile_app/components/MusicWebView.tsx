@@ -2,7 +2,7 @@ import React, { forwardRef, useImperativeHandle, useRef, useState, useCallback }
 import { View, StyleSheet } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
 import { Asset } from 'expo-asset';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import MusicManager, { MusicAssets, MusicCommand } from '../services/MusicManager';
 
 export interface MusicWebViewRef {

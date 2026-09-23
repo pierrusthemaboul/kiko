@@ -10,7 +10,7 @@
  * @date 2026-01-13
  */
 
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import { Event } from '../hooks/types';
 
 export interface EventTimecode {

@@ -330,7 +330,6 @@ export default function AdminPanel() {
           }
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
-          estimatedItemSize={200} // Hauteur estimée d'une carte d'événement
           extraData={selectedCategory} // Re-render quand le filtre change
         />
       )}
