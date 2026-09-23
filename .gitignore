@@ -36,6 +36,32 @@ supabase-env.txt
 dump_*.json
 sayon_session_*.json
 
+# === TIKTOK CREDENTIALS ===
+tiktok-credentials.json
+tiktok-tokens.json
+tiktok-pkce-temp.json
+tiktok-stats.json
+
+# === ROOT-LEVEL SECRETS & KEYS ===
+/AuthKey_*.p8
+/credentials.json
+/client_secret_*.json
+/kiko-chrono-*.json
+/google-services*.json
+/GoogleService-Info.plist
+/discord-webhook.json
+/twitter-credentials.json
+/env_backup*
+/env_example_backup*
+*.pem
+*.p8
+
+# === BUILD ARTIFACTS (root) ===
+*.aab
+*.apk
+application-*.tar.gz
+nul
+
 # === TOOLS & PIPELINES ===
 tools/**/node_modules/
 tools/**/STORAGE/LOGS/
