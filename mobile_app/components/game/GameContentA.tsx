@@ -187,13 +187,6 @@ function GameContentA({
   const topCardTop = headerHeight + 10;
   const cardSpacing = Math.max(Math.round(windowHeight * 0.025), 14);
   const bottomCardTop = topCardTop + topCardHeight + cardSpacing;
-  
-  // Cutouts pour le tutoriel
-  const tutorialTopCutoutHeight = topCardHeight + 20; // Un peu plus large pour le padding
-  const tutorialBottomCutoutTop = bottomCardTop - 10;
-  const tutorialBottomCutoutHeight = topCardHeight + 20;
-  const tutorialCompareTop = bottomCardTop + (topCardHeight / 2) - 40; // Centré sur la carte du bas
-  const tutorialButtonsBottom = Math.max(insets.bottom + 16, 28);
 
   useEffect(() => {
     Logger.info('System', `[GameContentA] Initialized. Screen: ${windowWidth}x${windowHeight}, Insets: ${JSON.stringify(insets)}, Version: ${Application.nativeApplicationVersion}`);
@@ -324,18 +317,21 @@ function GameContentA({
   }, [showLevelModal, contentOpacity]);
 
   // --- Effet pour gérer la fin de partie et l'offre de publicité ---
-  // Utilise isAdLoaded pour vérifier directement l'instance native
+  // Affiche l'offre même si la pub n'est pas chargée, avec indicateur de chargement
   useEffect(() => {
     if (isGameOver && user) {
       const canOfferAd =
         user.lives === 0 &&
         showRewardedAd &&
-        isAdLoaded('rewarded') &&
         !adState.hasWatchedRewardedAd;
 
       if (canOfferAd) {
         setShowWatchAdOffer(true);
         setShowScoreboard(false);
+        // Si la pub n'est pas chargée, on tente de la charger en arrière-plan
+        if (!isAdLoaded('rewarded')) {
+          console.log('[GameContentA] Pub non chargée, tentative de chargement en arrière-plan');
+        }
       } else if (user.lives === 0) {
         setShowWatchAdOffer(false);
         setShowScoreboard(true); // Afficher le scoreboard si pas de pub ou déjà vue
@@ -349,7 +345,7 @@ function GameContentA({
       setShowWatchAdOffer(false);
       setShowScoreboard(false);
     }
-  }, [isGameOver, user, adState, showRewardedAd, isAdLoaded]); // Ajout de isAdLoaded aux dépendances
+  }, [isGameOver, user, adState, showRewardedAd, isAdLoaded]);
 
   // --- Effet pour réinitialiser l'état de chargement de la pub ---
   useEffect(() => {
@@ -357,6 +353,13 @@ function GameContentA({
       setIsLoadingAd(false);
     }
   }, [showScoreboard, isGameOver]);
+
+  // --- Effet pour surveiller le chargement de la pub et mettre à jour l'UI ---
+  useEffect(() => {
+    if (showWatchAdOffer && isAdLoaded('rewarded')) {
+      console.log('[GameContentA] Pub devenue disponible, UI sera mise à jour');
+    }
+  }, [showWatchAdOffer, isAdLoaded]);
 
   // --- Effet pour marquer la fin du premier rendu significatif ---
   // (Logique inchangée)
@@ -515,6 +518,7 @@ function GameContentA({
           isInitialRender={isInitialRenderRef.current}
           isLastEventOfLevel={isLastEventOfLevel}
           isTutorialActive={tutorialEnabled && showTutorialGhost}
+          tutorialStep={tutorialStep}
         />
 
         {shouldShowTutorialHint && (
@@ -522,42 +526,18 @@ function GameContentA({
             <View style={styles.ghostTutorialMask} />
 
             {tutorialStep === 0 && (
-              <View style={[styles.topCardFocusCutout, { top: topCardTop - 10, height: tutorialTopCutoutHeight }]} />
+              <View style={[styles.topCardFocusCutout, { top: topCardTop - 10, height: topCardHeight + 20 }]} />
             )}
             {tutorialStep === 1 && (
               <View
                 style={[
                   styles.bottomCardFocusCutout,
                   {
-                    top: tutorialBottomCutoutTop,
-                    height: tutorialBottomCutoutHeight,
+                    top: bottomCardTop - 10,
+                    height: topCardHeight + 20,
                   },
                 ]}
               />
-            )}
-
-            {(tutorialStep === 2 || tutorialStep === 3) && !isVerySmallScreen && (
-              <View style={[styles.tutorialButtonsAnchor, { bottom: tutorialButtonsBottom }]}>
-
-                <View style={styles.tutorialButtonsMirrorRow}>
-                  <View style={styles.tutorialButtonSlot}>
-                    <View
-                      style={[
-                        styles.slotHalo,
-                        tutorialStep === 2 ? styles.activeSlotHalo : styles.inactiveSlotHalo,
-                      ]}
-                    />
-                  </View>
-                  <View style={styles.tutorialButtonSlot}>
-                    <View
-                      style={[
-                        styles.slotHalo,
-                        tutorialStep === 3 ? styles.activeSlotHalo : styles.inactiveSlotHalo,
-                      ]}
-                    />
-                  </View>
-                </View>
-              </View>
             )}
 
             {tutorialStep < 4 ? (
@@ -620,7 +600,6 @@ function GameContentA({
         {/* ------------------------------------------------- */}
 
         {/* --- Overlay pour l'offre de Publicité Récompensée --- */}
-        {/* (Logique inchangée) */}
         {isGameOver && showWatchAdOffer && (
           <View style={styles.watchAdOverlay}>
             <View style={styles.watchAdContainer}>
@@ -631,6 +610,12 @@ function GameContentA({
               <Text style={styles.watchAdDescription}>
                 Regardez une courte publicité pour obtenir une vie supplémentaire et continuer votre partie.
               </Text>
+              {!isAdLoaded('rewarded') && (
+                <View style={styles.adLoadingIndicator}>
+                  <ActivityIndicator size="small" color={colors.incorrectRed} />
+                  <Text style={styles.adLoadingText}>Chargement de la publicité...</Text>
+                </View>
+              )}
               <View style={styles.watchAdButtonsContainer}>
                 <TouchableOpacity
                   style={[styles.watchAdButton, styles.watchAdDeclineButton]}
@@ -640,12 +625,17 @@ function GameContentA({
                   <Text style={styles.watchAdDeclineText}>Non, merci</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={[styles.watchAdButton, styles.watchAdAcceptButton, isLoadingAd && styles.watchAdButtonDisabled]}
+                  style={[styles.watchAdButton, styles.watchAdAcceptButton, isLoadingAd && styles.watchAdButtonDisabled, !isAdLoaded('rewarded') && styles.watchAdButtonDisabled]}
                   onPress={handleWatchAd}
-                  disabled={isLoadingAd}
+                  disabled={isLoadingAd || !isAdLoaded('rewarded')}
                 >
                   {isLoadingAd ? (
                     <ActivityIndicator size="small" color="white" />
+                  ) : !isAdLoaded('rewarded') ? (
+                    <>
+                      <ActivityIndicator size="small" color="white" />
+                      <Text style={styles.watchAdAcceptText}>Chargement...</Text>
+                    </>
                   ) : (
                     <>
                       <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
@@ -902,6 +892,18 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     lineHeight: 22,
   },
+  adLoadingIndicator: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    gap: 8,
+  },
+  adLoadingText: {
+    fontSize: 14,
+    color: colors.incorrectRed,
+    fontWeight: '500',
+  },
   watchAdButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -1007,14 +1009,14 @@ const styles = StyleSheet.create({
   },
   compareTextContainer: {
     position: 'absolute',
-    top: '50%', // Centré verticalement
-    left: 30,
-    right: 30,
+    top: '35%', // Remonter les messages plus haut
+    left: 20,
+    right: 20,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     borderRadius: 16,
     borderWidth: 2,
     borderColor: '#E0E0E0',
@@ -1028,11 +1030,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 4,
     borderBottomColor: '#D0D0D0',
     transform: [{ translateY: -50 }],
+    maxWidth: 300,
   },
   compareText: {
     color: '#1A1A1A',
-    fontSize: 14,
-    lineHeight: 20,
+    fontSize: 13,
+    lineHeight: 18,
     textAlign: 'center',
     letterSpacing: 0.3,
     textShadowColor: 'rgba(0, 0, 0, 0.08)',
@@ -1070,44 +1073,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: 20,
-  },
-  tutorialButtonsMirrorRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    marginVertical: 10,
-    width: '100%',
-    paddingHorizontal: 10,
-  },
-  tutorialButtonSlot: {
-    width: '42%',
-    marginHorizontal: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    minHeight: 84,
-  },
-  slotHalo: {
-    position: 'absolute',
-    width: '100%',
-    height: 58,
-    borderRadius: 29,
-    borderWidth: 2,
-    borderColor: '#F4D068',
-    backgroundColor: 'rgba(244, 208, 104, 0.16)',
-  },
-  activeSlotHalo: {
-    borderColor: '#F4D068',
-    backgroundColor: 'rgba(244, 208, 104, 0.24)',
-    borderWidth: 3,
-  },
-  inactiveSlotHalo: {
-    borderColor: 'rgba(244, 208, 104, 0.35)',
-    backgroundColor: 'rgba(244, 208, 104, 0.08)',
-  },
-  slotHand: {
-    position: 'absolute',
-    bottom: 4,
   },
 });
 

@@ -191,8 +191,8 @@ export function useAdConsent() {
   }, [requestConsent]);
 
   // Demande d'autorisation ATT indépendante sur iOS
-  // Améliorée pour s'assurer que la pop-up s'affiche correctement même en mode letterbox sur iPad
-  useEffect(() => {
+  // Exportée sous forme de fonction pour être déclenchée de façon fiable par les pages visibles (évite le déclenchement sous le Splash Screen)
+  const requestATTIfNeeded = useCallback(async () => {
     if (Platform.OS !== 'ios') return;
     let active = true;
     let retryCount = 0;
@@ -205,8 +205,8 @@ export function useAdConsent() {
         const currentStatus = await getTrackingPermissionsAsync();
         consentLog('log', 'Current ATT status before request:', currentStatus?.status);
         
-        // Si déjà déterminé (authorized/denied), ne pas redemander
-        if (currentStatus?.status === 'authorized' || currentStatus?.status === 'denied') {
+        // Si déjà déterminé (granted/denied), ne pas redemander
+        if (currentStatus?.status === 'granted' || currentStatus?.status === 'denied') {
           consentLog('log', 'ATT already determined, skipping request');
           FirebaseAnalytics.trackEvent('att_already_determined', { status: currentStatus.status });
           return;
@@ -230,43 +230,37 @@ export function useAdConsent() {
       }
     };
 
-    (async () => {
-      // Attendre que l'app soit active et stable
-      // Délai augmenté à 3 secondes pour s'assurer que l'app est complètement chargée
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+    // Attendre que l'app soit active et stable
+    // Un délai de 2 secondes après affichage de la page est idéal
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    
+    // Vérifier que l'app est active avant de demander ATT
+    if (AppState.currentState !== 'active') {
+      consentLog('log', 'App not active, waiting for active state...');
       
-      // Vérifier que l'app est active avant de demander ATT
-      if (AppState.currentState !== 'active') {
-        consentLog('log', 'App not active, waiting for active state...');
-        
-        // Attendre que l'app devienne active
-        const waitForActive = () => {
-          return new Promise<void>((resolve) => {
-            const subscription = AppState.addEventListener('change', (nextAppState) => {
-              if (nextAppState === 'active') {
-                subscription.remove();
-                resolve();
-              }
-            });
-            // Timeout de 5 secondes si l'app ne devient jamais active
-            setTimeout(() => {
+      // Attendre que l'app devienne active
+      const waitForActive = () => {
+        return new Promise<void>((resolve) => {
+          const subscription = AppState.addEventListener('change', (nextAppState) => {
+            if (nextAppState === 'active') {
               subscription.remove();
               resolve();
-            }, 5000);
+            }
           });
-        };
-        
-        await waitForActive();
-      }
+          // Timeout de 5 secondes si l'app ne devient jamais active
+          setTimeout(() => {
+            subscription.remove();
+            resolve();
+          }, 5000);
+        });
+      };
       
-      if (!active) return;
-      consentLog('log', 'App is active, requesting ATT...');
-      await requestATT();
-    })();
-
-    return () => {
-      active = false;
-    };
+      await waitForActive();
+    }
+    
+    if (!active) return;
+    consentLog('log', 'App is active, requesting ATT...');
+    await requestATT();
   }, []);
 
   useEffect(() => {
@@ -300,5 +294,6 @@ export function useAdConsent() {
     canShowPersonalizedAds,
     requestConsent,
     resetConsent,
+    requestATTIfNeeded,
   };
 }

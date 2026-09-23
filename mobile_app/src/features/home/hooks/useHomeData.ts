@@ -31,9 +31,10 @@ export function useHomeData() {
 
   const headerPlays = useMemo(() => {
     if (!profile?.id) {
-      return `${guestPlaysInfo.remaining} parties restantes (invité)`;
+      return `${guestPlaysInfo.remaining} ${guestPlaysInfo.remaining > 1 ? 'parties' : 'partie'} (invité)`;
     }
-    return `${playsInfo?.remaining ?? 0} parties restantes`;
+    const rem = playsInfo?.remaining ?? 0;
+    return `${rem} ${rem > 1 ? 'parties' : 'partie'}`;
   }, [profile?.id, playsInfo?.remaining, guestPlaysInfo.remaining]);
 
   const canPlay = useMemo(() => {

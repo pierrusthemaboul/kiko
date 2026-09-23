@@ -55,10 +55,14 @@ tiktok-stats.json
 /env_example_backup*
 *.pem
 *.p8
+.claude/mcp-config.json
 
 # === BUILD ARTIFACTS (root) ===
 *.aab
 *.apk
+*.jks
+*.keystore
+!mobile_app/android/app/debug.keystore
 application-*.tar.gz
 nul
 

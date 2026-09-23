@@ -243,9 +243,7 @@ export default function RootLayout() {
     const checkGuestMode = async () => {
       try {
         const isGuest = await AsyncStorage.getItem(GUEST_MODE_KEY);
-        if (isGuest === 'true') {
-          setGuestMode(true);
-        }
+        setGuestMode(isGuest === 'true');
       } catch (e) {
         console.warn('Failed to check guest mode state:', e);
       }
@@ -260,7 +258,7 @@ export default function RootLayout() {
     });
 
     return () => subscription.remove();
-  }, []);
+  }, [segments]);
 
   // --- Gestion Erreur Polices ---
   useEffect(() => {
@@ -312,36 +310,32 @@ export default function RootLayout() {
 
     // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
-    // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers vue1
+    // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers le jeu
     if (session && isTryingTabsIndex && splashShown) {
-      // console.log('[Auth Guard] Session exists & on index & splash shown -> Redirecting to vue1');
-      router.replace('/(tabs)/vue1');
+      router.replace('/(tabs)');
       return;
     }
 
-    // Si connecté et dans auth, rediriger vers vue1
+    // Si connecté et dans auth, rediriger vers le jeu
     if (session && inAuthGroup) {
-      // console.log('[Auth Guard] Session exists & in auth area -> Redirecting to vue1');
-      router.replace('/(tabs)/vue1');
+      router.replace('/(tabs)');
       return;
     }
 
-    // MODE INVITÉ: Si en mode invité, autoriser l'accès aux zones protégées
+    // MODE INVITÉ PAR DÉFAUT : Si pas de session et pas encore en mode invité (et hors de l'authentification)
+    if (!session && !guestMode && !inAuthGroup) {
+      AsyncStorage.setItem(GUEST_MODE_KEY, 'true').catch(err => console.warn(err));
+      setGuestMode(true);
+      return;
+    }
+
+    // MODE INVITÉ ACTIF : Autoriser l'accès aux zones protégées
     if (guestMode && isTryingProtectedGroup) {
-      // console.log('[Auth Guard] Guest mode active & trying protected area -> Allowing access');
-      return; // Autoriser l'accès
-    }
-
-    // Si pas de session NI mode invité et essai d'accéder à une zone protégée (sauf index)
-    if (!session && !guestMode && isTryingProtectedGroup && !isTryingTabsIndex) {
-      // console.log('[Auth Guard] No session & no guest mode & trying protected area -> Redirecting to /auth/login');
-      router.replace('/auth/login');
       return;
     }
 
-    // Si pas de session NI mode invité et pas sur auth, rediriger vers login
-    if (!session && !guestMode && !inAuthGroup && !isTryingTabsIndex) {
-      // console.log('[Auth Guard] No session & no guest mode & not on auth/index -> Redirecting to /auth/login');
+    // Si pas de session NI mode invité (ex: déconnecté sur la page de login)
+    if (!session && !guestMode && isTryingProtectedGroup && !isTryingTabsIndex) {
       router.replace('/auth/login');
       return;
     }

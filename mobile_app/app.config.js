@@ -5,7 +5,7 @@ module.exports = ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus: History Timeline Quiz",
     slug: "kiko",
-    version: "1.7.4",
+    version: "1.7.7",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -21,9 +21,12 @@ module.exports = ({ config }) => {
       supportsTablet: false,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       appleTeamId: "RBH23M8YUV",
-      buildNumber: "17",
+      buildNumber: "31",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
+        CFBundleDevelopmentRegion: "fr",
+        CFBundleLocalizations: ["fr", "en"],
+        CFBundleAllowMixedLocalizations: true,
         ITSAppUsesNonExemptEncryption: false,
         NSUserTrackingUsageDescription: "Cette application utilise des identifiants pour diffuser des publicités personnalisées et analyser l'audience afin d'améliorer votre expérience.",
         NSPhotoLibraryUsageDescription: "Cette application n'accède pas à vos photos, mais cette autorisation est requise par certains modules tiers.",
@@ -62,7 +65,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10170,
+      versionCode: 10272,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -77,9 +80,9 @@ module.exports = ({ config }) => {
         {
           android: {
             kotlinVersion: "1.9.25",
-            compileSdkVersion: 35,
-            targetSdkVersion: 35,
-            buildToolsVersion: "35.0.0",
+            compileSdkVersion: 36,
+            targetSdkVersion: 36,
+            buildToolsVersion: "36.0.0",
             gradleVersion: "8.10.2",
             ndkVersion: "27.1.12297006",
             packagingOptions: {
@@ -213,9 +216,16 @@ module.exports = ({ config }) => {
     owner: "pierretulle",
     updates: {
       fallbackToCacheTimeout: 30000,
-      url: "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
+      url: "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050",
+      checkAutomatically: "ON_LOAD",
+      enabled: true,
+      // Permet les mises à jour OTA sur 4 versions précédentes
+      // Le runtimeVersion utilise un schéma stable basé sur la version majeure.minor
+      // ce qui permet aux versions 1.7.x de recevoir les mêmes updates
     },
-    runtimeVersion: "1.7.4",
+    // RuntimeVersion basé sur la version majeure.minor pour supporter les updates sur plusieurs versions
+    // Cela permet aux versions 1.7.1, 1.7.2, 1.7.3, 1.7.4, 1.7.5 de recevoir les mêmes updates OTA
+    runtimeVersion: "1.7",
     extra: {
       ...(config.extra || {}),
       eas: {

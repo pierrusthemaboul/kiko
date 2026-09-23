@@ -27,7 +27,7 @@ serve(async (req) => {
     // 1. Récupérer le profil actuel du joueur
     const { data: profile, error: profileError } = await supabase
       .from("profiles")
-      .select("xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score")
+      .select("xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score, parties_restantes")
       .eq("id", userId)
       .single();
 

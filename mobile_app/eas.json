@@ -37,7 +37,8 @@
         "buildType": "app-bundle"
       },
       "ios": {
-        "simulator": true
+        "simulator": true,
+        "image": "latest"
       }
     },
     "simulator": {
@@ -49,7 +50,8 @@
         "EXPO_SKIP_DOCTOR": "1"
       },
       "ios": {
-        "simulator": true
+        "simulator": true,
+        "image": "latest"
       }
     },
     "apk": {
@@ -69,6 +71,7 @@
       "autoIncrement": false,
       "credentialsSource": "remote",
       "node": "20.19.4",
+      "pnpm": "10.34.5",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "production",
         "EXPO_SKIP_DOCTOR": "1"

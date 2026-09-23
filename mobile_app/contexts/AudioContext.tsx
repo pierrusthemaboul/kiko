@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useRef, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useRef, useState, ReactNode, useEffect } from 'react';
+import { AppState } from 'react-native';
 import AudioWebView, { AudioWebViewRef } from '../components/AudioWebView';
 
 interface AudioContextType {
@@ -45,6 +46,20 @@ export const AudioProvider = ({ children }: Props) => {
       audioRef.current.setVolume(volume);
     }
   };
+
+  // Gérer l'état de l'application pour arrêter les sons en arrière-plan
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextAppState) => {
+      if (nextAppState === 'background' || nextAppState === 'inactive') {
+        console.log('[AudioContext] App going to background, stopping all sounds');
+        audioRef.current?.stopAllSounds();
+      }
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
 
   return (
     <AudioContext.Provider value={{ playSound, setVolume, isReady }}>

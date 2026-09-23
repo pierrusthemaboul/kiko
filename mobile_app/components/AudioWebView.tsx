@@ -6,6 +6,7 @@ import { loadAudioAssets, AudioAssets } from './audioAssets';
 export interface AudioWebViewRef {
   playSound: (soundName: string) => void;
   setVolume: (volume: number) => void;
+  stopAllSounds: () => void;
 }
 
 interface Props {
@@ -48,6 +49,16 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       // console.log('[AudioWebView] Setting volume:', volume);
       webViewRef.current?.injectJavaScript(`
         setVolume(${volume});
+        true;
+      `);
+    },
+    stopAllSounds: () => {
+      // console.log('[AudioWebView] Stopping all sounds');
+      webViewRef.current?.injectJavaScript(`
+        Object.values(sounds).forEach(audio => {
+          audio.pause();
+          audio.currentTime = 0;
+        });
         true;
       `);
     },

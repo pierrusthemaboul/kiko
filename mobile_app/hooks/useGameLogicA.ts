@@ -1132,6 +1132,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           
           // Side effects that don't depend on state update settling
           const nextLevel = user.level + 1;
+          console.log(`[LEVEL_UP] 🎯 Checking level reward for level ${nextLevel}`);
+          checkRewards({ type: 'level', value: nextLevel }, user);
           setCurrentLevelConfig({ ...LEVEL_CONFIGS[nextLevel], eventsSummary: [] });
           // resetLevelCompletedEvents(); // RÉINITIALISÉ UNIQUEMENT DANS handleLevelUp !
           resetAntiqueCount();

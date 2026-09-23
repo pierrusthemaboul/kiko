@@ -14,6 +14,7 @@ interface Props {
   onMusicVolumeChange: (volume: number) => void;
   musicEnabled: boolean;
   onMusicEnabledChange: (enabled: boolean) => void;
+  isGuest?: boolean;
 }
 
 export function HomeSettingsModal({
@@ -26,6 +27,7 @@ export function HomeSettingsModal({
   onMusicVolumeChange,
   musicEnabled,
   onMusicEnabledChange,
+  isGuest = false,
 }: Props) {
   const { height, width } = useWindowDimensions();
   const isSmallScreen = width < 375 || height < 700;
@@ -165,24 +167,9 @@ export function HomeSettingsModal({
             <Text style={styles.modalItemText}>Confidentialité</Text>
           </TouchableOpacity>
 
-          <View style={styles.modalDivider} />
-
-          <TouchableOpacity
-            style={[styles.modalItem, styles.logoutItem]}
-            onPress={() => {
-              onClose();
-              onLogout();
-            }}
-          >
-            <View style={styles.modalItemIcon}>
-              <Ionicons name="log-out-outline" size={20} color="#DC3545" />
-            </View>
-            <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Déconnexion</Text>
-          </TouchableOpacity>
-
           {onDeleteAccount && (
             <TouchableOpacity
-              style={[styles.modalItem, { marginTop: 4 }]}
+              style={styles.modalItem}
               onPress={() => {
                 onClose();
                 onDeleteAccount();
@@ -191,8 +178,40 @@ export function HomeSettingsModal({
               <View style={styles.modalItemIcon}>
                 <Ionicons name="trash-outline" size={20} color="#DC3545" />
               </View>
-              <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Supprimer mon compte</Text>
+              <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Suppression de compte</Text>
             </TouchableOpacity>
+          )}
+
+          <View style={styles.modalDivider} />
+
+          {isGuest ? (
+            <TouchableOpacity
+              style={[styles.modalItem, { marginTop: 4 }]}
+              onPress={() => {
+                onClose();
+                onLogout(); // handleLogout clears guest mode and goes to login screen
+              }}
+            >
+              <View style={[styles.modalItemIcon, { borderColor: COLORS.accent }]}>
+                <Ionicons name="log-in-outline" size={20} color={COLORS.accent} />
+              </View>
+              <Text style={[styles.modalItemText, { color: COLORS.accent }]}>Se connecter / Créer un compte</Text>
+            </TouchableOpacity>
+          ) : (
+            <>
+              <TouchableOpacity
+                style={[styles.modalItem, styles.logoutItem]}
+                onPress={() => {
+                  onClose();
+                  onLogout();
+                }}
+              >
+                <View style={styles.modalItemIcon}>
+                  <Ionicons name="log-out-outline" size={20} color="#DC3545" />
+                </View>
+                <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Déconnexion</Text>
+              </TouchableOpacity>
+            </>
           )}
         </View>
       </View>

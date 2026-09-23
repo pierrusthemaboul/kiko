@@ -23,6 +23,7 @@ interface EventLayoutAProps {
   isLastEventOfLevel?: boolean; // Nouvelle prop pour identifier le dernier événement
   triggerLevelEndAnim?: boolean; // Nouvelle prop pour déclencher l'animation de fin
   isTutorialActive?: boolean; // Nouvelle prop pour bloquer les interactions pendant le tutoriel
+  tutorialStep?: number; // Nouvelle prop pour l'étape du tutoriel
 }
 
 const EventLayoutA: React.FC<EventLayoutAProps> = ({
@@ -40,6 +41,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
   isLastEventOfLevel = false,
   triggerLevelEndAnim = false,
   isTutorialActive = false,
+  tutorialStep = 0,
 }) => {
   const { height, width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -275,6 +277,8 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
                 isLevelPaused={isLevelPaused}
                 isWaitingForCountdown={false}
                 transitioning={transitioning}
+                isTutorialActive={isTutorialActive}
+                tutorialStep={tutorialStep}
               />
             )}
           </View>

@@ -152,7 +152,8 @@ export default function ForgotPassword() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <TouchableOpacity
+        <View style={styles.formWrapper}>
+          <TouchableOpacity
           style={styles.backButton}
           onPress={handleGoBack}
           disabled={isLoading}
@@ -199,12 +200,18 @@ export default function ForgotPassword() {
         >
           <Text style={styles.backToLoginText}>Retour à la connexion</Text>
         </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  formWrapper: {
+    width: '100%',
+    maxWidth: 400,
+    alignSelf: 'center',
+  },
   safeArea: {
     flex: 1,
     backgroundColor: THEME.background.main

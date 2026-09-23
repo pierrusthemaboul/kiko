@@ -1,5 +1,5 @@
 @echo off
-echo Starting ngrok tunnel for backend...
+echo Starting localtunnel for backend...
 echo Backend will be accessible via HTTPS tunnel
 echo.
-ngrok http 3001
+lt --port 3001

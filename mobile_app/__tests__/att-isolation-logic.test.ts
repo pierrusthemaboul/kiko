@@ -79,7 +79,10 @@ jest.mock('../lib/config/adConfig', () => ({
 
 // Composant de test minimaliste qui consomme notre hook
 function TestConsentComponent() {
-  useAdConsent();
+  const { requestATTIfNeeded } = useAdConsent();
+  React.useEffect(() => {
+    requestATTIfNeeded();
+  }, [requestATTIfNeeded]);
   return null;
 }
 

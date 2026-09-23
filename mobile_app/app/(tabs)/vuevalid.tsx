@@ -8,6 +8,8 @@ import { router, useLocalSearchParams } from 'expo-router';
 
 import { supabase } from '@/lib/supabase/supabaseClients';
 
+const AUTHORIZED_EMAIL = process.env.EXPO_PUBLIC_AUTHORIZED_EMAIL || 'pierre.cousin7@gmail.com';
+
 // ==============================================================================
 // TYPES ET INTERFACES
 // ==============================================================================

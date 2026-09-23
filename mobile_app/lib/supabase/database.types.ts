@@ -15,6 +15,7 @@ export interface Database {
           xp_total: number;
           title_key: string;
           parties_per_day: number;
+          parties_restantes: number;
           current_streak: number;
           best_streak: number;
           last_play_date: string | null;
@@ -32,6 +33,7 @@ export interface Database {
           xp_total?: number;
           title_key?: string;
           parties_per_day?: number;
+          parties_restantes?: number;
           current_streak?: number;
           best_streak?: number;
           last_play_date?: string | null;
@@ -47,6 +49,7 @@ export interface Database {
           xp_total?: number;
           title_key?: string;
           parties_per_day?: number;
+          parties_restantes?: number;
           current_streak?: number;
           best_streak?: number;
           last_play_date?: string | null;

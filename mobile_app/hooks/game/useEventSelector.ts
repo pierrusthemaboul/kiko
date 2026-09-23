@@ -689,13 +689,13 @@ export function useEventSelector({
         usedIds.push(referenceEvent.id);
       }
 
-      supabase.rpc('fetch_intelligent_events', {
+      (supabase as any).rpc('fetch_intelligent_events', {
         p_ref_event_id: referenceEvent.id,
         p_last_event_ids: usedIds,
         p_limit: 40, // On demande un pool large pour laisser le scoring JS faire son travail
         p_notoriete_min: userLevel <= 3 ? 60 : (userLevel <= 10 ? 40 : 20),
         p_min_year: userLevel <= 2 ? 1800 : 1
-      }).then(({ data, error }) => {
+      }).then(({ data, error }: any) => {
         isFetchingZoneBRef.current = false;
         if (!error && data && data.length > 0) {
            const formattedData = (data as any[]).map(e => ({
@@ -707,7 +707,7 @@ export function useEventSelector({
              return [...prev, ...newEvents];
            });
         }
-      }).catch(err => {
+      }).catch((err: any) => {
         isFetchingZoneBRef.current = false;
       });
     }

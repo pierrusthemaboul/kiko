@@ -1,33 +1,16 @@
-# .easignore FINAL - Exclusion totale du .git
-.git/
-**/.git/
-../.git/
-../node_modules/
+# Exclude node_modules and native build outputs
 node_modules/
 **/node_modules/
+.git/
+.expo/
 android/
 ios/
 build/
 dist/
+store_listing/
+.tmp_logcat.txt
 *.log
 *.tar.gz
 *.apk
 *.sql
-*.json
-!app.json
-!package.json
-!google-services.json
-!GoogleService-Info.plist
-!assets/**/*.json
-
-# Exclude parent monorepo folders to keep the build archive small
-../docs/
-../tools/
-../admin_web/
-../screenshots/
-../dist/
-../imagesint/
-../scratch/
-../android/
-../*.tar.gz
 

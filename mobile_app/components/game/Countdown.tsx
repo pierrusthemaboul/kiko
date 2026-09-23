@@ -101,20 +101,18 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
   },
   tutorialContainer: {
-    // Style spécial pour le tutoriel - plus visible avec un cadre
+    // Style spécial pour le tutoriel - plus visible
     width: 50,
     height: 50,
     borderRadius: 25,
-    borderWidth: 3,
-    borderColor: '#FFD700', // Bordure dorée
     backgroundColor: 'rgba(255, 255, 255, 0.95)', // Fond blanc semi-transparent
     elevation: 8,
-    shadowColor: '#FFD700',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 4,
     },
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.3,
     shadowRadius: 8,
   },
   text: {

@@ -107,13 +107,6 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
               verySmallScreen && styles.glassCardSmall
             ]}
           >
-            {/* MODE PRINCIPAL - masqué sur petits écrans */}
-            {!verySmallScreen && (
-              <View style={styles.headerGlass}>
-                <Ionicons name="compass" size={16} color={COLORS.accent} style={styles.iconSpaced} />
-                <Text style={styles.heroLabel}>MODE PRINCIPAL</Text>
-              </View>
-            )}
             <Text
               style={[
                 styles.heroTitle,
@@ -208,6 +201,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.15)',
     overflow: 'hidden',
     width: '100%',
+    maxWidth: 420,
+    alignSelf: 'center',
     marginBottom: 40,
   },
   glassCardSmall: {

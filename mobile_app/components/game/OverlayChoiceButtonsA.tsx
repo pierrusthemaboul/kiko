@@ -21,6 +21,8 @@ interface OverlayChoiceButtonsAProps {
   isLevelPaused: boolean;
   isWaitingForCountdown?: boolean;
   transitioning?: boolean;
+  isTutorialActive?: boolean;
+  tutorialStep?: number;
 }
 
 /**
@@ -32,6 +34,8 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   isLevelPaused,
   isWaitingForCountdown = false,
   transitioning = false,
+  isTutorialActive = false,
+  tutorialStep = 0,
 }) => {
   // États simples
   const [pressedButton, setPressedButton] = useState<'avant' | 'après' | null>(null);
@@ -43,6 +47,8 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   const leftButtonRotate = useRef(new Animated.Value(0)).current;
   const rightButtonRotate = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
+  const leftGlowOpacity = useRef(new Animated.Value(0)).current;
+  const rightGlowOpacity = useRef(new Animated.Value(0)).current;
 
   // Animation de fade-in dès le montage
   useEffect(() => {
@@ -79,6 +85,68 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
       ])
     ).start();
   };
+
+  // Animation de glow pour le tutoriel
+  useEffect(() => {
+    if (isTutorialActive) {
+      // Step 2: highlight left button (AVANT)
+      if (tutorialStep === 2) {
+        leftGlowOpacity.setValue(0);
+        Animated.loop(
+          Animated.sequence([
+            Animated.timing(leftGlowOpacity, {
+              toValue: 1,
+              duration: 800,
+              easing: Easing.inOut(Easing.ease),
+              useNativeDriver: true,
+            }),
+            Animated.timing(leftGlowOpacity, {
+              toValue: 0.3,
+              duration: 800,
+              easing: Easing.inOut(Easing.ease),
+              useNativeDriver: true,
+            }),
+          ])
+        ).start();
+        rightGlowOpacity.setValue(0);
+      }
+      // Step 3: highlight right button (APRÈS)
+      else if (tutorialStep === 3) {
+        rightGlowOpacity.setValue(0);
+        Animated.loop(
+          Animated.sequence([
+            Animated.timing(rightGlowOpacity, {
+              toValue: 1,
+              duration: 800,
+              easing: Easing.inOut(Easing.ease),
+              useNativeDriver: true,
+            }),
+            Animated.timing(rightGlowOpacity, {
+              toValue: 0.3,
+              duration: 800,
+              easing: Easing.inOut(Easing.ease),
+              useNativeDriver: true,
+            }),
+          ])
+        ).start();
+        leftGlowOpacity.setValue(0);
+      }
+      // Reset glows for other steps
+      else {
+        leftGlowOpacity.setValue(0);
+        rightGlowOpacity.setValue(0);
+      }
+    } else {
+      // Reset when tutorial is not active
+      leftGlowOpacity.setValue(0);
+      rightGlowOpacity.setValue(0);
+    }
+
+    return () => {
+      leftGlowOpacity.stopAnimation();
+      rightGlowOpacity.stopAnimation();
+    };
+  }, [isTutorialActive, tutorialStep]);
 
   // Gérer le clic sur un bouton
   const handlePress = (choice: 'avant' | 'après') => {
@@ -144,6 +212,12 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
           },
         ]}
       >
+        <Animated.View 
+          style={[
+            styles.tutorialGlow,
+            { opacity: leftGlowOpacity }
+          ]}
+        />
         <TouchableOpacity
           onPress={() => handlePress('avant')}
           activeOpacity={0.9}
@@ -181,6 +255,12 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
           },
         ]}
       >
+        <Animated.View 
+          style={[
+            styles.tutorialGlow,
+            { opacity: rightGlowOpacity }
+          ]}
+        />
         <TouchableOpacity
           onPress={() => handlePress('après')}
           activeOpacity={0.9}
@@ -267,6 +347,23 @@ const styles = StyleSheet.create({
     bottom: -4,
     borderRadius: 25,
     backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    zIndex: -1,
+  },
+  tutorialGlow: {
+    position: 'absolute',
+    top: -8,
+    left: -8,
+    right: -8,
+    bottom: -8,
+    borderRadius: 33,
+    borderWidth: 3,
+    borderColor: '#F4D068',
+    backgroundColor: 'rgba(244, 208, 104, 0.2)',
+    shadowColor: '#F4D068',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.8,
+    shadowRadius: 12,
+    elevation: 10,
     zIndex: -1,
   },
 });

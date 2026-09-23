@@ -90,7 +90,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "list_tables") {
       const { data, error } = await supabase.rpc("execute_sql", { 
-        query: "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE';" 
+        query: "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE'" 
       });
 
       if (error) {

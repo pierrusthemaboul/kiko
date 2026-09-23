@@ -102,10 +102,11 @@ class MusicManager {
    */
   async initialize(assets: MusicAssets): Promise<void> {
     // console.log('[MusicManager] initialize() called');
-    
-    // On autorise la ré-initialisation pour mettre à jour les pistes si nécessaire
-    if (this.isInitialized) {
-      // console.log('[MusicManager] Already initialized, updating tracks and re-notifying WebView...');
+
+    // Si on ré-initialise (reload), on arrête d'abord la musique en cours
+    if (this.isInitialized && this.isPlaying) {
+      console.log('[MusicManager] Re-initializing, stopping current playback first');
+      this.stop();
     }
 
     try {

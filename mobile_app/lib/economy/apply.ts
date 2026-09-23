@@ -319,7 +319,7 @@ function profilesRepo() {
           eq: (col: 'id', value: string) => { maybeSingle: () => Promise<{ data: ProfileRow | null; error: unknown | null }> };
         };
       })
-        .select('xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score')
+        .select('xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score, parties_restantes')
         .eq('id', userId)
         .maybeSingle();
 
@@ -573,12 +573,25 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const currentLevel = levelMapping[previousRank.key] || 1;
   const newLevel = levelMapping[rank.key] || 1;
   
+  // Calculer la récompense de cœurs si le joueur a monté de niveau
+  // On donne 1 cœur si le joueur a monté de niveau et a moins de 3 cœurs
+  const currentHearts = safeProfile.parties_restantes ?? 0;
+  const MAX_HEARTS = 3;
+  const heartsReward = leveledUp && currentHearts < MAX_HEARTS ? 1 : 0;
+  
+  economyLog('[ECONOMY] ❤️ Hearts reward calculation:', {
+    leveledUp,
+    currentHearts,
+    MAX_HEARTS,
+    heartsReward
+  });
+  
   // On utilise le nouveau niveau car c'est celui qui vient d'être atteint
   await completeLevelReward({
     userId,
     levelCompleted: newLevel,
     xpReward: xpEarned,
-    heartsReward: 0, // Pas de récompense de cœurs pour l'instant
+    heartsReward,
   });
 
   // Mettre à jour uniquement les champs non liés à XP/rang (streak, games_played, etc.)

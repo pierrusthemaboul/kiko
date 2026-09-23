@@ -77,6 +77,16 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
     }
   }, [onReady, onTrackChange, onStopped]);
 
+  // Cleanup : arrêter la musique quand le composant se démonte
+  React.useEffect(() => {
+    return () => {
+      if (isReady) {
+        sendCommandToWebView({ type: 'STOP' });
+        console.log('[MusicWebView] Stopping music on unmount');
+      }
+    };
+  }, [isReady, sendCommandToWebView]);
+
   const htmlContent = React.useMemo(() => `
     <!DOCTYPE html>
     <html>

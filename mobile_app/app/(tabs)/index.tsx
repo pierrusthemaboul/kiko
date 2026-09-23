@@ -21,11 +21,18 @@ import { useBackgroundMusic } from '@/hooks/useBackgroundMusic';
 import { useHomeData } from '@/src/features/home/hooks/useHomeData';
 import { useHomeAdsFlow } from '@/src/features/home/hooks/useHomeAdsFlow';
 import { useAIConsent } from '@/src/features/home/hooks/useAIConsent';
+import { useAdConsent } from '@/hooks/useAdConsent';
 
 export default function Vue1() {
+  const { requestATTIfNeeded } = useAdConsent();
+
+  useEffect(() => {
+    requestATTIfNeeded();
+  }, [requestATTIfNeeded]);
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const playsPillTopOffset = insets.top + 82;
+  const playsPillTopOffset = insets.top + 12;
+  const homeHeaderTopOffset = insets.top + 68;
 
   // Custom Hooks qui encapsulent les logiques complexes
   const homeData = useHomeData();
@@ -53,7 +60,7 @@ export default function Vue1() {
   } = useBackgroundMusic({ autoStart: false });
 
   useEffect(() => {
-    FirebaseAnalytics.screen('HomeClean', 'Vue1');
+    FirebaseAnalytics.screen('HomeClean', 'Home');
   }, []);
 
   useEffect(() => {
@@ -109,7 +116,30 @@ export default function Vue1() {
 
   const handleDeleteAccount = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return;
+    
+    if (!user) {
+      // Mode Invité : réinitialiser les données locales
+      Alert.alert(
+        'Supprimer les données',
+        'Vous êtes en mode Invité. Souhaitez-vous réinitialiser le jeu et supprimer toutes vos données locales ? Cette action est irréversible.',
+        [
+          { text: 'Annuler', style: 'cancel' },
+          {
+            text: 'Réinitialiser',
+            style: 'destructive',
+            onPress: async () => {
+              try {
+                await AsyncStorage.clear();
+                router.replace('/auth/login');
+              } catch (error) {
+                Alert.alert('Erreur', 'Impossible de réinitialiser les données.');
+              }
+            },
+          },
+        ]
+      );
+      return;
+    }
 
     Alert.alert(
       'Supprimer le compte',
@@ -123,21 +153,23 @@ export default function Vue1() {
             try {
               FirebaseAnalytics.trackEvent('user_account_deletion_requested', {
                 user_id: user.id,
-                screen: 'vue1',
+                screen: 'home',
               });
 
               // Appel de la fonction RPC Supabase pour une suppression réelle (auth.users)
               const { error: deleteError } = await supabase.rpc('delete_user');
               
               if (deleteError) {
-                console.warn("RPC delete_user failed (falling back to simple logout):", deleteError);
+                console.error("RPC delete_user failed:", deleteError);
+                Alert.alert('Erreur', 'Impossible de supprimer votre compte : ' + deleteError.message);
+                return;
               }
 
               // On déconnecte l'utilisateur
               await supabase.auth.signOut();
               await AsyncStorage.removeItem('@timalaus_guest_mode');
 
-              Alert.alert('Compte supprimé', 'Votre demande de suppression a été prise en compte et vous avez été déconnecté.');
+              Alert.alert('Compte supprimé', 'Votre compte et toutes vos données ont été définitivement supprimés.');
               router.replace('/auth/login');
             } catch (error) {
               console.error("Error during account deletion:", error);
@@ -147,6 +179,10 @@ export default function Vue1() {
         },
       ]
     );
+  }, [router]);
+
+  const handleSignUp = useCallback(() => {
+    router.push('/auth/signup');
   }, [router]);
 
   return (
@@ -177,6 +213,9 @@ export default function Vue1() {
         playerName={homeData.playerName}
         headerSubtitle={homeData.headerSubtitle}
         onOpenSettings={() => setSettingsVisible(true)}
+        isGuest={!homeData.profile?.id}
+        onSignUp={handleSignUp}
+        topOffset={homeHeaderTopOffset}
       />
 
       {/* Layer Overlay Milieu : Plays Status Container */}
@@ -206,7 +245,7 @@ export default function Vue1() {
         onClose={() => setSettingsVisible(false)}
         onOpenAIInfo={() => setShowAIInfo(true)}
         onLogout={handleLogout}
-        onDeleteAccount={homeData.profile?.id ? handleDeleteAccount : undefined}
+        onDeleteAccount={handleDeleteAccount}
         musicVolume={musicVolume}
         onMusicVolumeChange={setMusicVolume}
         musicEnabled={musicEnabled}
@@ -215,6 +254,7 @@ export default function Vue1() {
             Alert.alert('Erreur', "Impossible de mettre à jour la musique.");
           });
         }}
+        isGuest={!homeData.profile?.id}
       />
 
       <LeaderboardRewardModal

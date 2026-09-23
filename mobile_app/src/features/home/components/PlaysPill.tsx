@@ -14,7 +14,7 @@ interface Props {
 export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd, topOffset = 118 }: Props) {
   const { height, width } = useWindowDimensions();
   const isSmallScreen = width < 375 || height < 700;
-  const adjustedTopOffset = isSmallScreen ? topOffset + 40 : topOffset;
+  const adjustedTopOffset = topOffset;
   return (
     <View style={[styles.playsStatusContainer, { top: adjustedTopOffset }]}>
       <View style={styles.playsPill}>
@@ -36,8 +36,10 @@ export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd, t
 const styles = StyleSheet.create({
   playsStatusContainer: {
     position: 'absolute',
-    left: 24,
-    right: 24,
+    width: '100%',
+    maxWidth: 420,
+    alignSelf: 'center',
+    paddingHorizontal: 24,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useRef, useState, ReactNode, useCallback, useEffect } from 'react';
+import { AppState } from 'react-native';
 import MusicWebView, { MusicWebViewRef } from '../components/MusicWebView';
 import MusicManager from '../services/MusicManager';
 
@@ -51,6 +52,20 @@ export const MusicProvider = ({ children }: Props) => {
 
   const handleStopped = useCallback(() => {
     console.log('[MusicProvider] Music stopped');
+  }, []);
+
+  // Gérer l'état de l'application pour arrêter la musique en arrière-plan
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextAppState) => {
+      if (nextAppState === 'background' || nextAppState === 'inactive') {
+        console.log('[MusicProvider] App going to background, stopping music');
+        MusicManager.stop();
+      }
+    });
+
+    return () => {
+      subscription.remove();
+    };
   }, []);
 
   return (

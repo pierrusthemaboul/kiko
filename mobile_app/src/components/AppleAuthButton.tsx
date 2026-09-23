@@ -28,7 +28,7 @@ export function AppleAuthButton({
       buttonStyle={buttonStyle}
       cornerRadius={8}
       style={[styles.button, style, disabled && styles.disabled]}
-      onPress={disabled ? undefined : onPress}
+      onPress={disabled ? () => {} : onPress}
     />
   );
 }

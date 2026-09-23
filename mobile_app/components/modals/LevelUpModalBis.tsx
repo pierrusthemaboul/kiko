@@ -24,6 +24,7 @@ import { colors } from '../../constants/Colors';
 import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
 import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 import { supabase } from '@/lib/supabase/supabaseClients';
+import { maybeRequestReview } from '@/lib/reviewPrompt';
 
 const { width } = Dimensions.get('window');
 
@@ -116,6 +117,16 @@ export default function LevelUpModalBis({
 
   // State pour stocker uniquement les événements du niveau actuel/précédent
   const [filteredEvents, setFilteredEvents] = useState<LevelEventSummary[]>([]);
+
+  // Demande d'avis native : à la fermeture de la modale de victoire de niveau
+  // (moment de réussite), seulement si au moins un niveau a été terminé.
+  const wasVisible = useRef(visible);
+  useEffect(() => {
+    if (wasVisible.current && !visible && (previousLevel ?? 0) >= 1) {
+      maybeRequestReview();
+    }
+    wasVisible.current = visible;
+  }, [visible, previousLevel]);
 
   const isValidUuid = (value: string) =>
     /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);

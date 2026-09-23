@@ -1,9 +1,41 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
+const fs = require('fs');
+const path = require('path');
 
-// Note: This requires a package to read image headers if we don't want to load the whole thing.
-// But for now I'll just use a simple approach if I had one. 
-// Actually, I can use a simple buffer check for JPG/PNG.
-// Or just use PowerShell correctly.
+const files = [
+  'Screenshot_2026-05-03-21-08-58-324_com.pierretulle.juno2.dev_iphone_6-7.jpg',
+  'Screenshot_2026-05-03-21-09-30-731_com.pierretulle.juno2.dev_iphone_6-7.jpg',
+  'Screenshot_2026-05-03-21-09-15-629_com.pierretulle.juno2.dev_iphone_6-7.jpg'
+];
 
-console.log("Checking dimensions...");
+files.forEach(file => {
+  const filePath = path.join(
+    __dirname,
+    '..',
+    'mobile_app',
+    'store',
+    'apple',
+    'screenshot',
+    'fr-FR',
+    'APP_IPHONE_65',
+    file
+  );
+
+  if (!fs.existsSync(filePath)) {
+    console.log(`File not found: ${filePath}`);
+    return;
+  }
+
+  const buffer = fs.readFileSync(filePath);
+  const header = buffer.toString('hex', 0, 4);
+
+  let detectedType = 'unknown';
+  if (header.startsWith('89504e47')) {
+    detectedType = 'PNG';
+  } else if (header.startsWith('ffd8ff')) {
+    detectedType = 'JPEG/JPG';
+  }
+
+  console.log(`File: ${file}`);
+  console.log(`  Header bytes: ${header}`);
+  console.log(`  Detected type: ${detectedType}`);
+});

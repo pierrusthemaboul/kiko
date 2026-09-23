@@ -368,7 +368,8 @@ export default function SignUp() {
         contentContainerStyle={styles.container}
         keyboardShouldPersistTaps="handled" // Important pour que le tap sur le bouton fonctionne même si clavier ouvert
       >
-        <Text style={styles.title}>Inscription</Text>
+        <View style={styles.formWrapper}>
+          <Text style={styles.title}>Inscription</Text>
 
         {/* Apple Sign In - iOS only */}
         {isAppleAvailable && (
@@ -460,13 +461,18 @@ export default function SignUp() {
          >
             <Text style={styles.goBackText}>Déjà un compte ? Se connecter</Text>
          </TouchableOpacity>
-
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  formWrapper: {
+    width: '100%',
+    maxWidth: 400,
+    alignSelf: 'center',
+  },
   safeArea: {
     flex: 1,
     backgroundColor: THEME.background.main // Fond blanc

@@ -82,12 +82,13 @@ Le workflow applique automatiquement deux scripts de correction post-prebuild :
 
 | Version | Version Code | Date | Cache | Notes |
 |---------|--------------|------|-------|-------|
+| 1.7.4   | 10270        | 26/06/2026 | V15 | Build et soumission réussis via GitHub Actions |
 | 1.7.3   | 10130        | 05/05/2026 | V12 | Build stabilisé (Fix EAS doctor) |
 | 1.7.2   | 10129        | 16/04/2026 | V11 | Release stabilisée (Fix submission path) |
 | 1.7.1   | 10128        | 16/04/2026 | V10 | Tentative initiale via Action |
 
 ---
 
-**Dernière mise à jour** : 05/05/2026 (Mise à jour version 1.7.3)
+**Dernière mise à jour** : 26/06/2026 (Mise à jour version 1.7.4)
 **Version du document** : 2.0
 **Mainteneur** : Pierre / Antigravity

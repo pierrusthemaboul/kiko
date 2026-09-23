@@ -50,7 +50,12 @@ export const useRewards = ({
 
   // A. Calcul Streak RÉÉQUILIBRÉ (multiples de 10)
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
-    if (streak % 10 !== 0 || streak === 0) return null;
+    console.log('[REWARD] 🔍 calculateStreakReward called:', { streak, userLives: user.lives, maxLives: effectiveMaxLives });
+    
+    if (streak % 10 !== 0 || streak === 0) {
+      console.log('[REWARD] ❌ Streak reward skipped: streak not multiple of 10 or is 0');
+      return null;
+    }
 
     let pointsAmount = 0;
 
@@ -77,7 +82,14 @@ export const useRewards = ({
     const finalAmount = canGiveLife ? 1 : pointsAmount;
     const finalType = canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS;
 
-    // logger.log(`Calculating BALANCED streak reward: streak=${streak}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${finalAmount}`);
+    console.log('[REWARD] ✅ Streak reward calculated:', { 
+      streak, 
+      canGiveLife, 
+      finalType, 
+      finalAmount,
+      userLives: user.lives,
+      maxLives: effectiveMaxLives
+    });
 
     return {
       type: finalType,
@@ -90,16 +102,25 @@ export const useRewards = ({
 
   // B. Calcul Level LÉGÈREMENT AUGMENTÉ
   const calculateLevelReward = useCallback((newLevel: number, user: User): Reward | null => {
-    if (isNaN(newLevel) || newLevel <= 0 || newLevel === 1) return null;
+    console.log('[REWARD] 🔍 calculateLevelReward called:', { newLevel, userLives: user.lives, maxLives: effectiveMaxLives });
+    
+    if (isNaN(newLevel) || newLevel <= 0 || newLevel === 1) {
+      console.log('[REWARD] ❌ Level reward skipped: invalid level', { newLevel });
+      return null;
+    }
 
     const levelConfig = LEVEL_CONFIGS[newLevel];
-    if (!levelConfig) return null;
+    if (!levelConfig) {
+      console.log('[REWARD] ❌ Level reward skipped: no config for level', { newLevel });
+      return null;
+    }
 
     // Priorité aux vies si possible
     const canGiveLife = user.lives < effectiveMaxLives;
 
     // Si on peut donner une vie, on la donne
     if (canGiveLife) {
+      console.log('[REWARD] ✅ Level reward: EXTRA_LIFE', { newLevel, userLives: user.lives, maxLives: effectiveMaxLives });
       return {
         type: RewardType.EXTRA_LIFE,
         amount: 1,
@@ -112,7 +133,7 @@ export const useRewards = ({
     // Sinon, donner les points du niveau (déjà équilibrés dans levelConfigs.ts)
     const rewardAmount = levelConfig.pointsReward || 1000;
 
-    // logger.log(`Calculating level reward: level=${newLevel}, type=POINTS, amount=${rewardAmount}`);
+    console.log('[REWARD] ✅ Level reward: POINTS', { newLevel, rewardAmount, userLives: user.lives, maxLives: effectiveMaxLives });
 
     return {
       type: RewardType.POINTS,
@@ -188,12 +209,13 @@ export const useRewards = ({
 
   // Traitement d'une récompense spécifique (interne)
   const processReward = useCallback((trigger: RewardTrigger, user: User) => {
+    console.log('[REWARD] 🎯 processReward called:', { trigger, userLives: user.lives, userPoints: user.points });
     isProcessingReward.current = true;
     const triggerKey = `${trigger.type}-${trigger.value}`;
 
     // Éviter les doublons (sauf si c'est une nouvelle tentative valide)
     if (triggerKey === lastProcessedTrigger) {
-      // logger.log(`[useRewards] Trigger ${triggerKey} already processed, skipping`);
+      console.log('[REWARD] ⚠️ Trigger already processed, skipping:', triggerKey);
       isProcessingReward.current = false;
       return;
     }
@@ -208,16 +230,22 @@ export const useRewards = ({
         reward = calculateLevelReward(trigger.value, user);
         break;
       default:
+        console.log('[REWARD] ❌ Unknown trigger type:', trigger.type);
         break;
     }
 
     if (!reward) {
-      // logger.log(`[useRewards] No reward calculated for trigger ${trigger.type}-${trigger.value}`);
+      console.log('[REWARD] ❌ No reward calculated for trigger:', triggerKey);
       isProcessingReward.current = false;
       return;
     }
 
-    // logger.log(`[useRewards] BALANCED reward calculated: ${reward.type}, amount: ${reward.amount} for trigger ${trigger.type}-${trigger.value}`);
+    console.log('[REWARD] ✅ Reward ready to apply:', { 
+      type: reward.type, 
+      amount: reward.amount, 
+      reason: reward.reason,
+      triggerKey 
+    });
 
     // Tracking Firebase
     try {
@@ -232,9 +260,9 @@ export const useRewards = ({
         currentLevelForLog,
         user.points
       );
-      // console.log(`[useRewards] FirebaseAnalytics.reward logged successfully.`);
+      console.log('[REWARD] 📊 Firebase reward logged successfully');
     } catch (error) {
-      console.error("[useRewards] Error logging FirebaseAnalytics.reward:", error);
+      console.error("[REWARD] ❌ Error logging FirebaseAnalytics.reward:", error);
     }
 
     // Mettre en place l'animation et notifier le parent
@@ -249,20 +277,26 @@ export const useRewards = ({
 
     timeoutRef.current = setTimeout(() => {
       if (isAnimating) {
-        // logger.warn('[useRewards] Animation timeout reached, forcing completion');
+        console.warn('[REWARD] ⏱️ Animation timeout reached, forcing completion');
         completeRewardAnimation();
       }
     }, 5000); // 5 secondes max pour l'animation complète
 
     if (onRewardEarned) {
+      console.log('[REWARD] 🎁 Calling onRewardEarned callback');
       onRewardEarned(reward);
     }
   }, [calculateStreakReward, calculateLevelReward, completeRewardAnimation, lastProcessedTrigger, onRewardEarned, isAnimating]);
 
   // checkRewards - Version améliorée avec File d'attente
   const checkRewards = useCallback((trigger: RewardTrigger, user: User) => {
+    console.log('[REWARD] 📥 checkRewards called:', { trigger, userLives: user.lives, userPoints: user.points });
     // Ajouter à la file d'attente
-    setRewardQueue(prev => [...prev, { trigger, user }]);
+    setRewardQueue(prev => {
+      const newQueue = [...prev, { trigger, user }];
+      console.log('[REWARD] 📋 Reward queue size:', newQueue.length);
+      return newQueue;
+    });
   }, []);
 
   // Effet pour traiter la file d'attente

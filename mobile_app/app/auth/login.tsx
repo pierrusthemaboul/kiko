@@ -381,7 +381,8 @@ export default function Login() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
-          <Text style={styles.title}>Connexion</Text>
+          <View style={styles.formWrapper}>
+            <Text style={styles.title}>Connexion</Text>
 
         {/* Apple Sign In - iOS only */}
         {isAppleAvailable && (
@@ -489,6 +490,7 @@ export default function Login() {
           >
             <Text style={styles.guestModeText}>Jouer en mode Exploration</Text>
           </TouchableOpacity>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -496,6 +498,11 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
+  formWrapper: {
+    width: '100%',
+    maxWidth: 400,
+    alignSelf: 'center',
+  },
   safeArea: {
     flex: 1,
     backgroundColor: THEME.background.main // Fond blanc

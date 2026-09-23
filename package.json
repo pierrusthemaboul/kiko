@@ -37,7 +37,13 @@
     "ai-bridge": "node scripts/maintenance/ai_bridge.mjs",
     "admin-api": "node api/admin-backend.js",
     "curateur-api": "node admin_web/server/curateur_service.mjs",
-    "start:usb": "adb reverse tcp:8081 tcp:8081 && npm run start:usb --prefix mobile_app"
+    "start:usb": "adb reverse tcp:8081 tcp:8081 && npm run start:usb --prefix mobile_app",
+    "store:play:pull": "node tools/store_manager/playstore_sync.mjs pull",
+    "store:play:push": "node tools/store_manager/playstore_sync.mjs push",
+    "store:play:push:dry": "node tools/store_manager/playstore_sync.mjs push --dry-run",
+    "store:play:reviews": "node tools/store_manager/playstore_sync.mjs reviews",
+    "store:apple:token": "node tools/store_manager/appstore_sync.mjs token",
+    "store:apple:pull": "node tools/store_manager/appstore_sync.mjs pull"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.54.0",
@@ -92,6 +98,7 @@
     "csv-writer": "^1.6.0",
     "express": "^5.1.0",
     "firebase-admin": "^13.6.0",
+    "googleapis": "^166.0.0",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.3",
     "patch-package": "^8.0.0",
