@@ -54,12 +54,16 @@ export const MusicProvider = ({ children }: Props) => {
     console.log('[MusicProvider] Music stopped');
   }, []);
 
-  // Gérer l'état de l'application pour arrêter la musique en arrière-plan
+  // Gérer l'état de l'application : pause en arrière-plan, reprise au retour.
+  // resume() est un no-op si la musique ne jouait pas (isPlaying/isPaused false).
   useEffect(() => {
     const subscription = AppState.addEventListener('change', (nextAppState) => {
       if (nextAppState === 'background' || nextAppState === 'inactive') {
-        console.log('[MusicProvider] App going to background, stopping music');
-        MusicManager.stop();
+        console.log('[MusicProvider] App going to background, pausing music');
+        MusicManager.pause();
+      } else if (nextAppState === 'active') {
+        console.log('[MusicProvider] App back to foreground, resuming music');
+        MusicManager.resume();
       }
     });
 

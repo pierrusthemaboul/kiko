@@ -7,6 +7,7 @@
  ************************************************************************************/
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FirebaseAnalytics } from './firebase';
 
 const LAST_REQUEST_KEY = '@timalaus/review_last_request';
 const MIN_DAYS_BETWEEN_REQUESTS = 30;
@@ -35,6 +36,14 @@ function getStoreReview(): StoreReviewNative | null {
   }
 }
 
+function track(result: string) {
+  try {
+    FirebaseAnalytics.trackEvent('review_prompt', { result });
+  } catch {
+    // Ne jamais laisser l'analytics perturber le jeu.
+  }
+}
+
 /**
  * Affiche la feuille d'avis native si le moment est opportun.
  * Silencieuse par design : ne doit jamais bloquer ni perturber le jeu.
@@ -42,18 +51,30 @@ function getStoreReview(): StoreReviewNative | null {
 export async function maybeRequestReview(): Promise<void> {
   try {
     if (__DEV__) console.log('[reviewPrompt] déclenchement demandé');
+    track('triggered');
     const StoreReview = getStoreReview();
-    if (!StoreReview) return;
+    if (!StoreReview) {
+      track('no_native_module');
+      return;
+    }
 
     const available = (await StoreReview.isAvailableAsync?.()) ?? false;
-    if (!available) return;
+    if (!available) {
+      track('not_available');
+      return;
+    }
 
     const last = await AsyncStorage.getItem(LAST_REQUEST_KEY);
-    if (last && (Date.now() - Number(last)) / 86400000 < MIN_DAYS_BETWEEN_REQUESTS) return;
+    if (last && (Date.now() - Number(last)) / 86400000 < MIN_DAYS_BETWEEN_REQUESTS) {
+      track('throttled');
+      return;
+    }
 
     await AsyncStorage.setItem(LAST_REQUEST_KEY, String(Date.now()));
     await StoreReview.requestReview?.();
+    track('shown');
   } catch {
+    track('error');
     // La demande d'avis ne doit jamais faire échouer le jeu.
   }
 }

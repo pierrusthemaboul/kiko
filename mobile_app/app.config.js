@@ -5,7 +5,7 @@ module.exports = ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus: History Timeline Quiz",
     slug: "kiko",
-    version: "1.8.0",
+    version: "1.8.1",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -21,7 +21,7 @@ module.exports = ({ config }) => {
       supportsTablet: false,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       appleTeamId: "RBH23M8YUV",
-      buildNumber: "32",
+      buildNumber: "33",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         CFBundleDevelopmentRegion: "fr",
@@ -65,7 +65,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 11000,
+      versionCode: 11001,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -86,7 +86,8 @@ module.exports = ({ config }) => {
             }
           },
           ios: {
-            useFrameworks: "static"
+            useFrameworks: "static",
+            buildReactNativeFromSource: true
           }
         }
       ],
