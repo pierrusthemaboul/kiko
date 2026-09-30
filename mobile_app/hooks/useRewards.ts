@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { RewardType, User, MAX_LIVES } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
-import { Logger } from '../utils/logger';
+import { Logger, traceGameRender } from '../utils/logger';
 import { FirebaseAnalytics } from '../lib/firebase';
 
 interface Position {
@@ -147,6 +147,7 @@ export const useRewards = ({
   // completeRewardAnimation - Version améliorée avec gestion de la file d'attente
   const completeRewardAnimation = useCallback(() => {
     // logger.log('[useRewards] Animation completed, resetting state');
+    traceGameRender('rewardq.complete', { hadTimeout: !!timeoutRef.current });
 
     // Nettoyer le timeout de sécurité
     if (timeoutRef.current) {
@@ -170,18 +171,21 @@ export const useRewards = ({
   const updateRewardPosition = useCallback((position: Position) => {
     if (!currentReward) {
       // logger.log('[useRewards] No current reward to update position');
+      traceGameRender('rewardq.position', { applied: false, reason: 'no-reward' });
       return;
     }
 
     // Vérifier que la position est valide
     if (isNaN(position.x) || isNaN(position.y)) {
       Logger.warn('GameLogic', 'Invalid position coordinates', { x: position.x, y: position.y });
+      traceGameRender('rewardq.position', { applied: false, reason: 'nan' });
       return;
     }
 
     // Valeurs trop faibles probablement incorrectes
     if (position.x < 10 || position.y < 10) {
       // logger.warn(`[useRewards] Position too close to origin, might be incorrect: x=${position.x}, y=${position.y}`);
+      traceGameRender('rewardq.position', { x: position.x, y: position.y, applied: false, reason: 'near-origin' });
       return;
     }
 
@@ -197,12 +201,14 @@ export const useRewards = ({
         Math.abs(prev.targetPosition.y - position.y) > 5;
 
       if (positionChanged) {
+        traceGameRender('rewardq.position', { x: position.x, y: position.y, applied: true });
         return {
           ...prev,
           targetPosition: position
         };
       }
 
+      traceGameRender('rewardq.position', { x: position.x, y: position.y, applied: false, reason: 'unchanged' });
       return prev; // Pas de changement significatif
     });
   }, [currentReward]);
@@ -212,10 +218,12 @@ export const useRewards = ({
     console.log('[REWARD] 🎯 processReward called:', { trigger, userLives: user.lives, userPoints: user.points });
     isProcessingReward.current = true;
     const triggerKey = `${trigger.type}-${trigger.value}`;
+    traceGameRender('rewardq.process', { triggerKey, userLives: user.lives });
 
     // Éviter les doublons (sauf si c'est une nouvelle tentative valide)
     if (triggerKey === lastProcessedTrigger) {
       console.log('[REWARD] ⚠️ Trigger already processed, skipping:', triggerKey);
+      traceGameRender('rewardq.process', { triggerKey, skippedDup: true });
       isProcessingReward.current = false;
       return;
     }
@@ -236,6 +244,7 @@ export const useRewards = ({
 
     if (!reward) {
       console.log('[REWARD] ❌ No reward calculated for trigger:', triggerKey);
+      traceGameRender('rewardq.process', { triggerKey, reward: null });
       isProcessingReward.current = false;
       return;
     }
@@ -266,6 +275,7 @@ export const useRewards = ({
     }
 
     // Mettre en place l'animation et notifier le parent
+    traceGameRender('rewardq.show', { triggerKey, type: reward.type, amount: reward.amount });
     setCurrentReward(reward);
     setIsAnimating(true);
     setLastProcessedTrigger(triggerKey);
@@ -278,6 +288,7 @@ export const useRewards = ({
     timeoutRef.current = setTimeout(() => {
       if (isAnimating) {
         console.warn('[REWARD] ⏱️ Animation timeout reached, forcing completion');
+        traceGameRender('rewardq.safety-fire', { triggerKey });
         completeRewardAnimation();
       }
     }, 5000); // 5 secondes max pour l'animation complète
@@ -295,6 +306,7 @@ export const useRewards = ({
     setRewardQueue(prev => {
       const newQueue = [...prev, { trigger, user }];
       console.log('[REWARD] 📋 Reward queue size:', newQueue.length);
+      traceGameRender('rewardq.enqueue', { trigger: trigger.type, value: trigger.value, queueLen: newQueue.length });
       return newQueue;
     });
   }, []);
@@ -304,6 +316,7 @@ export const useRewards = ({
     // Si on n'anime pas, qu'on ne traite pas déjà, et qu'il y a des récompenses en attente
     if (!isAnimating && !isProcessingReward.current && rewardQueue.length > 0) {
       const nextReward = rewardQueue[0];
+      traceGameRender('rewardq.dequeue', { trigger: nextReward.trigger.type, value: nextReward.trigger.value, remaining: rewardQueue.length - 1 });
 
       // Retirer de la file
       setRewardQueue(prev => prev.slice(1));

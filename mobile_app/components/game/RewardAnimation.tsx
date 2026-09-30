@@ -1,5 +1,15 @@
-import React, { useEffect, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
+import React, { useEffect, useCallback, useRef, useId, useMemo } from 'react';
+import { traceGameRender } from '@/utils/logger';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSpring,
+  withDelay,
+  withSequence,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 
 interface RewardAnimationProps {
@@ -15,13 +25,31 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
   targetPosition,
   onComplete,
 }) => {
-  // Réfs pour les animations
-  const opacity = useRef(new Animated.Value(0)).current;
-  const translateY = useRef(new Animated.Value(0)).current;
-  const translateX = useRef(new Animated.Value(0)).current;
-  const scale = useRef(new Animated.Value(0.3)).current;
+  const rewardId = useId();
+  useEffect(() => {
+    traceGameRender('reward.mount', { rewardId, type, amount });
+    return () => traceGameRender('reward.unmount', { rewardId });
+  }, []);
+  useEffect(() => {
+    traceGameRender('reward.props', { rewardId, type, amount, targetPosition });
+  }, [type, amount, targetPosition?.x, targetPosition?.y]);
+
+  // Réfs pour les animations (Reanimated : un seul canal UI-thread)
+  const opacity = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  const translateX = useSharedValue(0);
+  const scale = useSharedValue(0.3);
   const isAnimationStarted = useRef(false);
   const isMountedRef = useRef(true);
+
+  const bubbleStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+    transform: [
+      { translateX: translateX.value },
+      { translateY: translateY.value },
+      { scale: scale.value },
+    ],
+  }));
 
   // Dimensions de l'écran
   const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
@@ -31,6 +59,8 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     // Éviter de lancer plusieurs animations
     if (isAnimationStarted.current || !isMountedRef.current) return;
     isAnimationStarted.current = true;
+    const startedAt = Date.now();
+    traceGameRender('reward.start', { rewardId, type, amount, targetPosition });
 
     // Déterminer la position finale en fonction du type et de la cible
     let destinationX: number, destinationY: number;
@@ -55,80 +85,41 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     const offsetY = destinationY - (screenHeight / 2);
 
     // Réinitialisation des valeurs
-    translateX.setValue(0);
-    translateY.setValue(0);
-    opacity.setValue(0);
-    scale.setValue(0.3);
+    translateX.value = 0;
+    translateY.value = 0;
+    opacity.value = 0;
+    scale.value = 0.3;
 
-    const animationSequence = Animated.sequence([
-      // 1. Apparition au centre
-      Animated.parallel([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.spring(scale, {
-          toValue: 1.3,
-          friction: 6,
-          useNativeDriver: true,
-        }),
-      ]),
-
-      // 2. Petit délai
-      Animated.delay(300),
-
-      // 3. Déplacement vers la position finale
-      Animated.parallel([
-        Animated.timing(translateX, {
-          toValue: offsetX,
-          duration: 800,
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateY, {
-          toValue: offsetY,
-          duration: 800,
-          useNativeDriver: true,
-        }),
-        Animated.timing(scale, {
-          toValue: 0.7,
-          duration: 800,
-          useNativeDriver: true,
-        }),
-      ]),
-
-      // 4. Effet "pop" à l'arrivée
-      Animated.sequence([
-        Animated.timing(scale, {
-          toValue: 0.9,
-          duration: 150,
-          useNativeDriver: true,
-        }),
-        Animated.timing(scale, {
-          toValue: 0.7,
-          duration: 150,
-          useNativeDriver: true,
-        }),
-      ]),
-
-      // 5. Disparition
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-    ]);
-
-    animationSequence.start(({ finished }) => {
+    // Timeline Reanimated (~2 s au total) :
+    //  1. 0→300 ms  : apparition (opacity 1 + scale spring 1.3)
+    //  2. 300→600   : pause
+    //  3. 600→1400  : déplacement + réduction scale 0.7
+    //  4. 1400→1700 : "pop" (scale 0.9 → 0.7)
+    //  5. 1700→2000 : disparition (opacity 0)
+    const onFinished = (finished: boolean) => {
+      traceGameRender('reward.end', { rewardId, finished, mounted: isMountedRef.current, elapsedMs: Date.now() - startedAt });
       if (!isMountedRef.current) return;
-      
-      // Appeler onComplete dans tous les cas pour éviter les blocages
       if (onComplete) {
         onComplete();
       }
-    });
+    };
+
+    opacity.value = withSequence(
+      withTiming(1, { duration: 300 }),
+      withDelay(1400, withTiming(0, { duration: 300 }, (finished) => {
+        runOnJS(onFinished)(finished === true);
+      }))
+    );
+    scale.value = withSequence(
+      withSpring(1.3, { damping: 12, stiffness: 120 }),
+      withDelay(300, withTiming(0.7, { duration: 800 })),
+      withTiming(0.9, { duration: 150 }),
+      withTiming(0.7, { duration: 150 })
+    );
+    translateX.value = withDelay(600, withTiming(offsetX, { duration: 800 }));
+    translateY.value = withDelay(600, withTiming(offsetY, { duration: 800 }));
   }, [
-    type, amount, targetPosition, screenWidth, screenHeight, 
+    type, amount, targetPosition, screenWidth, screenHeight,
     opacity, translateX, translateY, scale, onComplete
   ]);
 
@@ -145,6 +136,7 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     
     // Assurer que l'animation se termine après un certain temps, même en cas de problème
     const safetyTimer = setTimeout(() => {
+      traceGameRender('reward.timeout', { rewardId, mounted: isMountedRef.current });
       if (isMountedRef.current) {
         if (onComplete) {
           onComplete();
@@ -193,25 +185,22 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
 
   const config = getConfig();
 
+  // Enfant figé de l'Animated.View : un nouvel élément à chaque render
+  // recréerait le nœud AnimatedProps → __restoreDefaultValues → la bulle
+  // reviendrait une frame à ses valeurs par défaut pendant son animation.
+  const bubbleEl = useMemo(() => (
+    <View style={[styles.bubble, { backgroundColor: config.color }]}>
+      <Ionicons name={config.icon} size={24} color="white" style={styles.icon} />
+      <Text style={styles.amount}>+{amount}</Text>
+    </View>
+  ), [config.color, config.icon, amount]);
+
   return (
-    <Animated.View
-      style={[
-        styles.container,
-        {
-          opacity,
-          transform: [
-            { translateX },
-            { translateY },
-            { scale }
-          ],
-        }
-      ]}
+    <AnimatedRe.View
+      style={[styles.container, bubbleStyle]}
     >
-      <View style={[styles.bubble, { backgroundColor: config.color }]}>
-        <Ionicons name={config.icon} size={24} color="white" style={styles.icon} />
-        <Text style={styles.amount}>+{amount}</Text>
-      </View>
-    </Animated.View>
+      {bubbleEl}
+    </AnimatedRe.View>
   );
 };
 

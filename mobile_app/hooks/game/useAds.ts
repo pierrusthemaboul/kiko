@@ -9,6 +9,7 @@ import {
 import { getAdRequestOptions, getAdUnitId } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
+import { traceGameRender } from '../../utils/logger';
 import Constants from 'expo-constants';
 
 const ADS_LOG_ENABLED = (() => {
@@ -244,6 +245,7 @@ export function useAds({
     processingRewardRef.current = true;
 
     adLog('log', "Applying reward and resuming game...");
+    traceGameRender('ads.revive.start');
     setIsGameOverRef.current(false);
 
     try {
@@ -255,8 +257,10 @@ export function useAds({
           }
           const currentLives = prevUser.lives;
           const livesToAdd = 1;
-          adLog('log', `Granting life. Current: ${currentLives}, New: ${Math.min(currentLives + livesToAdd, effectiveMaxLives)}`);
-          return { ...prevUser, lives: Math.min(currentLives + livesToAdd, effectiveMaxLives) };
+          const nextLives = Math.min(currentLives + livesToAdd, effectiveMaxLives);
+          adLog('log', `Granting life. Current: ${currentLives}, New: ${nextLives}`);
+          traceGameRender('ads.revive.life', { from: currentLives, to: nextLives });
+          return { ...prevUser, lives: nextLives };
         });
         setTimeout(resolve, 150);
       });
@@ -275,8 +279,10 @@ export function useAds({
 
     if (allEventsRef.current && previousEventRef.current) {
       adLog('log', "Selecting new event after reward.");
+      traceGameRender('ads.revive.select-start');
       try {
         const nextEvent = await selectNewEventRef.current(allEventsRef.current, previousEventRef.current);
+        traceGameRender('ads.revive.select-done', { eventId: nextEvent?.id ?? null });
         if (!nextEvent) {
           adLog('warn', "Failed to select next event after reward, potentially end of game.");
           setIsGameOverRef.current(true);
@@ -298,6 +304,7 @@ export function useAds({
 
     adLog('log', "Reloading rewarded ad after reward process.");
     rewardedAd.load();
+    traceGameRender('ads.revive.done');
     processingRewardRef.current = false;
 
     if (setPendingAdDisplay) {

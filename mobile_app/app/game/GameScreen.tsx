@@ -4,7 +4,6 @@
 import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import {
   StyleSheet,
-  Animated,
   StatusBar,
   ImageBackground,
   View,
@@ -12,6 +11,7 @@ import {
   Platform,
   Alert,
 } from 'react-native';
+import AnimatedRe, { useSharedValue, useAnimatedStyle, withTiming, type SharedValue } from 'react-native-reanimated';
 import { useRouter, useFocusEffect, useLocalSearchParams, useSegments } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -27,7 +27,7 @@ import { nextRankProgress } from '@/lib/economy/ranks';
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
 import { usePrecisionGame } from '@/hooks/game/usePrecisionGame';
 import { useImmersiveMode } from '@/hooks/useImmersiveMode';
-import { Logger } from '@/utils/logger';
+import { Logger, traceGameRender } from '@/utils/logger';
 
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
@@ -48,11 +48,12 @@ function getNavigationBarModule() {
 
 function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const router = useRouter();
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeAnim = useSharedValue(0);
   const [gameKey, setGameKey] = useState(0); // Utilisé pour forcer le re-rendu du contenu du jeu
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
   const [runState, setRunState] = useState<'pending' | 'ready' | 'error'>('pending');
-  const bgFadeAnim = useRef(new Animated.Value(1)).current; // Animation pour transition des backgrounds
+  const bgFadeAnim = useSharedValue(1); // Animation pour transition des backgrounds
+  const bgFadeStyle = useAnimatedStyle(() => ({ opacity: bgFadeAnim.value }));
 
   // Activer le mode immersif pour cet écran
   useImmersiveMode(true);
@@ -68,7 +69,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   useEffect(() => {
     // On ne met à jour le background que si on n'est pas en transition de fin de niveau
     if (!gameLogic.triggerLevelEndAnim && gameLogic.user?.level) {
+      traceGameRender('screen.bg-level', { level: gameLogic.user.level });
       setDisplayedLevel(gameLogic.user.level);
+    } else if (gameLogic.user?.level !== displayedLevel) {
+      traceGameRender('screen.level-held', { displayedLevel, actualLevel: gameLogic.user?.level });
     }
   }, [gameLogic.user?.level, gameLogic.triggerLevelEndAnim]);
 
@@ -83,13 +87,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
       (console as any).tron.log(`🖼️ TRANSITION BACKGROUND - Niveau affiché: ${displayedLevel}`);
     }
     // Fade in simple
-    bgFadeAnim.setValue(0.8);
-    Animated.timing(bgFadeAnim, {
-      toValue: 1,
-      duration: 400,
-      useNativeDriver: true,
-    }).start();
-  }, [currentBackground, bgFadeAnim, displayedLevel]);
+    traceGameRender('screen.bg-fade', { displayedLevel });
+    bgFadeAnim.value = 0.8;
+    bgFadeAnim.value = withTiming(1, { duration: 400 });
+  }, [currentBackground, displayedLevel]);
 
   useEffect(() => {
     const initializeRun = async () => {
@@ -169,6 +170,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     }
 
     setIsRestarting(true);
+    traceGameRender('screen.restart.start', { playsRemaining: playsInfo?.remaining });
 
     // La logique de vérification et de démarrage est maintenant dans le useEffect principal
     if (typeof startRun === 'function') {
@@ -214,8 +216,8 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     }
 
     setGameKey(prevKey => prevKey + 1);
-    fadeAnim.setValue(0);
-    Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
+    fadeAnim.value = 0;
+    fadeAnim.value = withTiming(1, { duration: 500 });
 
     // 🔍 REACTOTRON LOG - FIN REJOUER
     if (__DEV__ && tron) {
@@ -231,6 +233,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
       });
     }
 
+    traceGameRender('screen.restart.done');
     setTimeout(() => setIsRestarting(false), 150);
 
   }, [
@@ -290,9 +293,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   // Animation d'entrée initiale et lors du changement de clé (redémarrage)
   useEffect(() => {
-    fadeAnim.setValue(0);
-    Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-  }, [gameKey, fadeAnim]); // Se déclenche au montage et quand gameKey change
+    traceGameRender('screen.fade', { gameKey });
+    fadeAnim.value = 0;
+    fadeAnim.value = withTiming(1, { duration: 500 });
+  }, [gameKey]); // Se déclenche au montage et quand gameKey change
 
   const [countdown, setCountdown] = useState<number | null>(null);
 
@@ -316,13 +320,47 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     }
   }, [countdown, gameLogic.startMusic]);
 
-  if (!isDataLoaded || (countdown !== null && countdown > 0)) {
+  // --- Diagnostic : transitions d'état visibles (loader / countdown / jeu) ---
+  const prevLoadedRef = useRef<boolean | null>(null);
+  useEffect(() => {
+    if (prevLoadedRef.current !== isDataLoaded) {
+      prevLoadedRef.current = isDataLoaded;
+      traceGameRender('screen.loaded', { isDataLoaded, runState, isRestarting });
+    }
+  }, [isDataLoaded, runState, isRestarting]);
+
+  const prevCountdownRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (prevCountdownRef.current !== countdown) {
+      prevCountdownRef.current = countdown;
+      traceGameRender('screen.countdown', { value: countdown });
+    }
+  }, [countdown]);
+
+  // Le jeu ne peut se rendre QUE quand le countdown a été joué jusqu'à 0.
+  // Avant, `countdown === null` (avant le setCountdown(3) de l'effet) rendait
+  // déjà l'arbre jeu pendant ~1 frame : montage → démontage → remontage
+  // complet (double layout.mount dans les traces) + les deux premiers events
+  // visibles une fraction de seconde avant le 3-2-1.
+  const renderMode = !isDataLoaded || countdown !== 0
+    ? 'loader'
+    : (!gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig) ? 'loader2' : 'game';
+  const prevRenderRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (prevRenderRef.current !== renderMode) {
+      prevRenderRef.current = renderMode;
+      traceGameRender('screen.render', { mode: renderMode });
+    }
+  }, [renderMode]);
+  // ------------------------------------------------------------------------
+
+  if (!isDataLoaded || countdown !== 0) {
     return (
       <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
         <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-        <Animated.Text style={{ fontSize: 72, color: 'white', fontWeight: 'bold' }}>
+        <AnimatedRe.Text style={{ fontSize: 72, color: 'white', fontWeight: 'bold' }}>
           {countdown !== null && countdown > 0 ? countdown : '...'}
-        </Animated.Text>
+        </AnimatedRe.Text>
       </View>
     );
   }
@@ -340,7 +378,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   return (
     <View style={styles.fullScreenContainer}>
-      <Animated.View style={[styles.fullScreenContainer, { opacity: bgFadeAnim }]}>
+      <AnimatedRe.View style={[styles.fullScreenContainer, bgFadeStyle]}>
         <ImageBackground
           source={currentBackground}
           style={styles.backgroundImage}
@@ -349,7 +387,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
           {/* Overlay semi-transparent pour ne pas surcharger visuellement */}
           <View style={styles.backgroundOverlay} />
         </ImageBackground>
-      </Animated.View>
+      </AnimatedRe.View>
 
       <View style={styles.contentContainer}>
         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
@@ -415,7 +453,8 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
 function PrecisionGameScreen() {
   const router = useRouter();
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeAnim = useSharedValue(0);
+  const fadeStyle = useAnimatedStyle(() => ({ opacity: fadeAnim.value }));
 
   // Activer le mode immersif pour cet écran
   useImmersiveMode(true);
@@ -470,9 +509,9 @@ function PrecisionGameScreen() {
   );
 
   useEffect(() => {
-    fadeAnim.setValue(0);
-    Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true }).start();
-  }, [fadeAnim, currentEvent?.id, lastResult?.event.id]);
+    fadeAnim.value = 0;
+    fadeAnim.value = withTiming(1, { duration: 400 });
+  }, [currentEvent?.id, lastResult?.event.id]);
 
   const handleMenu = useCallback(() => {
     router.replace('/(tabs)');
@@ -494,7 +533,7 @@ function PrecisionGameScreen() {
               <ActivityIndicator size="large" color="#FFFFFF" />
             </View>
           ) : (
-            <Animated.View style={[styles.flexFill, { opacity: fadeAnim }]}>
+            <AnimatedRe.View style={[styles.flexFill, fadeStyle]}>
               <PrecisionGameContent
                 loading={loading}
                 error={error}
@@ -556,7 +595,7 @@ function PrecisionGameScreen() {
                 monthlyScores={leaderboards.monthly}
                 allTimeScores={leaderboards.allTime}
               />
-            </Animated.View>
+            </AnimatedRe.View>
           )}
         </SafeAreaView>
       </ImageBackground>

@@ -10,7 +10,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Animated,
   ScrollView,
   Image,
   TouchableOpacity,
@@ -18,6 +17,16 @@ import {
   Alert,
   useWindowDimensions,
 } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSpring,
+  withDelay,
+  withSequence,
+  withRepeat,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
@@ -25,6 +34,7 @@ import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
 import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { maybeRequestReview } from '@/lib/reviewPrompt';
+import { traceGameRender } from '@/utils/logger';
 
 const { width } = Dimensions.get('window');
 
@@ -103,13 +113,29 @@ export default function LevelUpModalBis({
   // Activer le mode immersif quand la modale est visible
   useImmersiveMode(visible);
 
-  // Animations
-  const scaleAnim = useRef(new Animated.Value(0.3)).current;
-  const opacityAnim = useRef(new Animated.Value(0)).current;
-  const buttonScaleAnim = useRef(new Animated.Value(1)).current;
-  const backgroundOpacityAnim = useRef(new Animated.Value(0)).current;
-  const levelNumberAnim = useRef(new Animated.Value(0)).current;
-  const contentTranslateY = useRef(new Animated.Value(50)).current;
+  // Animations (Reanimated : un seul canal UI-thread, immunisé contre les
+  // resets de transform par les commits Fabric — cause racine des flashs)
+  const scaleAnim = useSharedValue(0.3);
+  const opacityAnim = useSharedValue(0);
+  const buttonScaleAnim = useSharedValue(1);
+  const backgroundOpacityAnim = useSharedValue(0);
+  const levelNumberAnim = useSharedValue(0);
+  const contentTranslateY = useSharedValue(50);
+
+  const overlayStyle = useAnimatedStyle(() => ({ opacity: backgroundOpacityAnim.value }));
+  const contentStyle = useAnimatedStyle(() => ({
+    opacity: opacityAnim.value,
+    transform: [{ scale: scaleAnim.value }, { translateY: contentTranslateY.value }],
+  }));
+  const bannerStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: levelNumberAnim.value },
+      { translateY: contentTranslateY.value },
+    ],
+  }));
+  const buttonStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: buttonScaleAnim.value }],
+  }));
 
   // State pour le popup d'un événement en particulier
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
@@ -263,72 +289,42 @@ export default function LevelUpModalBis({
   // Animation d'entrée
   useEffect(() => {
     if (visible) {
+      traceGameRender('levelmodal.enter-start', { level, previousLevel });
       // Reset des animations
-      const resetAnimations = () => {
-        scaleAnim.setValue(0.3);
-        opacityAnim.setValue(0);
-        backgroundOpacityAnim.setValue(0);
-        levelNumberAnim.setValue(0);
-        contentTranslateY.setValue(50);
-        buttonScaleAnim.setValue(1);
-      };
+      scaleAnim.value = 0.3;
+      opacityAnim.value = 0;
+      backgroundOpacityAnim.value = 0;
+      levelNumberAnim.value = 0;
+      contentTranslateY.value = 50;
+      buttonScaleAnim.value = 1;
 
-      resetAnimations();
-
-      // Séquence d'animations
-      Animated.sequence([
-        Animated.timing(backgroundOpacityAnim, {
-          toValue: 1,
-          duration: 400,
-          useNativeDriver: true,
-        }),
-        Animated.parallel([
-          Animated.spring(scaleAnim, {
-            toValue: 1,
-            friction: 8,
-            tension: 40,
-            useNativeDriver: true,
-          }),
-          Animated.timing(opacityAnim, {
-            toValue: 1,
-            duration: 400,
-            useNativeDriver: true,
-          }),
-          Animated.spring(contentTranslateY, {
-            toValue: 0,
-            friction: 8,
-            tension: 40,
-            useNativeDriver: true,
-          }),
-          Animated.spring(levelNumberAnim, {
-            toValue: 1,
-            friction: 8,
-            tension: 40,
-            useNativeDriver: true,
-          }),
-        ]),
-      ]).start(() => {
-        startButtonAnimation();
-      });
+      // Séquence d'animations : backdrop d'abord, puis contenu en parallèle.
+      // Le dernier callback (opacity, 400+400ms) déclenche la boucle du bouton.
+      backgroundOpacityAnim.value = withTiming(1, { duration: 400 });
+      scaleAnim.value = withDelay(400, withSpring(1, { damping: 15, stiffness: 90 }));
+      contentTranslateY.value = withDelay(400, withSpring(0, { damping: 15, stiffness: 90 }));
+      levelNumberAnim.value = withDelay(400, withSpring(1, { damping: 15, stiffness: 90 }));
+      opacityAnim.value = withDelay(400, withTiming(1, { duration: 400 }, (finished) => {
+        runOnJS(onEnterEnd)(finished === true);
+      }));
     }
-  }, [visible, scaleAnim, opacityAnim, backgroundOpacityAnim, levelNumberAnim, contentTranslateY, buttonScaleAnim]);
+  }, [visible]);
+
+  const onEnterEnd = (finished: boolean) => {
+    traceGameRender('levelmodal.enter-end', { finished });
+    startButtonAnimation();
+  };
 
   // Animation du bouton "GO!"
   const startButtonAnimation = () => {
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(buttonScaleAnim, {
-          toValue: 1.1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-        Animated.timing(buttonScaleAnim, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
+    traceGameRender('levelmodal.button-loop');
+    buttonScaleAnim.value = withRepeat(
+      withSequence(
+        withTiming(1.1, { duration: 1000 }),
+        withTiming(1, { duration: 1000 })
+      ),
+      -1
+    );
   };
 
   // Rendu du bandeau de niveau
@@ -336,16 +332,8 @@ export default function LevelUpModalBis({
     if (!previousLevel || !isNewLevel) return null;
 
     return (
-      <Animated.View
-        style={[
-          styles.levelUpBanner,
-          {
-            transform: [
-              { scale: levelNumberAnim },
-              { translateY: contentTranslateY },
-            ],
-          },
-        ]}
+      <AnimatedRe.View
+        style={[styles.levelUpBanner, bannerStyle]}
       >
         <LinearGradient
           colors={['#ff9966', '#ff5e62']}
@@ -358,7 +346,7 @@ export default function LevelUpModalBis({
             Bravo ! Niveau {previousLevel} terminé
           </Text>
         </LinearGradient>
-      </Animated.View>
+      </AnimatedRe.View>
     );
   };
 
@@ -535,17 +523,14 @@ export default function LevelUpModalBis({
       animationType="none"
       statusBarTranslucent
     >
-      <Animated.View
-        style={[styles.modalOverlay, { opacity: backgroundOpacityAnim }]}
+      <AnimatedRe.View
+        style={[styles.modalOverlay, overlayStyle]}
       >
-        <Animated.View
+        <AnimatedRe.View
           style={[
             styles.modalContent,
             isSmallScreen && styles.modalContentSmall,
-            {
-              opacity: opacityAnim,
-              transform: [{ scale: scaleAnim }, { translateY: contentTranslateY }],
-            },
+            contentStyle,
           ]}
         >
           <ScrollView style={styles.scrollView}>
@@ -557,11 +542,8 @@ export default function LevelUpModalBis({
 
             {renderEventsSummary()}
 
-            <Animated.View
-              style={[
-                styles.startButtonContainer,
-                { transform: [{ scale: buttonScaleAnim }] },
-              ]}
+            <AnimatedRe.View
+              style={[styles.startButtonContainer, buttonStyle]}
             >
               <TouchableOpacity
                 style={styles.startButton}
@@ -581,7 +563,7 @@ export default function LevelUpModalBis({
                   <Text style={styles.startButtonText}>GO !</Text>
                 </LinearGradient>
               </TouchableOpacity>
-            </Animated.View>
+            </AnimatedRe.View>
 
             {/* Bouton retour au menu */}
             {onReturnToMenu && (
@@ -596,8 +578,8 @@ export default function LevelUpModalBis({
             )}
           </ScrollView>
           {renderEventDetailsModal()}
-        </Animated.View>
-      </Animated.View>
+        </AnimatedRe.View>
+      </AnimatedRe.View>
     </Modal>
   );
 };

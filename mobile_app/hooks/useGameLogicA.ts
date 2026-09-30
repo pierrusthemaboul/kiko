@@ -27,7 +27,7 @@ import {
   usePlays, // Importer le nouveau hook
 } from './game';
 import { useBackgroundMusic } from './useBackgroundMusic';
-import { Logger } from '@/utils/logger';
+import { Logger, traceGameRender } from '@/utils/logger';
 import { useAppStateDetection } from './game/useAppStateDetection';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
 import { applyEndOfRunEconomy } from '@/lib/economy/apply';
@@ -431,6 +431,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     if (isTutorialMechanicsLocked || isLevelPaused || isGameOver) {
       return;
     }
+    traceGameRender('logic.timeout', { level: user.level, lives: user.lives, streak, eventId: newEvent?.id ?? null });
     setIsWaitingForCountdown(false);
 
     FirebaseAnalytics.trackEvent('timeout', {
@@ -469,7 +470,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     } else if (newEvent) {
       setIsCorrect(false);
       setShowDates(true);
+      traceGameRender('logic.defer-schedule', { source: 'timeout', delayMs: 1500 });
       setTimeout(() => {
+        traceGameRender('logic.defer-fire', { source: 'timeout', guardGameOver: isGameOver });
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
@@ -509,6 +512,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       return;
     }
 
+    traceGameRender('logic.background', { level: user.level, lives: user.lives, streak, eventId: newEvent?.id ?? null });
     playIncorrectSound();
     recordIncorrectAnswer(); // Anti-frustration : tracker l'erreur
     setStreak(0);
@@ -539,7 +543,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     } else if (newEvent) {
       setIsCorrect(false);
       setShowDates(true);
+      traceGameRender('logic.defer-schedule', { source: 'background', delayMs: 1500 });
       setTimeout(() => {
+        traceGameRender('logic.defer-fire', { source: 'background', guardGameOver: isGameOver });
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
@@ -584,6 +590,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const updateGameState = useCallback(
     async (selectedEvent: Event) => {
       try {
+        traceGameRender('logic.event-commit', { eventId: selectedEvent.id });
         setUsedEvents((prev) => new Set([...prev, selectedEvent.id]));
         setNewEvent(selectedEvent);
         setDisplayedEvent(selectedEvent);
@@ -662,6 +669,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       //   streak: currentStreak ?? streak 
       // });
 
+      const startedAt = Date.now();
+      traceGameRender('logic.select-start', { level: user.level, usedCount: usedEvents.size, streak: currentStreak ?? streak });
       const result = await baseSelectNewEvent(
         events,
         referenceEvent,
@@ -669,6 +678,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         usedEvents,
         currentStreak ?? streak
       );
+      traceGameRender('logic.select-done', { eventId: result?.id ?? null, elapsedMs: Date.now() - startedAt });
 
       if (result) {
         // Logger.info('GameLogic', 'Event selected', { id: result.id, title: result.titre });
@@ -931,6 +941,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
               ? Math.min(prev.lives + 1, gameMode.maxLives)
               : prev.lives;
 
+          traceGameRender('logic.reward-apply', { type: reward.type, amount: safeAmount, livesFrom: prev.lives, livesTo: updatedLives, pointsFrom: currentPoints, pointsTo: updatedPoints });
           FirebaseAnalytics.trackEvent('reward_applied', {
             reward_type: reward.type,
             reward_amount: safeAmount,
@@ -955,6 +966,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   // --- REPLACÉ ICI : Fonction pour réinitialiser l'état de contrôle du jeu ---
   const resetGameFlowState = useCallback(() => {
+    traceGameRender('logic.reset-flow');
     setIsGameOver(false);
     setIsLevelPaused(false);
     setShowLevelModal(false);
@@ -1027,6 +1039,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const handleChoice = useCallback(
     (choice: 'avant' | 'après') => {
       if (isTutorialMechanicsLocked || !previousEvent || !newEvent || isLevelPaused || isGameOver || isWaitingForCountdown) {
+        traceGameRender('logic.choice-blocked', { isTutorialMechanicsLocked, hasPrev: !!previousEvent, hasNew: !!newEvent, isLevelPaused, isGameOver, isWaitingForCountdown });
         return;
       }
 
@@ -1047,6 +1060,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
       const isNewBefore = newDate < prevDate;
       const isAnswerCorrect = (choice === 'avant' && isNewBefore) || (choice === 'après' && !isNewBefore);
+      traceGameRender('logic.choice', { choice, isAnswerCorrect, streak, level: user.level, lives: user.lives, eventsDoneInLevel: user.eventsCompletedInLevel });
 
       // 🎬 Enregistrer le choix du joueur avec timecode
       if (metadataManagerRef.current) {
@@ -1137,13 +1151,16 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           setCurrentLevelConfig({ ...LEVEL_CONFIGS[nextLevel], eventsSummary: [] });
           // resetLevelCompletedEvents(); // RÉINITIALISÉ UNIQUEMENT DANS handleLevelUp !
           resetAntiqueCount();
+          traceGameRender('logic.levelup.trigger', { completedLevel: user.level, nextLevel });
           setTriggerLevelEndAnim(true);
 
           const completedLevel = user.level;
           const isDevAndLevel1 = __DEV__ && completedLevel === 1;
           const shouldShowAd = (completedLevel === 1 || completedLevel % 5 === 0) && !isDevAndLevel1;
 
+          traceGameRender('logic.levelup.modal-schedule', { delayMs: 1500, shouldShowAd });
           setTimeout(() => {
+            traceGameRender('logic.levelup.modal-fire', { shouldShowAd });
             setIsLevelPaused(true);
             setShowLevelModal(true);
             playLevelUpSound();
@@ -1158,8 +1175,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           nextEventPromise.then((evt: Event | null) => {
             if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
           });
+          traceGameRender('logic.defer-schedule', { source: 'correct', delayMs: 750 });
           setTimeout(() => {
             setIsWaitingForCountdown(false);
+            traceGameRender('logic.defer-fire', { source: 'correct', guardGameOver: isGameOver, guardShowLevelModal: showLevelModal });
             if (!isGameOver && !showLevelModal) {
               nextEventPromise.then((evt: Event | null) => {
                 if (evt) updateGameState(evt);
@@ -1215,7 +1234,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         });
 
         if (user.lives <= 1) { // Check if *about* to be game over
+          traceGameRender('logic.gameover-defer', { source: 'incorrect', delayMs: 500 });
           setTimeout(() => {
+            traceGameRender('logic.gameover-defer-fire', { source: 'incorrect', guardGameOver: isGameOver });
             // Re-check isGameOver in case something else ended the game during the delay
             if (!isGameOver) endGameRef.current();
           }, 500); // Short delay before game over screen
@@ -1225,8 +1246,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           nextEventPromise.then((evt: Event | null) => {
             if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
           });
+          traceGameRender('logic.defer-schedule', { source: 'incorrect', delayMs: 1500 });
           setTimeout(() => {
             setIsWaitingForCountdown(false);
+            traceGameRender('logic.defer-fire', { source: 'incorrect', guardGameOver: isGameOver, guardShowLevelModal: showLevelModal });
             if (!isGameOver && !showLevelModal) {
               nextEventPromise.then((evt: Event | null) => {
                 if (evt) updateGameState(evt);
@@ -1272,6 +1295,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     }
 
     const runIdForThisEndGame = currentRunIdRef.current; // Capture the runId at the moment endGame starts
+    traceGameRender('logic.game-over', { points: user.points, level: user.level, lives: user.lives });
     setIsGameOver(true);
     setIsCountdownActive(false);
     setIsLevelPaused(true); // Pause the game logic
@@ -1545,6 +1569,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     const currentLevelState = user.level;
     const currentPointsState = user.points;
     const referenceEvent = previousEvent;
+    traceGameRender('logic.levelup-start', { level: currentLevelState, hasReference: !!referenceEvent });
 
     if (!referenceEvent) {
       RemoteLogger.error('GameLogic', 'Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante)', {
@@ -1673,11 +1698,13 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     selectNewEventRef.current(allEvents, firstEvent)
       .then((selectedEvent: Event | null) => {
         console.log('[LEVEL_START] Événement sélectionné:', selectedEvent?.id);
+        traceGameRender('logic.levelup-event-selected', { eventId: selectedEvent?.id ?? null, guardGameOver: isGameOver });
         // Only unpause if an event was successfully selected AND the game hasn't ended in the meantime
         if (selectedEvent && !isGameOver) {
 
           // Crucially update state before unpausing
           updateGameStateRef.current(selectedEvent);
+          traceGameRender('logic.unpause');
           setIsLevelPaused(false);
         } else if (!isGameOver) {
           // If no event could be selected, it's a critical error for continuing play

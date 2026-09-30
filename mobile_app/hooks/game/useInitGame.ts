@@ -8,6 +8,7 @@ import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chem
 import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
 import { Event, User, MAX_LIVES, LevelHistory } from '../types'; // Ajuste le chemin si nécessaire
 import { devLog } from '../../utils/devLog';
+import { traceGameRender } from '../../utils/logger';
 import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessaire
 import { useEventSelector, getCachedDateInfo } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
@@ -346,6 +347,7 @@ export function useInitGame() {
       setPreviousEvent(firstEvent);
       setNewEvent(secondEvent);
       setDisplayedEvent(secondEvent); // Afficher le second événement initialement
+      traceGameRender('init.done', { firstEventId: firstEvent.id, secondEventId: secondEvent.id, totalEvents: validEvents.length });
       setUsedEvents(new Set([firstEvent.id, secondEvent.id]));
       if (isAntiqueEvent(firstEvent)) updateAntiqueCount(firstEvent);
       if (isAntiqueEvent(secondEvent)) updateAntiqueCount(secondEvent);

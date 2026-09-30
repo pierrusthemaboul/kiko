@@ -1,20 +1,90 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { 
-  View, 
-  TouchableOpacity, 
-  Text, 
-  StyleSheet, 
-  Animated, 
-  Dimensions, 
-  Easing,
+import React, { useEffect, useState, useRef, useId, useMemo, useCallback, createContext, useContext } from 'react';
+import { traceGameRender } from '@/utils/logger';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Dimensions,
   Platform
 } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSpring,
+  withDelay,
+  withSequence,
+  withRepeat,
+  cancelAnimation,
+  runOnJS,
+  Easing,
+  type SharedValue,
+} from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
 
 const { width, height } = Dimensions.get('window');
 const isVerySmallScreen = width < 360 || height < 640;
+
+// État partagé aux enfants des Animated.View via contexte : props.children
+// doit garder une identité stable, sinon React Native recrée le nœud
+// AnimatedProps à chaque render et appelle __restoreDefaultValues() → les
+// vues animées reviennent une frame à leurs valeurs par défaut (clignotement).
+type BtnChoice = 'avant' | 'après';
+interface ChoiceButtonsCtxValue {
+  pressedButton: BtnChoice | null;
+  onPress: (choice: BtnChoice) => void;
+}
+const ChoiceButtonsCtx = createContext<ChoiceButtonsCtxValue | null>(null);
+
+const ChoiceButtonInner: React.FC<{ choice: BtnChoice; glow: SharedValue<number> }> = ({ choice, glow }) => {
+  const ctx = useContext(ChoiceButtonsCtx);
+  const isLeft = choice === 'avant';
+  const pressed = ctx?.pressedButton === choice;
+  const glowStyle = useAnimatedStyle(() => ({ opacity: glow.value }));
+  return (
+    <>
+      <AnimatedRe.View
+        style={[styles.tutorialGlow, glowStyle]}
+      />
+      <TouchableOpacity
+        onPress={() => ctx?.onPress(choice)}
+        activeOpacity={0.9}
+        style={styles.button}
+      >
+        <LinearGradient
+          colors={pressed
+            ? ['rgba(0,0,0,0.7)', 'rgba(0,0,0,0.8)', 'rgba(0,0,0,0.7)']
+            : ['rgba(0,0,0,0.4)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.5)']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.buttonGradient}
+        >
+          {isLeft && (
+            <Ionicons
+              name="arrow-back"
+              size={isVerySmallScreen ? 14 : 18}
+              color={colors.white}
+              style={styles.buttonIcon}
+            />
+          )}
+          <Text style={styles.buttonText}>{isLeft ? 'AVANT' : 'APRÈS'}</Text>
+          {!isLeft && (
+            <Ionicons
+              name="arrow-forward"
+              size={isVerySmallScreen ? 14 : 18}
+              color={colors.white}
+              style={styles.buttonIcon}
+            />
+          )}
+        </LinearGradient>
+      </TouchableOpacity>
+      <View style={styles.buttonShadow} />
+    </>
+  );
+};
 
 interface OverlayChoiceButtonsAProps {
   onChoice: (choice: 'avant' | 'après') => void;
@@ -23,6 +93,7 @@ interface OverlayChoiceButtonsAProps {
   transitioning?: boolean;
   isTutorialActive?: boolean;
   tutorialStep?: number;
+  debugEventId?: string;
 }
 
 /**
@@ -36,256 +107,148 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   transitioning = false,
   isTutorialActive = false,
   tutorialStep = 0,
+  debugEventId,
 }) => {
+  const buttonsId = useId();
+  const trace = (action: string, data: Record<string, unknown> = {}) => {
+    traceGameRender(action, { buttonsId, eventId: debugEventId, ...data });
+  };
   // États simples
   const [pressedButton, setPressedButton] = useState<'avant' | 'après' | null>(null);
   
-  // Animations
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-  const leftButtonScale = useRef(new Animated.Value(1)).current;
-  const rightButtonScale = useRef(new Animated.Value(1)).current;
-  const leftButtonRotate = useRef(new Animated.Value(0)).current;
-  const rightButtonRotate = useRef(new Animated.Value(0)).current;
-  const pulseAnim = useRef(new Animated.Value(1)).current;
-  const leftGlowOpacity = useRef(new Animated.Value(0)).current;
-  const rightGlowOpacity = useRef(new Animated.Value(0)).current;
+  // Animations (Reanimated : un seul canal UI-thread — plus de restauration
+  // de valeurs par défaut au milieu des animations, cause des clignotements)
+  const fadeAnim = useSharedValue(0);
+  const leftButtonScale = useSharedValue(1);
+  const rightButtonScale = useSharedValue(1);
+  const leftButtonRotate = useSharedValue(0);
+  const rightButtonRotate = useSharedValue(0);
+  const pulseAnim = useSharedValue(1);
+  const leftGlowOpacity = useSharedValue(0);
+  const rightGlowOpacity = useSharedValue(0);
+
+  const containerStyle = useAnimatedStyle(() => ({ opacity: fadeAnim.value }));
+  const leftButtonStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: leftButtonScale.value },
+      { rotate: `${leftButtonRotate.value * 5}deg` },
+      { scale: pulseAnim.value },
+    ],
+  }));
+  const rightButtonStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: rightButtonScale.value },
+      { rotate: `${rightButtonRotate.value * 5}deg` },
+      { scale: pulseAnim.value },
+    ],
+  }));
 
   // Animation de fade-in dès le montage
   useEffect(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 200,
-      useNativeDriver: true,
-    }).start();
+    const startedAt = Date.now();
+    trace('buttons.mount', { fadeDurationMs: 200 });
+    fadeAnim.value = withTiming(1, { duration: 200 }, (finished) =>
+      runOnJS(trace)('buttons.fade-end', { finished: finished === true, elapsedMs: Date.now() - startedAt }));
 
     // Animation de pulsation
     startPulseAnimation();
 
     return () => {
-      pulseAnim.stopAnimation();
+      trace('buttons.unmount');
+      cancelAnimation(pulseAnim);
     };
   }, []);
 
   // Animation de pulsation
   const startPulseAnimation = () => {
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.05,
-          duration: 1200,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 1200,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
+    pulseAnim.value = withRepeat(
+      withSequence(
+        withTiming(1.05, { duration: 1200, easing: Easing.inOut(Easing.ease) }),
+        withTiming(1, { duration: 1200, easing: Easing.inOut(Easing.ease) })
+      ),
+      -1
+    );
   };
 
   // Animation de glow pour le tutoriel
   useEffect(() => {
-    if (isTutorialActive) {
-      // Step 2: highlight left button (AVANT)
-      if (tutorialStep === 2) {
-        leftGlowOpacity.setValue(0);
-        Animated.loop(
-          Animated.sequence([
-            Animated.timing(leftGlowOpacity, {
-              toValue: 1,
-              duration: 800,
-              easing: Easing.inOut(Easing.ease),
-              useNativeDriver: true,
-            }),
-            Animated.timing(leftGlowOpacity, {
-              toValue: 0.3,
-              duration: 800,
-              easing: Easing.inOut(Easing.ease),
-              useNativeDriver: true,
-            }),
-          ])
-        ).start();
-        rightGlowOpacity.setValue(0);
-      }
-      // Step 3: highlight right button (APRÈS)
-      else if (tutorialStep === 3) {
-        rightGlowOpacity.setValue(0);
-        Animated.loop(
-          Animated.sequence([
-            Animated.timing(rightGlowOpacity, {
-              toValue: 1,
-              duration: 800,
-              easing: Easing.inOut(Easing.ease),
-              useNativeDriver: true,
-            }),
-            Animated.timing(rightGlowOpacity, {
-              toValue: 0.3,
-              duration: 800,
-              easing: Easing.inOut(Easing.ease),
-              useNativeDriver: true,
-            }),
-          ])
-        ).start();
-        leftGlowOpacity.setValue(0);
-      }
-      // Reset glows for other steps
-      else {
-        leftGlowOpacity.setValue(0);
-        rightGlowOpacity.setValue(0);
-      }
+    const glowLoop = () => withRepeat(
+      withSequence(
+        withTiming(1, { duration: 800, easing: Easing.inOut(Easing.ease) }),
+        withTiming(0.3, { duration: 800, easing: Easing.inOut(Easing.ease) })
+      ),
+      -1
+    );
+
+    if (isTutorialActive && tutorialStep === 2) {
+      leftGlowOpacity.value = 0;
+      leftGlowOpacity.value = glowLoop();
+      rightGlowOpacity.value = 0;
+    } else if (isTutorialActive && tutorialStep === 3) {
+      rightGlowOpacity.value = 0;
+      rightGlowOpacity.value = glowLoop();
+      leftGlowOpacity.value = 0;
     } else {
-      // Reset when tutorial is not active
-      leftGlowOpacity.setValue(0);
-      rightGlowOpacity.setValue(0);
+      leftGlowOpacity.value = 0;
+      rightGlowOpacity.value = 0;
     }
 
     return () => {
-      leftGlowOpacity.stopAnimation();
-      rightGlowOpacity.stopAnimation();
+      cancelAnimation(leftGlowOpacity);
+      cancelAnimation(rightGlowOpacity);
     };
   }, [isTutorialActive, tutorialStep]);
 
   // Gérer le clic sur un bouton
-  const handlePress = (choice: 'avant' | 'après') => {
+  const handlePress = useCallback((choice: 'avant' | 'après') => {
     setPressedButton(choice);
-    
-    // Animation de pression
-    Animated.sequence([
-      Animated.parallel([
-        Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
-          toValue: 0.9,
-          useNativeDriver: true,
-          friction: 3,
-        }),
-        Animated.timing(choice === 'avant' ? leftButtonRotate : rightButtonRotate, {
-          toValue: choice === 'avant' ? -1 : 1,
-          duration: 150,
-          useNativeDriver: true,
-        })
-      ]),
-      Animated.parallel([
-        Animated.timing(fadeAnim, {
-          toValue: 0,
-          duration: 150,
-          useNativeDriver: true,
-        }),
-        Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
-          toValue: 1,
-          useNativeDriver: true,
-          friction: 5,
-        }),
-      ])
-    ]).start();
+
+    // Animation de pression : squash+rotate, puis fade-out du conteneur
+    // et rebond du bouton.
+    const scale = choice === 'avant' ? leftButtonScale : rightButtonScale;
+    const rotate = choice === 'avant' ? leftButtonRotate : rightButtonRotate;
+    scale.value = withSequence(
+      withSpring(0.9, { damping: 8, stiffness: 150 }),
+      withSpring(1, { damping: 10, stiffness: 120 })
+    );
+    rotate.value = withTiming(choice === 'avant' ? -1 : 1, { duration: 150 });
+    fadeAnim.value = withDelay(150, withTiming(0, { duration: 150 }));
 
     // Appeler la fonction parent avec le choix
     onChoice(choice);
-  };
+  }, [onChoice]);
 
-  // Transformations pour la rotation des boutons
-  const leftRotate = leftButtonRotate.interpolate({
-    inputRange: [-1, 0, 1],
-    outputRange: ['-5deg', '0deg', '5deg']
-  });
-
-  const rightRotate = rightButtonRotate.interpolate({
-    inputRange: [-1, 0, 1],
-    outputRange: ['-5deg', '0deg', '5deg']
-  });
+  // Enfants figés des Animated.View : voir ChoiceButtonsCtx.
+  const buttonsCtx = useMemo<ChoiceButtonsCtxValue>(
+    () => ({ pressedButton, onPress: handlePress }),
+    [pressedButton, handlePress],
+  );
+  const leftButtonEl = useMemo(() => (
+    <AnimatedRe.View style={[styles.buttonWrapper, leftButtonStyle]}>
+      <ChoiceButtonInner choice="avant" glow={leftGlowOpacity} />
+    </AnimatedRe.View>
+  ), [leftButtonStyle, leftGlowOpacity]);
+  const rightButtonEl = useMemo(() => (
+    <AnimatedRe.View style={[styles.buttonWrapper, rightButtonStyle]}>
+      <ChoiceButtonInner choice="après" glow={rightGlowOpacity} />
+    </AnimatedRe.View>
+  ), [rightButtonStyle, rightGlowOpacity]);
+  const containerChildren = useMemo(() => (
+    <>
+      {leftButtonEl}
+      {rightButtonEl}
+    </>
+  ), [leftButtonEl, rightButtonEl]);
 
   return (
-    <Animated.View 
-      style={[styles.container, { opacity: fadeAnim }]} 
-      pointerEvents="auto"
-    >
-      <Animated.View 
-        style={[
-          styles.buttonWrapper,
-          { 
-            transform: [
-              { scale: leftButtonScale },
-              { rotate: leftRotate },
-              { scale: pulseAnim },
-            ]
-          },
-        ]}
+    <ChoiceButtonsCtx.Provider value={buttonsCtx}>
+      <AnimatedRe.View
+        style={[styles.container, containerStyle]}
+        pointerEvents="auto"
       >
-        <Animated.View 
-          style={[
-            styles.tutorialGlow,
-            { opacity: leftGlowOpacity }
-          ]}
-        />
-        <TouchableOpacity
-          onPress={() => handlePress('avant')}
-          activeOpacity={0.9}
-          style={styles.button}
-        >
-          <LinearGradient
-            colors={pressedButton === 'avant' 
-              ? ['rgba(0,0,0,0.7)', 'rgba(0,0,0,0.8)', 'rgba(0,0,0,0.7)'] 
-              : ['rgba(0,0,0,0.4)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.5)']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.buttonGradient}
-          >
-            <Ionicons
-              name="arrow-back"
-              size={isVerySmallScreen ? 14 : 18}
-              color={colors.white}
-              style={styles.buttonIcon}
-            />
-            <Text style={styles.buttonText}>AVANT</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-        <View style={styles.buttonShadow} />
-      </Animated.View>
-
-      <Animated.View 
-        style={[
-          styles.buttonWrapper,
-          { 
-            transform: [
-              { scale: rightButtonScale },
-              { rotate: rightRotate },
-              { scale: pulseAnim },
-            ]
-          },
-        ]}
-      >
-        <Animated.View 
-          style={[
-            styles.tutorialGlow,
-            { opacity: rightGlowOpacity }
-          ]}
-        />
-        <TouchableOpacity
-          onPress={() => handlePress('après')}
-          activeOpacity={0.9}
-          style={styles.button}
-        >
-          <LinearGradient
-            colors={pressedButton === 'après' 
-              ? ['rgba(0,0,0,0.7)', 'rgba(0,0,0,0.8)', 'rgba(0,0,0,0.7)'] 
-              : ['rgba(0,0,0,0.4)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.5)']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.buttonGradient}
-          >
-            <Text style={styles.buttonText}>APRÈS</Text>
-            <Ionicons
-              name="arrow-forward"
-              size={isVerySmallScreen ? 14 : 18}
-              color={colors.white}
-              style={styles.buttonIcon}
-            />
-          </LinearGradient>
-        </TouchableOpacity>
-        <View style={styles.buttonShadow} />
-      </Animated.View>
-    </Animated.View>
+        {containerChildren}
+      </AnimatedRe.View>
+    </ChoiceButtonsCtx.Provider>
   );
 };
 

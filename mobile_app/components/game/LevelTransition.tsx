@@ -1,5 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import { View, StyleSheet, Dimensions, Animated, Image } from 'react-native';
+import React, { useEffect, useMemo } from 'react';
+import { View, StyleSheet, Dimensions, Image } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSpring,
+  withDelay,
+  runOnJS,
+} from 'react-native-reanimated';
 
 const { width, height } = Dimensions.get('window');
 
@@ -9,71 +17,53 @@ interface LevelTransitionProps {
 }
 
 const LevelTransition: React.FC<LevelTransitionProps> = ({ visible, onComplete }) => {
-  const opacity = useRef(new Animated.Value(0)).current;
-  const scale = useRef(new Animated.Value(0.8)).current;
+  const opacity = useSharedValue(0);
+  const scale = useSharedValue(0.8);
+  const animStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+    transform: [{ scale: scale.value }],
+  }));
 
   useEffect(() => {
     console.log('[LevelTransition] useEffect, visible:', visible);
     if (visible) {
       console.log('[LevelTransition] Démarrage animation d\'entrée');
       // Animation d'entrée
-      Animated.parallel([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 600,
-          useNativeDriver: true,
-        }),
-        Animated.spring(scale, {
-          toValue: 1,
-          friction: 8,
-          tension: 40,
-          useNativeDriver: true,
-        }),
-      ]).start(() => {
-        console.log('[LevelTransition] Animation d\'entrée terminée');
-      });
+      opacity.value = withTiming(1, { duration: 600 });
+      scale.value = withSpring(1, { damping: 15, stiffness: 90 });
 
       // Animation de sortie après 2 secondes (affichage plus long)
-      setTimeout(() => {
+      const t = setTimeout(() => {
         console.log('[LevelTransition] Démarrage animation de sortie');
-        Animated.parallel([
-          Animated.timing(opacity, {
-            toValue: 0,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-          Animated.timing(scale, {
-            toValue: 1.1,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-        ]).start(() => {
+        opacity.value = withTiming(0, { duration: 500 }, () => {
           console.log('[LevelTransition] Animation de sortie terminée');
-          onComplete();
+          runOnJS(onComplete)();
         });
+        scale.value = withTiming(1.1, { duration: 500 });
       }, 2000);
+      return () => clearTimeout(t);
     }
   }, [visible]);
+
+  // Enfant figé : un nouvel élément `children` recréerait le nœud AnimatedProps
+  // et restaurerait les valeurs par défaut une frame (snap pendant l'animation).
+  const imageEl = useMemo(() => (
+    <Image
+      source={require('@/assets/images/cartefinniveau.png')}
+      style={styles.image}
+      resizeMode="contain"
+    />
+  ), []);
 
   console.log('[LevelTransition] Render, visible:', visible);
   if (!visible) return null;
 
   return (
-    <Animated.View
-      style={[
-        styles.container,
-        {
-          opacity,
-          transform: [{ scale }],
-        },
-      ]}
+    <AnimatedRe.View
+      style={[styles.container, animStyle]}
     >
-      <Image
-        source={require('@/assets/images/cartefinniveau.png')}
-        style={styles.image}
-        resizeMode="contain"
-      />
-    </Animated.View>
+      {imageEl}
+    </AnimatedRe.View>
   );
 };
 

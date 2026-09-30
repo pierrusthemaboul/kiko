@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Animated, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -8,12 +8,20 @@ interface TutorialGhostHandProps {
 }
 
 export default function TutorialGhostHand({ style, label }: TutorialGhostHandProps) {
-  return (
-    <Animated.View pointerEvents="none" style={[styles.wrapper, style]}>
+  // Enfants figés : un nouvel élément à chaque render recréerait les nœuds
+  // AnimatedProps et restaurerait les valeurs animées par défaut une frame.
+  const contentEl = useMemo(() => (
+    <>
       <Animated.View style={styles.container}>
         <Ionicons name="hand-right" size={40} color="rgba(255,255,255,0.92)" />
       </Animated.View>
       {label ? <Text style={styles.label}>{label}</Text> : null}
+    </>
+  ), [label]);
+
+  return (
+    <Animated.View pointerEvents="none" style={[styles.wrapper, style]}>
+      {contentEl}
     </Animated.View>
   );
 }

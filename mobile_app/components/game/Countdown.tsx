@@ -1,6 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSequence,
+  withRepeat,
+} from 'react-native-reanimated';
 import { colors } from '@/constants/Colors';
+import { traceGameRender } from '@/utils/logger';
 
 
 interface CountdownProps {
@@ -10,48 +18,35 @@ interface CountdownProps {
 }
 
 const Countdown: React.FC<CountdownProps> = ({ timeLeft, isActive = true, isTutorial = false }) => {
-  const scaleAnim = useRef(new Animated.Value(1)).current;
-  const tutorialPulseAnim = useRef(new Animated.Value(1)).current;
+  const scaleAnim = useSharedValue(1);
+  const tutorialPulseAnim = useSharedValue(1);
+  const pulseStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: isTutorial ? tutorialPulseAnim.value : scaleAnim.value }],
+  }));
 
   useEffect(() => {
-    if (isActive) {
-      if (timeLeft <= 5) {
-        // Animation de pulse pour les dernières 5 secondes
-        Animated.sequence([
-          Animated.timing(scaleAnim, {
-            toValue: 1.2,
-            duration: 200,
-            useNativeDriver: true,
-          }),
-          Animated.timing(scaleAnim, {
-            toValue: 1,
-            duration: 200,
-            useNativeDriver: true,
-          }),
-        ]).start();
-      }
+    if (isActive && timeLeft <= 5) {
+      traceGameRender('countdown.pulse', { timeLeft });
+      // Animation de pulse pour les dernières 5 secondes
+      scaleAnim.value = withSequence(
+        withTiming(1.2, { duration: 200 }),
+        withTiming(1, { duration: 200 })
+      );
     }
   }, [timeLeft, isActive]);
 
   // Animation de pulse continue pendant le tutoriel
   useEffect(() => {
     if (isTutorial) {
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(tutorialPulseAnim, {
-            toValue: 1.15,
-            duration: 800,
-            useNativeDriver: true,
-          }),
-          Animated.timing(tutorialPulseAnim, {
-            toValue: 1,
-            duration: 800,
-            useNativeDriver: true,
-          }),
-        ])
-      ).start();
+      tutorialPulseAnim.value = withRepeat(
+        withSequence(
+          withTiming(1.15, { duration: 800 }),
+          withTiming(1, { duration: 800 })
+        ),
+        -1
+      );
     } else {
-      tutorialPulseAnim.setValue(1);
+      tutorialPulseAnim.value = 1;
     }
   }, [isTutorial]);
 
@@ -69,18 +64,18 @@ const Countdown: React.FC<CountdownProps> = ({ timeLeft, isActive = true, isTuto
   };
 
   return (
-    <Animated.View
+    <AnimatedRe.View
       style={[
         styles.container,
         isTutorial && styles.tutorialContainer,
-        { 
+        {
           backgroundColor: getBackgroundColor(),
-          transform: [{ scale: isTutorial ? tutorialPulseAnim : scaleAnim }]
         },
+        pulseStyle,
       ]}
     >
       <Text style={[styles.text, { color: getTextColor() }]}>{timeLeft}</Text>
-    </Animated.View>
+    </AnimatedRe.View>
   );
 };
 

@@ -17,11 +17,28 @@
  ************************************************************************************/
 
 // 1.C. Imports
-import React, { useEffect, useRef, useState } from 'react';
-import { View, Image, Text, StyleSheet, Dimensions, Animated, TouchableOpacity, Alert, Linking } from 'react-native';
+import React, { useEffect, useRef, useState, useId, useMemo, createContext, useContext } from 'react';
+import { traceGameRender } from '@/utils/logger';
+import { View, Image, Text, StyleSheet, Dimensions, TouchableOpacity, Alert, Linking } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withSequence,
+  withRepeat,
+  interpolateColor,
+} from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { supabase } from '@/lib/supabase/supabaseClients';
+
+// Le contenu du bandeau de date passe par ce contexte : props.children de
+// l'Animated.View doit garder une identité stable. Sans ça, React Native
+// recréait le nœud AnimatedProps à chaque render et restaurait les valeurs
+// par défaut (__restoreDefaultValues) → l'opacité du bandeau revenait une
+// frame à sa valeur de repos (bandeau qui clignote à chaque render).
+const DateBandCtx = createContext<React.ReactNode>(null);
+const DateBandSlot: React.FC = () => useContext(DateBandCtx) as React.ReactElement | null;
 
 const ADMIN_EMAIL = 'pierre.cousin7@gmail.com';
 const ADMIN_EVENT_EDIT_BASE_URL = 'https://adminweb-ruddy.vercel.app/edit-event';
@@ -41,6 +58,7 @@ interface AnimatedEventCardAProps {
   isCorrect?: boolean;
   streak?: number;
   level?: number;
+  debugSlot?: string;
 }
 
 /************************************************************************************
@@ -53,22 +71,90 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   showDate = false,
   isCorrect,
   streak,
-  level
+  level,
+  debugSlot,
 }) => {
-  // 1.E.1. Animations et états
-  const dateScale = useRef(new Animated.Value(1)).current;
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const cardId = useId();
+  const imageStartRef = useRef(0);
+  const trace = (action: string, data: Record<string, unknown> = {}) => {
+    traceGameRender(action, { cardId, slot: debugSlot, eventId: event?.id, position, ...data });
+  };
+
+  useEffect(() => {
+    trace('card.mount');
+    return () => traceGameRender('card.unmount', { cardId, slot: debugSlot });
+  }, []);
+  // 1.E.1. Animations et états (Reanimated : un seul canal UI-thread, plus de
+  // restauration de valeurs par défaut au milieu des animations)
+  const dateScale = useSharedValue(1);
+  const fadeAnim = useSharedValue(0);
   const [isTitleLong, setIsTitleLong] = useState(false);
 
   // État pour adapter la taille du texte en fonction de la longueur du titre
   const [titleFontSize, setTitleFontSize] = useState(position === 'top' ? 24 : 22);
 
   // Animation pour la couleur du titre
-  const titleColorAnim = useRef(new Animated.Value(0)).current;
+  const titleColorAnim = useSharedValue(0);
+
+  const dateScaleStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: dateScale.value }],
+  }));
+  const dateFadeStyle = useAnimatedStyle(() => ({ opacity: fadeAnim.value }));
+  const titleColorStyle = useAnimatedStyle(() => ({
+    color: interpolateColor(
+      titleColorAnim.value, [0, 0.5, 1],
+      ['rgba(255, 255, 255, 1)', 'rgba(220, 240, 255, 1)', 'rgba(255, 255, 255, 1)']
+    ),
+    textShadowColor: interpolateColor(
+      titleColorAnim.value, [0, 0.5, 1],
+      ['rgba(0, 0, 0, 0.9)', 'rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.9)']
+    ),
+  }));
 
   // État administrateur pour le bouton d'accès rapide admin
   const [isAdmin, setIsAdmin] = useState(false);
   const [isOpeningAdmin, setIsOpeningAdmin] = useState(false);
+
+  // Garde l'image précédente affichée sous la nouvelle le temps qu'elle charge,
+  // pour éviter une frame vide (clignotement) lors du changement d'événement.
+  const [prevIllustration, setPrevIllustration] = useState<string | null>(null);
+  const lastIllustrationRef = useRef<string | null>(event?.illustration_url ?? null);
+  const lastImageEventIdRef = useRef(event?.id);
+  const loadedIllustrationRef = useRef<string | null>(null);
+  const [lastRenderedUri, setLastRenderedUri] = useState(event?.illustration_url ?? null);
+
+  // Ajustement PENDANT le rendu (pattern officiel React) : l'underlay doit être
+  // visible dès le premier commit du nouvel événement. Le faire dans un effet
+  // laissait un commit avec la zone image vide (fond noir visible ~130ms).
+  const currentUri = event?.illustration_url ?? null;
+  if (currentUri !== lastRenderedUri) {
+    setPrevIllustration(loadedIllustrationRef.current === currentUri ? null : lastRenderedUri);
+    setLastRenderedUri(currentUri);
+  }
+
+  useEffect(() => {
+    const uri = event?.illustration_url ?? null;
+    if (uri !== lastIllustrationRef.current) {
+      trace('image.source-change', { previousEventId: lastImageEventIdRef.current, hasImage: Boolean(uri) });
+      lastIllustrationRef.current = uri;
+    }
+    lastImageEventIdRef.current = event?.id;
+  }, [event?.illustration_url, event?.id]);
+
+  useEffect(() => {
+    trace('card.commit', {
+      showDate, isCorrect, hasImage: Boolean(event?.illustration_url),
+      underlayVisible: Boolean(prevIllustration), underlayMatchesImage: prevIllustration === event?.illustration_url,
+      titleFontSize, isTitleLong, isAdmin,
+    });
+  }, [event?.id, event?.illustration_url, position, showDate, isCorrect, prevIllustration, titleFontSize, isTitleLong, isAdmin]);
+
+  const handleImageLoaded = () => {
+    loadedIllustrationRef.current = event?.illustration_url ?? null;
+    trace('image.load', { elapsedMs: imageStartRef.current ? Date.now() - imageStartRef.current : null, hasCallback: Boolean(onImageLoad) });
+    setPrevIllustration(null);
+    onImageLoad?.();
+  };
 
   // Vérification de l'administrateur
   useEffect(() => {
@@ -132,69 +218,52 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
 
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
+    if (position === 'top') {
+      fadeAnim.value = 1;
+      dateScale.value = 1;
+      trace('date.keep-visible');
+      return;
+    }
+    trace('date.effect', { showDate, targetOpacity: showDate ? 1 : 0 });
     if (showDate) {
+      // Le bandeau réapparaît en fondu à chaque nouvel événement affiché,
+      // pour éviter une apparition instantanée perçue comme un clignotement.
+      fadeAnim.value = 0;
       // Animation de pulsation pour la date
-      Animated.sequence([
-        Animated.timing(dateScale, {
-          toValue: 1.2,
-          duration: 200,
-          useNativeDriver: true,
-        }),
-        Animated.timing(dateScale, {
-          toValue: 1,
-          duration: 200,
-          useNativeDriver: true,
-        })
-      ]).start();
+      dateScale.value = withSequence(
+        withTiming(1.2, { duration: 200 }),
+        withTiming(1, { duration: 200 })
+      );
 
       // Animation de fondu pour l'ensemble
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }).start();
+      fadeAnim.value = withTiming(1, { duration: 300 });
     } else {
       // Reset de l'animation quand la date est cachée
-      fadeAnim.setValue(position === 'top' ? 1 : 0);
+      fadeAnim.value = 0;
     }
-  }, [showDate, position]);
+  }, [showDate, position, event?.id]);
 
   // Animation initiale au chargement pour la carte supérieure
   useEffect(() => {
     if (position === 'top') {
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 500,
-        useNativeDriver: true,
-      }).start();
+      fadeAnim.value = 1;
     }
   }, [position]);
 
   // Animation de variation de couleur pour le titre
   useEffect(() => {
+    trace('card.title-color-restart');
     // Réinitialiser l'animation à chaque changement d'événement
-    titleColorAnim.setValue(0);
+    titleColorAnim.value = 0;
 
     // Animation en boucle pour faire varier la couleur du titre
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(titleColorAnim, {
-          toValue: 1,
-          duration: 20000,
-          useNativeDriver: false
-        }),
-        Animated.timing(titleColorAnim, {
-          toValue: 0,
-          duration: 20000,
-          useNativeDriver: false
-        })
-      ])
-    ).start();
-
-    // Nettoyer l'animation quand le composant est démonté ou l'événement change
-    return () => {
-      titleColorAnim.stopAnimation();
-    };
+    titleColorAnim.value = withRepeat(
+      withSequence(
+        withTiming(1, { duration: 20000 }),
+        withTiming(0, { duration: 20000 })
+      ),
+      -1
+    );
   }, [event?.id]); // Ajouter event?.id comme dépendance
 
   // 1.E.3. Vérification et ajustement pour la longueur du titre
@@ -237,17 +306,6 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
 
   // 1.E.5. Rendu du titre avec ou sans effet d'ombre
   const renderTitle = () => {
-    // Création des couleurs interpolées pour le titre
-    const textColor = titleColorAnim.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: ['rgba(255, 255, 255, 1)', 'rgba(220, 240, 255, 1)', 'rgba(255, 255, 255, 1)']
-    });
-
-    const shadowColor = titleColorAnim.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: ['rgba(0, 0, 0, 0.9)', 'rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.9)']
-    });
-
     // Titre pour la carte du haut
     if (position === 'top') {
       return (
@@ -257,21 +315,18 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           isTitleLong && styles.titleContainerLong,
           showDate && styles.titleContainerWithDate
         ]}>
-          <Animated.Text
+          <AnimatedRe.Text
             style={[
               styles.title,
               styles.titleTop,
               styles.textOutline,
-              {
-                fontSize: titleFontSize,
-                color: textColor,
-                textShadowColor: shadowColor
-              }
+              { fontSize: titleFontSize },
+              titleColorStyle,
             ]}
             numberOfLines={3}
           >
             {event?.titre}
-          </Animated.Text>
+          </AnimatedRe.Text>
         </View>
       );
     }
@@ -279,7 +334,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     // Titre pour la carte du bas avec effet d'ombre amélioré
     return (
       <View style={styles.bottomTitleWrapper}>
-        <Animated.Text
+        <AnimatedRe.Text
           style={[
             styles.titleBottom,
             styles.textOutline,
@@ -289,17 +344,36 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
               textAlign: 'center',
               textShadowOffset: { width: 1, height: 1 },
               textShadowRadius: 3,
-              color: textColor,
-              textShadowColor: shadowColor
-            }
+            },
+            titleColorStyle,
           ]}
           numberOfLines={3}
         >
           {event?.titre}
-        </Animated.Text>
+        </AnimatedRe.Text>
       </View>
     );
   };
+
+  // Contenu du bandeau de date, fourni par DateBandCtx : l'élément fils de
+  // l'Animated.View reste alors figé entre les renders (DateBandSlot).
+  const dateBandSlotEl = useMemo(() => <DateBandSlot />, []);
+  const dateBandContent = (
+    <>
+      {position === 'top' && (
+        <View style={styles.separator} />
+      )}
+      <AnimatedRe.Text
+        style={[
+          styles.dateText,
+          position === 'top' ? styles.topDateText : styles.bottomDateText,
+          dateScaleStyle,
+        ]}
+      >
+        {event?.date ? getYearFromDate(event.date) : ''}
+      </AnimatedRe.Text>
+    </>
+  );
 
   // 1.E.6. Rendu de l'overlay de date
   const renderDate = () => {
@@ -314,34 +388,46 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     ];
 
     return (
-      <Animated.View style={[dateOverlayStyle, { opacity: fadeAnim }]}>
-        {position === 'top' && (
-          <View style={styles.separator} />
-        )}
-        <Animated.Text
-          style={[
-            styles.dateText,
-            position === 'top' ? styles.topDateText : styles.bottomDateText,
-            { transform: [{ scale: dateScale }] }
-          ]}
-        >
-          {getYearFromDate(event.date)}
-        </Animated.Text>
-      </Animated.View>
+      <AnimatedRe.View style={[dateOverlayStyle, dateFadeStyle]}>
+        {dateBandSlotEl}
+      </AnimatedRe.View>
     );
   };
 
   // 1.E.7. Rendu principal du composant
   return (
-    <View style={styles.container}>
+    <DateBandCtx.Provider value={dateBandContent}>
+    <View style={styles.container} onLayout={({ nativeEvent }) => trace('card.layout', { ...nativeEvent.layout })}>
       <View style={styles.cardFrame}>
         <View style={styles.cardContent}>
+          {/* Image précédente en sous-couche le temps que la nouvelle charge */}
+          {prevIllustration && (
+            <Image
+              source={{ uri: prevIllustration }}
+              style={styles.image}
+              resizeMode="cover"
+              fadeDuration={0}
+            />
+          )}
           {/* Image d'arrière-plan */}
           <Image
             source={{ uri: event?.illustration_url }}
             style={styles.image}
-            onLoad={onImageLoad}
+            onLoadStart={() => {
+              imageStartRef.current = Date.now();
+              trace('image.load-start');
+            }}
+            onLoad={({ nativeEvent }) => {
+              trace('image.source-check', { matchesRequested: nativeEvent.source?.uri === event?.illustration_url });
+              handleImageLoaded();
+            }}
+            onLoadEnd={() => trace('image.load-end')}
+            onError={({ nativeEvent }) => trace('image.error', {
+              elapsedMs: imageStartRef.current ? Date.now() - imageStartRef.current : null,
+              error: nativeEvent.error?.replace(/https?:\/\/\S+/g, '[image-url]').slice(0, 300),
+            })}
             resizeMode="cover"
+            fadeDuration={0}
           />
 
           {/* Dégradé pour améliorer la lisibilité du texte */}
@@ -385,6 +471,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
         </View>
       </View>
     </View>
+    </DateBandCtx.Provider>
   );
 };
 

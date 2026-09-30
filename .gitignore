@@ -81,3 +81,18 @@ tools/**/temp_images/
 
 .vercel
 supabase-env.txt
+
+# === ARTEFACTS D'INVESTIGATION (enquete flashs animations) ===
+mobile_app/kiko_flash*.mp4
+mobile_app/logcat_capture*.txt
+mobile_app/f7map/
+mobile_app/f7modal/
+mobile_app/f8_*.png
+mobile_app/frames/
+mobile_app/frames2/
+mobile_app/luma*.txt
+mobile_app/render_trace_*.txt
+mobile_app/yavg*.txt
+mobile_app/scratch_check_play_status.mjs
+mobile_app/__tests__/event-card-logic.test.js
+scratch/

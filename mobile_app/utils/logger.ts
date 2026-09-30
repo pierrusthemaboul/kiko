@@ -107,3 +107,23 @@ class LoggerService {
 }
 
 export const Logger = LoggerService.getInstance();
+
+const renderTraceSession = Date.now();
+let renderTraceSequence = 0;
+
+// Instrumentation d'enquête (flashs d'animation) — résolue : la cause était
+// le double canal de positionnement (props React vs driver Animated), corrigé
+// par la migration Reanimated. Les points de trace restent en place dans le
+// code ; pour les réactiver, passer ce flag à true.
+const RENDER_TRACE_ENABLED = false;
+
+export function traceGameRender(action: string, data: Record<string, unknown> = {}) {
+  if (!__DEV__ || !RENDER_TRACE_ENABLED) return;
+  console.log('[RENDER_TRACE]', JSON.stringify({
+    session: renderTraceSession,
+    seq: ++renderTraceSequence,
+    at: Date.now(),
+    action,
+    ...data,
+  }));
+}

@@ -1,12 +1,11 @@
 // /home/pierre/sword/kiko/components/game/GameContentA.tsx
 // ----- VERSION COMPLÈTE AVEC MODIFICATIONS INTÉGRÉES -----
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo, createContext, useContext } from 'react';
 import {
   View,
   Text,
   ActivityIndicator,
-  Animated,
   StyleSheet,
   Platform,
   useWindowDimensions,
@@ -15,6 +14,7 @@ import {
   Image,
   Modal
 } from 'react-native';
+import AnimatedRe, { useSharedValue, useAnimatedStyle, withTiming, withDelay, withSequence, runOnJS, type SharedValue } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router'; // Gardé si jamais utilisé ailleurs, sinon peut être enlevé
 import { Ionicons } from '@expo/vector-icons';
@@ -28,7 +28,7 @@ import EventLayoutA from './EventLayoutA'; // Assurez-vous que ce chemin est cor
 import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
-import { Logger } from '@/utils/logger';
+import { Logger, traceGameRender } from '@/utils/logger';
 import { getTutorialEnabled, disableTutorial } from '@/src/features/tutorial/tutorialStorage';
 
 // Types & Constants
@@ -41,6 +41,12 @@ import type {
   LevelEventSummary,
 } from '@/hooks/types'; // Assurez-vous que ce chemin est correct
 import { RewardType } from '@/hooks/types';
+
+// Contenu du jeu fourni via contexte à l'Animated.View de fondu : un nouvel
+// élément `children` à chaque render recréerait le nœud AnimatedProps et
+// restaurerait l'opacité par défaut pendant une frame (clignotement global).
+const GameContentCtx = createContext<React.ReactNode>(null);
+const GameContentSlot: React.FC = () => useContext(GameContentCtx) as React.ReactElement | null;
 
 // Interface pour l'historique des niveaux (si non définie ailleurs)
 interface LevelHistory {
@@ -73,7 +79,7 @@ interface GameContentAProps {
   streak: number;
   highScore: number;
   level: number;
-  fadeAnim: Animated.Value; // Animation gérée par le parent
+  fadeAnim: SharedValue<number>; // Animation gérée par le parent
   showLevelModal: boolean;
   showLevelTransition: boolean;
   triggerLevelEndAnim: boolean;
@@ -168,8 +174,21 @@ function GameContentA({
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const isVerySmallScreen = windowWidth < 320 || windowHeight < 650;
   const userInfoRef = useRef<UserInfoHandle>(null);
-  const contentOpacity = useRef(new Animated.Value(1)).current;
+  const contentOpacity = useSharedValue(1);
+  const contentOpacityStyle = useAnimatedStyle(() => ({ opacity: contentOpacity.value }));
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
+
+  useEffect(() => {
+    traceGameRender('game.visual-state', {
+      eventId: displayedEvent?.id, referenceId: previousEvent?.id,
+      level, lives: user?.lives, streak, showDates, isCorrect, isImageLoaded,
+      isLevelPaused, showLevelModal, showLevelTransition, isGameOver,
+      rewardType: currentReward?.type ?? null, rewardAmount: currentReward?.amount,
+      rewardPositionReady: isRewardPositionSet,
+    });
+  }, [displayedEvent?.id, previousEvent?.id, level, user?.lives, streak, showDates, isCorrect,
+    isImageLoaded, isLevelPaused, showLevelModal, showLevelTransition, isGameOver,
+    currentReward?.type, currentReward?.amount, isRewardPositionSet]);
 
   // --- États pour gérer l'affichage conditionnel de fin de partie ---
   const [showWatchAdOffer, setShowWatchAdOffer] = useState(false);
@@ -225,54 +244,52 @@ function GameContentA({
 
     const updateRewardPositionSafely = async () => {
       if (!currentReward || !userInfoRef.current || !mounted || !user) {
-        // console.log("[GameContentA] Cannot update reward position - prerequisites not met");
+        traceGameRender('content.reward-position', { skipped: true, hasReward: !!currentReward, hasRef: !!userInfoRef.current, hasUser: !!user, mounted });
         return;
       }
 
       try {
-        // console.log(`[GameContentA] Getting position for reward type: ${currentReward.type}`);
         const position = currentReward.type === RewardType.EXTRA_LIFE
           ? await userInfoRef.current.getLifePosition()
           : await userInfoRef.current.getPointsPosition();
 
         if (mounted && position && typeof position.x === 'number' && typeof position.y === 'number') {
-          // console.log(`[GameContentA] Got valid position: x=${position.x}, y=${position.y}`);
           const positionChanged =
             !currentReward.targetPosition ||
             Math.abs(currentReward.targetPosition.x - position.x) > 5 ||
             Math.abs(currentReward.targetPosition.y - position.y) > 5;
 
           if (positionChanged) {
-            // console.log(`[GameContentA] Updating reward position`);
             updateRewardPosition(position);
+            traceGameRender('content.reward-position', { source: 'measure', x: position.x, y: position.y, type: currentReward.type });
             setIsRewardPositionSet(true);
           } else {
-            // console.log("[GameContentA] Position unchanged, no update needed");
+            traceGameRender('content.reward-position', { source: 'measure-unchanged', type: currentReward.type });
             setIsRewardPositionSet(true);
           }
         } else {
-          // console.warn("[GameContentA] getPosition returned invalid position:", position);
+          traceGameRender('content.reward-position', { source: 'invalid', attempt: attempts, x: position?.x, y: position?.y });
           if (attempts < MAX_ATTEMPTS) {
             attempts++;
           } else {
-            // console.log("[GameContentA] Using fallback position after failed attempts");
             const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
               ? { x: windowWidth * 0.80, y: 50 }
               : { x: windowWidth * 0.20, y: 50 };
             updateRewardPosition(fallbackPosition);
+            traceGameRender('content.reward-position', { source: 'fallback', x: fallbackPosition.x, y: fallbackPosition.y, type: currentReward.type });
             setIsRewardPositionSet(true);
           }
         }
       } catch (e) {
-        // console.warn("[GameContentA] Error getting element position:", e);
+        traceGameRender('content.reward-position', { source: 'error', attempt: attempts });
         if (attempts < MAX_ATTEMPTS) {
           attempts++;
         } else {
-          // console.log("[GameContentA] Using fallback position after error");
           const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
             ? { x: windowWidth * 0.80, y: 50 }
             : { x: windowWidth * 0.20, y: 50 };
           updateRewardPosition(fallbackPosition);
+          traceGameRender('content.reward-position', { source: 'fallback', x: fallbackPosition.x, y: fallbackPosition.y, type: currentReward.type });
           setIsRewardPositionSet(true);
         }
       }
@@ -307,14 +324,17 @@ function GameContentA({
   // (Logique inchangée)
   useEffect(() => {
     if (showLevelModal) {
-      Animated.sequence([
-        Animated.timing(contentOpacity, { toValue: 0.3, duration: 300, useNativeDriver: true }),
-        Animated.timing(contentOpacity, { toValue: 1, duration: 300, delay: 1000, useNativeDriver: true }),
-      ]).start();
+      traceGameRender('content.modal-opacity', { phase: 'dip-start' });
+      contentOpacity.value = withSequence(
+        withTiming(0.3, { duration: 300 }),
+        withDelay(1000, withTiming(1, { duration: 300 }, (finished) =>
+          runOnJS(traceGameRender)('content.modal-opacity', { phase: 'dip-end', finished: finished === true })))
+      );
     } else {
-      contentOpacity.setValue(1);
+      contentOpacity.value = 1;
+      traceGameRender('content.modal-opacity', { phase: 'reset' });
     }
-  }, [showLevelModal, contentOpacity]);
+  }, [showLevelModal]);
 
   // --- Effet pour gérer la fin de partie et l'offre de publicité ---
   // Affiche l'offre même si la pub n'est pas chargée, avec indicateur de chargement
@@ -361,12 +381,23 @@ function GameContentA({
     }
   }, [showWatchAdOffer, isAdLoaded]);
 
+  // --- Effet pour surveiller les overlays de fin de partie (diagnostic) ---
+  const prevGameOverUiRef = useRef('');
+  useEffect(() => {
+    const sig = `${showWatchAdOffer}|${showScoreboard}|${isGameOver}|${isLoadingAd}`;
+    if (prevGameOverUiRef.current !== sig) {
+      prevGameOverUiRef.current = sig;
+      traceGameRender('content.gameover-ui', { showWatchAdOffer, showScoreboard, isGameOver, isLoadingAd });
+    }
+  }, [showWatchAdOffer, showScoreboard, isGameOver, isLoadingAd]);
+
   // --- Effet pour marquer la fin du premier rendu significatif ---
   // (Logique inchangée)
   useEffect(() => {
     if (previousEvent && displayedEvent && isInitialRenderRef.current) {
       const timer = setTimeout(() => {
         isInitialRenderRef.current = false;
+        traceGameRender('content.initial-render-done');
       }, 0);
       return () => clearTimeout(timer);
     }
@@ -661,10 +692,15 @@ function GameContentA({
     );
   };
 
+  // Enfant figé de l'Animated.View de fondu : le contenu réel arrive par
+  // GameContentCtx (voir commentaire en haut du fichier).
+  const contentSlotEl = useMemo(() => <GameContentSlot />, []);
+
   // --- Rendu du Composant Principal ---
   return (
     // Le conteneur principal et l'animation fadeAnim sont gérés par le parent,
     // donc on peut simplifier ici. Le parent applique déjà l'animation.
+    <GameContentCtx.Provider value={renderContent()}>
     <View style={styles.container}>
       {/* La barre de statut est gérée par le parent */}
       {/* L'Animated.View avec fadeAnim est appliqué par le parent */}
@@ -728,10 +764,11 @@ function GameContentA({
       )}
 
       {/* Contenu principal du jeu avec son animation d'opacité interne (pour le modal) */}
-      <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
-        {renderContent()}
-      </Animated.View>
+      <AnimatedRe.View style={[styles.content, contentOpacityStyle]}>
+        {contentSlotEl}
+      </AnimatedRe.View>
     </View>
+    </GameContentCtx.Provider>
   );
 }
 

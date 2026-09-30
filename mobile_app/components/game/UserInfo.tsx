@@ -3,20 +3,28 @@ import React, {
   useImperativeHandle,
   useRef,
   useState,
-  useEffect
+  useEffect,
+  useMemo
 } from 'react';
 import {
   View,
   Text,
   StyleSheet,
-  Animated,
   Dimensions,
   Pressable,
   useWindowDimensions
 } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+  withSequence,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
 import { ActiveBonus, BonusType } from '@/hooks/types';
+import { traceGameRender } from '@/utils/logger';
 
 // Obtenir les dimensions de l'écran
 const { width, height } = Dimensions.get('window');
@@ -73,7 +81,11 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     const livesRef = useRef<View>(null);
 
     // Animation "bounce" lors du changement de points ou de vies
-    const bounceAnim = useRef(new Animated.Value(1)).current;
+    // (Reanimated : un seul canal UI-thread, pas de reset Fabric)
+    const bounceAnim = useSharedValue(1);
+    const bounceStyle = useAnimatedStyle(() => ({
+      transform: [{ scale: bounceAnim.value }],
+    }));
 
     // Position du conteneur principal (pour calculer l'offset Y)
     const [containerPosition, setContainerPosition] = useState({ x: 0, y: 0 });
@@ -85,21 +97,27 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     const [livesPosition, setLivesPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
     // Animation de bounce quand les points ou vies changent
+    const prevScoreRef = useRef({ points, lives });
     useEffect(() => {
-      Animated.sequence([
-        Animated.spring(bounceAnim, {
-          toValue: 1.1,
-          friction: 3,
-          tension: 40,
-          useNativeDriver: true
-        }),
-        Animated.spring(bounceAnim, {
-          toValue: 1,
-          friction: 3,
-          useNativeDriver: true
+      const prev = prevScoreRef.current;
+      traceGameRender('userinfo.bounce', { points, lives, prevPoints: prev.points, prevLives: prev.lives });
+      prevScoreRef.current = { points, lives };
+      bounceAnim.value = withSequence(
+        withSpring(1.1, { damping: 8, stiffness: 100 }),
+        withSpring(1, { damping: 8, stiffness: 100 }, (finished) => {
+          runOnJS(traceGameRender)('userinfo.bounce-end', { finished: finished === true, points, lives });
         })
-      ]).start();
+      );
     }, [points, lives]);
+
+    // Trace les changements de cœurs affichés (diagnostic clignotement)
+    const prevLivesRenderRef = useRef(lives);
+    useEffect(() => {
+      if (prevLivesRenderRef.current !== lives) {
+        traceGameRender('userinfo.hearts', { from: prevLivesRenderRef.current, to: lives, maxLives });
+        prevLivesRenderRef.current = lives;
+      }
+    }, [lives, maxLives]);
 
     // Mesurer la position du conteneur principal
     const handleContainerLayout = () => {
@@ -157,13 +175,13 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
           if (pointsRef.current) {
             pointsRef.current.measureInWindow((x, y, width, height) => {
               const pos = { x: x + width / 2, y: y + height / 2 };
-              // console.log('[UserInfo] Measured points position:', pos);
+              traceGameRender('userinfo.measure', { kind: 'points', source: 'ref', x: pos.x, y: pos.y });
               setPointsPosition(pos);
               resolve(pos);
             });
           } else {
-            // console.log('[UserInfo] Fallback points position used');
             const fallbackPos = { x: width * 0.25, y: 40 };
+            traceGameRender('userinfo.measure', { kind: 'points', source: 'fallback', x: fallbackPos.x, y: fallbackPos.y });
             resolve(fallbackPos);
           }
         }),
@@ -176,7 +194,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
           if (livesRef.current) {
             livesRef.current.measureInWindow((x, y, width, height) => {
               const pos = { x: x + width / 2, y: y + height / 2 };
-              // console.log('[UserInfo] Measured lives position:', pos);
+              traceGameRender('userinfo.measure', { kind: 'life', source: 'ref', x: pos.x, y: pos.y });
               setLivesPosition(pos);
               resolve(pos);
             });
@@ -189,13 +207,13 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               // Ajouter un offset Y pour cibler le centre des coeurs
               const lifeY = y + (containerHeight / 2);
 
-              // console.log('[UserInfo] Calculated life position:', { x: lifeX, y: lifeY });
+              traceGameRender('userinfo.measure', { kind: 'life', source: 'container', x: lifeX, y: lifeY });
               resolve({ x: lifeX, y: lifeY });
             });
           } else {
             // Fallback si aucune référence n'est disponible
-            // console.log('[UserInfo] Fallback lives position used');
             const fallbackPos = { x: width * 0.80, y: 40 };
+            traceGameRender('userinfo.measure', { kind: 'life', source: 'fallback', x: fallbackPos.x, y: fallbackPos.y });
             resolve(fallbackPos);
           }
         })
@@ -274,24 +292,34 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       );
     };
 
+    // Icônes de cœur figées : un nouvel élément `children` à chaque render
+    // recréerait le nœud AnimatedProps et restaurerait l'échelle par défaut
+    // pendant une frame (cœur qui clignote au milieu de son animation).
+    const heartIcons = useMemo(() => (
+      Array.from({ length: Math.max(1, maxLives) }, (_, i) => (
+        <Ionicons
+          key={i}
+          name={i < lives ? 'heart' : 'heart-outline'}
+          size={20}
+          color={i < lives ? colors.incorrectRed : colors.lightText}
+          style={styles.heart}
+        />
+      ))
+    ), [lives, maxLives]);
+
     // Rendu des vies
     const renderLives = () => (
       <View ref={livesRef} style={styles.livesContainer} onLayout={handleLivesLayout}>
         {Array.from({ length: Math.max(1, maxLives) }, (_, i) => (
-          <Animated.View
+          <AnimatedRe.View
             key={i}
             style={[
               styles.heartContainer,
-              i < lives && { transform: [{ scale: bounceAnim }] }
+              i < lives && bounceStyle
             ]}
           >
-            <Ionicons
-              name={i < lives ? 'heart' : 'heart-outline'}
-              size={20}
-              color={i < lives ? colors.incorrectRed : colors.lightText}
-              style={styles.heart}
-            />
-          </Animated.View>
+            {heartIcons[i]}
+          </AnimatedRe.View>
         ))}
       </View>
     );

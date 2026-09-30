@@ -3,6 +3,7 @@ import { AppState } from 'react-native';
 // FirebaseAnalytics import est conservé
 import { FirebaseAnalytics } from '../../lib/firebase';
 import useAudio from '../useAudio';
+import { traceGameRender } from '../../utils/logger';
 
 /**
  * Hook pour gérer le compte à rebours et les événements liés au timing
@@ -45,6 +46,15 @@ export function useTimer({
     fromRewardedAdRef.current = isFromRewardedAd;
   }, [isFromRewardedAd]);
 
+  // Trace des transitions du compte à rebours (diagnostic animations)
+  const prevCountdownActiveRef = useRef(isCountdownActive);
+  useEffect(() => {
+    if (prevCountdownActiveRef.current !== isCountdownActive) {
+      prevCountdownActiveRef.current = isCountdownActive;
+      traceGameRender('timer.state', { active: isCountdownActive, timeLeft, isLevelPaused, isGameOver });
+    }
+  }, [isCountdownActive, timeLeft, isLevelPaused, isGameOver]);
+
   useEffect(() => {
     defaultTimeRef.current = initialTime;
     setTimeLeft(initialTime);
@@ -62,6 +72,7 @@ export function useTimer({
 
           if (nextTime <= 0) {
             clearInterval(timer);
+            traceGameRender('timer.timeout', { prevTime });
             handleTimeout();
             return 0;
           }
@@ -130,6 +141,7 @@ export function useTimer({
 
   // Fonction pour initialiser ou réinitialiser le timer
   const resetTimer = useCallback((time: number = defaultTimeRef.current, skipNextMalus: boolean = false) => {
+    traceGameRender('timer.reset', { time, skipNextMalus });
     setTimeLeft(time);
     setIsCountdownActive(false);
     
@@ -145,6 +157,7 @@ export function useTimer({
 
   // Fonction pour démarrer le timer quand l'image est chargée
   const handleImageLoad = useCallback(() => {
+    traceGameRender('timer.image-loaded', { willStartTimer: !isLevelPaused && !isGameOver });
     setIsImageLoaded(true);
 
     if (!isLevelPaused && !isGameOver) {
