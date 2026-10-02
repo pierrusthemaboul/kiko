@@ -1,11 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
-  Animated,
 } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { MyRankingData, RankingPlayer } from '@/hooks/useMyRanking';
 
@@ -47,8 +52,14 @@ export default function MyRankingCarousel({
   loading = false,
 }: MyRankingCarouselProps) {
   const [currentPeriod, setCurrentPeriod] = useState<Period>('daily');
-  const slideAnim = useRef(new Animated.Value(0)).current;
-  const fadeAnim = useRef(new Animated.Value(1)).current;
+  // Reanimated : slide+fade sur le thread UI — le commit React du changement
+  // de période ne peut plus réécrire une valeur incohérente (clignotement).
+  const slideAnim = useSharedValue(0);
+  const fadeAnim = useSharedValue(1);
+  const contentAnimStyle = useAnimatedStyle(() => ({
+    opacity: fadeAnim.value,
+    transform: [{ translateX: slideAnim.value }],
+  }));
 
   const periods: Period[] = ['daily', 'weekly', 'monthly', 'allTime'];
   const currentIndex = periods.indexOf(currentPeriod);
@@ -61,33 +72,20 @@ export default function MyRankingCarousel({
 
     const nextPeriod = periods[nextIndex];
 
-    Animated.parallel([
-      Animated.timing(slideAnim, {
-        toValue: direction === 'next' ? -50 : 50,
-        duration: 200,
-        useNativeDriver: true,
-      }),
-      Animated.timing(fadeAnim, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: true,
-      }),
-    ]).start(() => {
-      setCurrentPeriod(nextPeriod);
-      slideAnim.setValue(direction === 'next' ? 50 : -50);
-      Animated.parallel([
-        Animated.timing(slideAnim, {
-          toValue: 0,
-          duration: 200,
-          useNativeDriver: true,
-        }),
-        Animated.timing(fadeAnim, {
-          toValue: 1,
-          duration: 200,
-          useNativeDriver: true,
-        }),
-      ]).start();
+    // Phase 1 : sortie (slide + fade out), puis JS swap du contenu et rentrée.
+    slideAnim.value = withTiming(direction === 'next' ? -50 : 50, { duration: 200 });
+    fadeAnim.value = withTiming(0, { duration: 200 }, (finished) => {
+      if (finished !== true) return;
+      runOnJS(swapPeriodContent)(nextPeriod, direction);
     });
+  };
+
+  const swapPeriodContent = (nextPeriod: Period, direction: 'next' | 'prev') => {
+    setCurrentPeriod(nextPeriod);
+    // Phase 2 : téléportation de l'autre côté + slide/fade in.
+    slideAnim.value = direction === 'next' ? 50 : -50;
+    slideAnim.value = withTiming(0, { duration: 200 });
+    fadeAnim.value = withTiming(1, { duration: 200 });
   };
 
   const currentData = rankings[currentPeriod] || [];
@@ -123,14 +121,8 @@ export default function MyRankingCarousel({
         </TouchableOpacity>
       </View>
 
-      <Animated.View
-        style={[
-          styles.content,
-          {
-            opacity: fadeAnim,
-            transform: [{ translateX: slideAnim }],
-          },
-        ]}
+      <AnimatedRe.View
+        style={[styles.content, contentAnimStyle]}
       >
         {loading ? (
           <Text style={styles.emptyText}>Chargement...</Text>
@@ -176,7 +168,7 @@ export default function MyRankingCarousel({
             </View>
           ))
         )}
-      </Animated.View>
+      </AnimatedRe.View>
 
       <View style={styles.dotsContainer}>
         {periods.map((period) => (

@@ -313,3 +313,29 @@ Composants migrés (10 — vérifiés présents dans le code) :
 > été démontée ; ce qui subsiste est **inerte et réversible d'un seul flag**
 > (`RENDER_TRACE_ENABLED`). L'enquête reste **close** : verdict on-device
 > (capture8) inchangé.
+
+---
+
+## 13. EXTENSION ACCUEIL — ProgressionDrawer + carrousels (validation en attente)
+
+**Symptôme rapporté** : la flèche d'ouverture des tableaux de classement sur la
+vue d'accueil produit le même clignotement.
+
+**Constat** : `src/features/home/components/ProgressionDrawer.tsx` pilotait le
+`translateY` du tiroir en core `Animated` + un `useEffect` qui faisait
+`translateY.setValue(isOpen ? 0 : closedOffset)` **sur chaque changement
+d'`isOpen`** — soit un écrasement de la valeur finale pendant que le spring
+tournait (saut visible garanti), en plus de la classe double-canal déjà
+identifiée (commit Fabric vs driver natif).
+
+**Migration Reanimated 4 (vague 3 — écran d'accueil)** :
+
+| Composant | Animations migrées |
+|---|---|
+| `ProgressionDrawer` | `translateY` du tiroir (`withSpring`) — l'effet stompant réduit à la seule resync dimensions |
+| `LeaderboardCarousel` | slide/fade de changement de période — swap React via `runOnJS` au callback du fade-out |
+| `MyRankingCarousel` | idem |
+| `QuestCarousel` | fade d'onglet + pulsation du bouton de récompense (`withRepeat`) |
+
+**Typecheck : OK.** Validation on-device à faire (ouverture/fermeture tiroir +
+navigation des périodes).

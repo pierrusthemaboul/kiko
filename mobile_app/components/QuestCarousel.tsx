@@ -1,5 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions, Easing, ActivityIndicator, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions, ActivityIndicator, Alert } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withRepeat,
+  withSequence,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import type { QuestWithProgress } from '@/lib/economy/quests';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
@@ -68,40 +76,35 @@ export default function QuestCarousel({
   const [currentType, setCurrentType] = useState<QuestType>('daily');
   const [loadingQuestId, setLoadingQuestId] = useState<string | null>(null);
 
-  const fadeAnim = useRef(new Animated.Value(1)).current;
-  const pulseAnim = useRef(new Animated.Value(1)).current;
+  // Reanimated : fade + pulsation sur le thread UI — les commits React
+  // (changement d'onglet, claim) ne peuvent plus réécrire des valeurs
+  // incohérentes (même cause racine que les flashs du jeu).
+  const fadeAnim = useSharedValue(1);
+  const pulseAnim = useSharedValue(1);
+  const fadeStyle = useAnimatedStyle(() => ({ opacity: fadeAnim.value }));
+  const pulseStyle = useAnimatedStyle(() => ({ transform: [{ scale: pulseAnim.value }] }));
 
   // Animation de pulsation pour le bouton de récompense
   useEffect(() => {
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.05,
-          duration: 800,
-          useNativeDriver: true,
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 800,
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
+    pulseAnim.value = withRepeat(
+      withSequence(
+        withTiming(1.05, { duration: 800 }),
+        withTiming(1, { duration: 800 })
+      ),
+      -1
+    );
   }, []);
 
   const transitionTo = (newType: QuestType) => {
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 200,
-      useNativeDriver: true,
-    }).start(() => {
-      setCurrentType(newType);
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }).start();
+    fadeAnim.value = withTiming(0, { duration: 200 }, (finished) => {
+      if (finished !== true) return;
+      runOnJS(swapQuestContent)(newType);
     });
+  };
+
+  const swapQuestContent = (newType: QuestType) => {
+    setCurrentType(newType);
+    fadeAnim.value = withTiming(1, { duration: 300 });
   };
 
   const handleClaim = async (questKey: string, id: string) => {
@@ -177,14 +180,14 @@ export default function QuestCarousel({
         ))}
       </View>
 
-      <Animated.ScrollView
+      <AnimatedRe.ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         decelerationRate="fast"
         snapToInterval={screenWidth * 0.8 + 16} // Largeur carte + gap
         snapToAlignment="start"
         contentContainerStyle={styles.scrollContent}
-        style={{ opacity: fadeAnim }}
+        style={fadeStyle}
       >
         {currentQuests.length === 0 ? (
           <View style={styles.emptyCard}>
@@ -261,7 +264,7 @@ export default function QuestCarousel({
                       <Text style={styles.claimedText}>DÉJÀ RÉCUPÉRÉ</Text>
                     </View>
                   ) : isCompleted ? (
-                    <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+                    <AnimatedRe.View style={pulseStyle}>
                       <TouchableOpacity
                         onPress={() => handleClaim(quest.quest_key, quest.id)}
                         style={[styles.premiumClaimButton, { shadowColor: config.color }]}
@@ -276,7 +279,7 @@ export default function QuestCarousel({
                           </View>
                         )}
                       </TouchableOpacity>
-                    </Animated.View>
+                    </AnimatedRe.View>
                   ) : (
                     <View style={styles.statusBadge}>
                       <Text style={styles.statusText}>EN COURS</Text>
@@ -287,7 +290,7 @@ export default function QuestCarousel({
             );
           })
         )}
-      </Animated.ScrollView>
+      </AnimatedRe.ScrollView>
     </View>
   );
 }

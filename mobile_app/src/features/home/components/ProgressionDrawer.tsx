@@ -1,5 +1,10 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, useWindowDimensions } from 'react-native';
+import React, { useState, useMemo, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, useWindowDimensions } from 'react-native';
+import AnimatedRe, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants';
 import QuestCarousel from '@/components/QuestCarousel';
@@ -27,24 +32,29 @@ export function ProgressionDrawer({
   const closedOffset = useMemo(() => Math.round(height * 0.7), [height]);
 
   const [isOpen, setIsOpen] = useState(false);
-  const translateY = useRef(new Animated.Value(closedOffset)).current;
+  // Reanimated : la position du tiroir vit uniquement sur le thread UI — un
+  // commit React (setIsOpen -> nouveau texte/icône) ne peut plus réécrire une
+  // valeur incohérente pendant le spring = plus de clignotement.
+  const translateY = useSharedValue(closedOffset);
+  const drawerStyle = useAnimatedStyle(() => ({
+    transform: [{ translateY: translateY.value }],
+  }));
 
+  // Resync si les dimensions changent (rotation, fold...)
   useEffect(() => {
-    translateY.setValue(isOpen ? 0 : closedOffset);
-  }, [closedOffset, isOpen, translateY]);
+    translateY.value = isOpen ? 0 : closedOffset;
+  }, [closedOffset]);
 
   const toggleDrawer = () => {
-    const toValue = isOpen ? closedOffset : 0;
-    Animated.spring(translateY, {
-      toValue,
-      useNativeDriver: true,
-      bounciness: 4,
-    }).start();
+    translateY.value = withSpring(isOpen ? closedOffset : 0, {
+      damping: 20,
+      stiffness: 150,
+    });
     setIsOpen(!isOpen);
   };
 
   return (
-    <Animated.View style={[styles.drawerContainer, { height: drawerHeight, transform: [{ translateY }] }]}>
+    <AnimatedRe.View style={[styles.drawerContainer, { height: drawerHeight }, drawerStyle]}>
       <TouchableOpacity style={styles.handleContainer} onPress={toggleDrawer} activeOpacity={0.8}>
         <View style={styles.handle} />
         <Text style={styles.handleText}>{isOpen ? "Fermer la progression" : "Voir votre progression"}</Text>
@@ -89,7 +99,7 @@ export function ProgressionDrawer({
           />
         </View>
       </ScrollView>
-    </Animated.View>
+    </AnimatedRe.View>
   );
 }
 
