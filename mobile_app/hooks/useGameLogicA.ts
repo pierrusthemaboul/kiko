@@ -231,6 +231,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     showGameOverInterstitial,
     resetAdsState,
     isAdLoaded,
+    reloadRewardedAd,
   } = useAds({
     user,
     setUser,
@@ -1893,6 +1894,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     resetAdsState, // from useAds
     resetGameFlowState, // <-- EXPOSER LA NOUVELLE FONCTION
     isAdLoaded, // from useAds - helper pour vérifier le chargement des pubs
+    reloadRewardedAd, // from useAds - force le rechargement de la pub récompensée
     adState: {
       rewardedLoaded: adState.rewardedLoaded,
       hasWatchedRewardedAd: adState.hasWatchedRewardedAd,

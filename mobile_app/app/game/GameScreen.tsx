@@ -430,6 +430,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             showRewardedAd={gameLogic?.showRewardedAd}
             resetAdsState={gameLogic?.resetAdsState} // Fonction reset pubs
             isAdLoaded={gameLogic?.isAdLoaded} // Vérification native de chargement des pubs
+            reloadRewardedAd={gameLogic?.reloadRewardedAd} // Rechargement forcé de la pub récompensée
             completeRewardAnimation={gameLogic?.completeRewardAnimation}
             updateRewardPosition={gameLogic?.updateRewardPosition}
             // Props d'animation/modales

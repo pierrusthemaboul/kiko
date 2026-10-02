@@ -987,6 +987,20 @@ export function useAds({
     }
   }, []);
 
+  // Force un rechargement de la pub récompensée si elle n'est pas prête
+  // (utilisé quand l'offre "vie supplémentaire" s'affiche sans pub chargée)
+  const reloadRewardedAd = useCallback(() => {
+    if (rewardedAd.loaded) {
+      return;
+    }
+    try {
+      adLog('log', "Reloading rewarded ad on explicit request.");
+      rewardedAd.load();
+    } catch (error) {
+      adLog('warn', "Error while reloading rewarded ad:", error);
+    }
+  }, []);
+
   // Helper pour vérifier si une pub est chargée (utilise l'instance native)
   const isAdLoaded = useCallback((adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => {
     switch (adType) {
@@ -1019,6 +1033,7 @@ export function useAds({
     showGameOverInterstitial,
     resetAdsState,
     isAdLoaded, // Nouvelle fonction helper
+    reloadRewardedAd, // Force un rechargement de la pub récompensée
   };
 }
 

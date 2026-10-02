@@ -30,10 +30,20 @@ const rewardedLog = (level: 'log' | 'warn' | 'error', message: string, ...args: 
   Logger.debug('Ads', message, args);
 };
 
-const rewardedPlayAd = RewardedAd.createForAdRequest(
-  getAdUnitId(AD_UNIT_IDS.rewardedExtraPlay),
-  getAdRequestOptions(),
-);
+// Instance créée paresseusement au premier accès : la créer au niveau module
+// capturait getAdRequestOptions() AVANT la restauration du consentement RGPD,
+// ce qui figeait requestNonPersonalizedAdsOnly=true en prod pour toujours.
+let rewardedPlayAdInstance: RewardedAd | null = null;
+
+function getRewardedPlayAd(): RewardedAd {
+  if (!rewardedPlayAdInstance) {
+    rewardedPlayAdInstance = RewardedAd.createForAdRequest(
+      getAdUnitId(AD_UNIT_IDS.rewardedExtraPlay),
+      getAdRequestOptions(),
+    );
+  }
+  return rewardedPlayAdInstance;
+}
 
 // État global pour partager entre toutes les instances du hook
 let globalIsLoaded = false;
@@ -70,6 +80,8 @@ export function useRewardedPlayAd(options?: UseRewardedPlayAdOptions) {
       setIsShowing(globalIsShowing);
     };
     stateListeners.add(updateState);
+
+    const rewardedPlayAd = getRewardedPlayAd();
 
     const loadedListener = rewardedPlayAd.addAdEventListener(
       RewardedAdEventType.LOADED,
@@ -239,6 +251,7 @@ export function useRewardedPlayAd(options?: UseRewardedPlayAdOptions) {
   }, []);
 
   const showAd = useCallback(() => {
+    const rewardedPlayAd = getRewardedPlayAd();
     // Vérifier l'instance native directement (plus fiable que le state React)
     if (!rewardedPlayAd.loaded) {
       rewardedLog('warn', 'Ad not loaded yet (native check)');

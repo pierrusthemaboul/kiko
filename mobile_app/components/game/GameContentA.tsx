@@ -29,6 +29,8 @@ import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
 import { Logger, traceGameRender } from '@/utils/logger';
+import { FirebaseAnalytics } from '@/lib/firebase';
+import { RemoteLogger } from '@/lib/remoteLogger';
 import { getTutorialEnabled, disableTutorial } from '@/src/features/tutorial/tutorialStorage';
 
 // Types & Constants
@@ -102,6 +104,7 @@ interface GameContentAProps {
   levelCompletedEvents: LevelEventSummary[];
   levelsHistory: LevelHistory[];
   showRewardedAd?: () => boolean;
+  reloadRewardedAd?: () => void;
   adState: AdStateForContent;
   resetAdsState?: () => void;
 
@@ -119,6 +122,9 @@ interface GameContentAProps {
   musicEnabled?: boolean;
   onToggleMusic?: () => void;
 }
+
+// Délai max d'attente du chargement de la pub récompensée avant de proposer "Réessayer"
+const REWARDED_AD_LOAD_TIMEOUT_MS = 10000;
 
 function GameContentA({
   user,
@@ -152,6 +158,7 @@ function GameContentA({
   levelCompletedEvents,
   levelsHistory,
   showRewardedAd,
+  reloadRewardedAd,
   adState,
   resetAdsState, // Reçu du parent
 
@@ -194,6 +201,7 @@ function GameContentA({
   const [showWatchAdOffer, setShowWatchAdOffer] = useState(false);
   const [showScoreboard, setShowScoreboard] = useState(false);
   const [isLoadingAd, setIsLoadingAd] = useState(false);
+  const [adUnavailable, setAdUnavailable] = useState(false);
   const [tutorialEnabled, setTutorialEnabled] = useState(false);
   const [showTutorialGhost, setShowTutorialGhost] = useState(false);
   const [tutorialStep, setTutorialStep] = useState(0);
@@ -348,10 +356,10 @@ function GameContentA({
       if (canOfferAd) {
         setShowWatchAdOffer(true);
         setShowScoreboard(false);
-        // Si la pub n'est pas chargée, on tente de la charger en arrière-plan
-        if (!isAdLoaded('rewarded')) {
-          console.log('[GameContentA] Pub non chargée, tentative de chargement en arrière-plan');
-        }
+        FirebaseAnalytics.trackEvent('rewarded_offer_shown', {
+          rewarded_loaded: isAdLoaded('rewarded'),
+          level: user.level ?? 0,
+        });
       } else if (user.lives === 0) {
         setShowWatchAdOffer(false);
         setShowScoreboard(true); // Afficher le scoreboard si pas de pub ou déjà vue
@@ -373,6 +381,36 @@ function GameContentA({
       setIsLoadingAd(false);
     }
   }, [showScoreboard, isGameOver]);
+
+  // --- Effet : rechargement + timeout de la pub récompensée ---
+  // Sans fallback, si AdMob ne remplit pas la demande (no-fill), le joueur
+  // reste bloqué sur "Chargement..." indéfiniment. Après un délai, on
+  // affiche "Vidéo indisponible" avec un bouton Réessayer.
+  useEffect(() => {
+    if (!showWatchAdOffer) {
+      if (adUnavailable) setAdUnavailable(false);
+      return;
+    }
+    if (adUnavailable || isAdLoaded('rewarded')) return;
+
+    console.log('[GameContentA] Pub non chargée, tentative de chargement en arrière-plan');
+    reloadRewardedAd?.();
+
+    const timeout = setTimeout(() => {
+      if (!isAdLoaded('rewarded')) {
+        console.log('[GameContentA] Pub récompensée toujours indisponible après timeout');
+        traceGameRender('content.ad-unavailable', { adType: 'rewarded' });
+        FirebaseAnalytics.trackEvent('rewarded_offer_timeout', {
+          timeout_ms: REWARDED_AD_LOAD_TIMEOUT_MS,
+          level: user?.level ?? 0,
+        });
+        RemoteLogger.warn('Ads', 'Rewarded extra_life still unavailable at game over offer (timeout)', { level: user?.level ?? 0 });
+        setAdUnavailable(true);
+      }
+    }, REWARDED_AD_LOAD_TIMEOUT_MS);
+
+    return () => clearTimeout(timeout);
+  }, [showWatchAdOffer, adUnavailable, adState.rewardedLoaded, reloadRewardedAd, isAdLoaded]);
 
   // --- Effet pour surveiller le chargement de la pub et mettre à jour l'UI ---
   useEffect(() => {
@@ -490,6 +528,13 @@ function GameContentA({
   const handleDeclineWatchAd = () => {
     setShowWatchAdOffer(false);
     setShowScoreboard(true); // Afficher le scoreboard si le joueur refuse
+  };
+
+  // Relance le chargement de la pub récompensée après un échec (no-fill, réseau...)
+  const handleRetryWatchAd = () => {
+    console.log('[GameContentA] Réessai chargement pub récompensée');
+    setAdUnavailable(false); // L'effet de timeout repart pour un nouvel essai
+    reloadRewardedAd?.();
   };
 
   // --- Rendu Principal du Contenu ---
@@ -643,8 +688,14 @@ function GameContentA({
               </Text>
               {!isAdLoaded('rewarded') && (
                 <View style={styles.adLoadingIndicator}>
-                  <ActivityIndicator size="small" color={colors.incorrectRed} />
-                  <Text style={styles.adLoadingText}>Chargement de la publicité...</Text>
+                  {adUnavailable ? (
+                    <Text style={styles.adLoadingText}>Vidéo indisponible pour le moment.</Text>
+                  ) : (
+                    <>
+                      <ActivityIndicator size="small" color={colors.incorrectRed} />
+                      <Text style={styles.adLoadingText}>Chargement de la publicité...</Text>
+                    </>
+                  )}
                 </View>
               )}
               <View style={styles.watchAdButtonsContainer}>
@@ -656,17 +707,24 @@ function GameContentA({
                   <Text style={styles.watchAdDeclineText}>Non, merci</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={[styles.watchAdButton, styles.watchAdAcceptButton, isLoadingAd && styles.watchAdButtonDisabled, !isAdLoaded('rewarded') && styles.watchAdButtonDisabled]}
-                  onPress={handleWatchAd}
-                  disabled={isLoadingAd || !isAdLoaded('rewarded')}
+                  style={[styles.watchAdButton, styles.watchAdAcceptButton, (isLoadingAd || (!isAdLoaded('rewarded') && !adUnavailable)) && styles.watchAdButtonDisabled]}
+                  onPress={adUnavailable && !isAdLoaded('rewarded') ? handleRetryWatchAd : handleWatchAd}
+                  disabled={isLoadingAd || (!isAdLoaded('rewarded') && !adUnavailable)}
                 >
                   {isLoadingAd ? (
                     <ActivityIndicator size="small" color="white" />
                   ) : !isAdLoaded('rewarded') ? (
-                    <>
-                      <ActivityIndicator size="small" color="white" />
-                      <Text style={styles.watchAdAcceptText}>Chargement...</Text>
-                    </>
+                    adUnavailable ? (
+                      <>
+                        <Ionicons name="refresh-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
+                        <Text style={styles.watchAdAcceptText}>Réessayer</Text>
+                      </>
+                    ) : (
+                      <>
+                        <ActivityIndicator size="small" color="white" />
+                        <Text style={styles.watchAdAcceptText}>Chargement...</Text>
+                      </>
+                    )
                   ) : (
                     <>
                       <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />

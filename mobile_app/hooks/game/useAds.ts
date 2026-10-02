@@ -1,13 +1,14 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   InterstitialAd,
-  RewardedAd,
+  RewardedInterstitialAd,
   AdEventType,
   RewardedAdEventType,
 } from 'react-native-google-mobile-ads';
 
-import { getAdRequestOptions, getAdUnitId } from '../../lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId, isAdPersonalizationEnabled } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';
+import { RemoteLogger } from '../../lib/remoteLogger';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
 import { traceGameRender } from '../../utils/logger';
 import Constants from 'expo-constants';
@@ -36,25 +37,41 @@ const adLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknow
 // ✅ SUPPRIMÉ : const USE_TEST_IDS = __DEV__;
 // On utilise maintenant getAdUnitId() qui gère déjà cette logique !
 
-const genericInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_GENERIC'),
-  getAdRequestOptions(),
-);
+// Instances créées paresseusement au premier accès : les créer au niveau
+// module capturait getAdRequestOptions() AVANT la restauration du consentement
+// RGPD, ce qui figeait requestNonPersonalizedAdsOnly=true en prod pour toujours.
+interface AdInstances {
+  genericInterstitial: InterstitialAd;
+  levelUpInterstitial: InterstitialAd;
+  gameOverInterstitial: InterstitialAd;
+  rewardedAd: RewardedInterstitialAd;
+}
 
-const levelUpInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_LEVEL_UP'),
-  getAdRequestOptions(),
-);
+let adInstances: AdInstances | null = null;
 
-const gameOverInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_GAME_OVER'),
-  getAdRequestOptions(),
-);
-
-const rewardedAd = RewardedAd.createForAdRequest(
-  getAdUnitId('REWARDED_EXTRA_LIFE'),
-  getAdRequestOptions(),
-);
+function getAds(): AdInstances {
+  if (!adInstances) {
+    adInstances = {
+      genericInterstitial: InterstitialAd.createForAdRequest(
+        getAdUnitId('INTERSTITIAL_GENERIC'),
+        getAdRequestOptions(),
+      ),
+      levelUpInterstitial: InterstitialAd.createForAdRequest(
+        getAdUnitId('INTERSTITIAL_LEVEL_UP'),
+        getAdRequestOptions(),
+      ),
+      gameOverInterstitial: InterstitialAd.createForAdRequest(
+        getAdUnitId('INTERSTITIAL_GAME_OVER'),
+        getAdRequestOptions(),
+      ),
+      rewardedAd: RewardedInterstitialAd.createForAdRequest(
+        getAdUnitId('REWARDED_EXTRA_LIFE'),
+        getAdRequestOptions(),
+      ),
+    };
+  }
+  return adInstances;
+}
 
 
 interface AdState {
@@ -242,7 +259,13 @@ export function useAds({
       return;
     }
 
+    const { rewardedAd } = getAds();
     processingRewardRef.current = true;
+
+    // Purger les pubs en file d'attente : elles ont été mises en queue pendant le
+    // game over (ex: interstitiel gameOver) et ne sont plus valides une fois le
+    // joueur réanimé — sinon elles s'affichent par-dessus la partie relancée.
+    setAdState(prev => ({ ...prev, pendingAds: [] }));
 
     adLog('log', "Applying reward and resuming game...");
     traceGameRender('ads.revive.start');
@@ -323,6 +346,8 @@ export function useAds({
       return user?.level || 0;
     };
 
+    const { genericInterstitial, levelUpInterstitial, gameOverInterstitial, rewardedAd } = getAds();
+
     const unsubGenericLoaded = genericInterstitial.addAdEventListener(AdEventType.LOADED, () => {
       adLog('log', "Generic Interstitial loaded successfully");
       setAdState(prev => ({ ...prev, interstitialLoaded: true }));
@@ -339,8 +364,10 @@ export function useAds({
         ad_unit: 'generic',
         error_code: String(errorCode),
         error_message: errorMessage,
+        personalized: isAdPersonalizationEnabled(),
         level: getCurrentLevelForLog(),
       });
+      RemoteLogger.error('Ads', `Interstitial generic load failed [${errorCode}]: ${errorMessage}`, { ad_unit: 'generic', personalized: isAdPersonalizationEnabled() });
       FirebaseAnalytics.ad('interstitial', 'failed', 'generic', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `Generic Interstitial [${errorCode}]: ${errorMessage}`, 'useAds');
       setTimeout(() => {
@@ -392,8 +419,10 @@ export function useAds({
         ad_unit: 'level_up',
         error_code: String(errorCode),
         error_message: errorMessage,
+        personalized: isAdPersonalizationEnabled(),
         level: getCurrentLevelForLog(),
       });
+      RemoteLogger.error('Ads', `Interstitial level_up load failed [${errorCode}]: ${errorMessage}`, { ad_unit: 'level_up', personalized: isAdPersonalizationEnabled() });
       FirebaseAnalytics.ad('interstitial', 'failed', 'level_up', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `LevelUp Interstitial [${errorCode}]: ${errorMessage}`, 'useAds');
       setTimeout(() => {
@@ -449,8 +478,10 @@ export function useAds({
         ad_unit: 'game_over',
         error_code: String(errorCode),
         error_message: errorMessage,
+        personalized: isAdPersonalizationEnabled(),
         level: getCurrentLevelForLog(),
       });
+      RemoteLogger.error('Ads', `Interstitial game_over load failed [${errorCode}]: ${errorMessage}`, { ad_unit: 'game_over', personalized: isAdPersonalizationEnabled() });
       FirebaseAnalytics.ad('interstitial', 'failed', 'game_over', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `GameOver Interstitial [${errorCode}]: ${errorMessage}`, 'useAds');
       setTimeout(() => {
@@ -467,6 +498,9 @@ export function useAds({
 
     const unsubGameOverOpened = gameOverInterstitial.addAdEventListener(AdEventType.OPENED, () => {
       adLog('log', "GameOver Interstitial opened");
+      // Sécurité : si cet interstitiel s'affiche pendant que la partie tourne
+      // (cas limite), il faut figer le chrono comme pour les autres interstitiels.
+      setIsLevelPausedRef.current(true);
       FirebaseAnalytics.ad('interstitial', 'opened', 'game_over', getCurrentLevelForLog());
     });
 
@@ -478,6 +512,7 @@ export function useAds({
         lastInterstitialTime: Date.now(),
         isShowingAd: false
       }));
+      setIsLevelPausedRef.current(false);
       gameOverInterstitial.load();
       FirebaseAnalytics.ad('interstitial', 'closed', 'game_over', getCurrentLevelForLog());
       setTimeout(safeCheckPendingAds, 500);
@@ -487,6 +522,7 @@ export function useAds({
       adLog('log', "Rewarded ad loaded successfully");
       setAdState(prev => ({ ...prev, rewardedLoaded: true }));
       FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_life', getCurrentLevelForLog());
+      RemoteLogger.info('Ads', 'Rewarded extra_life loaded', { ad_unit: 'extra_life', personalized: isAdPersonalizationEnabled() });
     });
 
     const unsubRewardedError = rewardedAd.addAdEventListener(AdEventType.ERROR, error => {
@@ -499,8 +535,10 @@ export function useAds({
         ad_unit: 'extra_life',
         error_code: String(errorCode),
         error_message: errorMessage,
+        personalized: isAdPersonalizationEnabled(),
         level: getCurrentLevelForLog(),
       });
+      RemoteLogger.error('Ads', `Rewarded extra_life load failed [${errorCode}]: ${errorMessage}`, { ad_unit: 'extra_life', personalized: isAdPersonalizationEnabled() });
       FirebaseAnalytics.ad('rewarded', 'failed', 'extra_life', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `Rewarded Ad [${errorCode}]: ${errorMessage}`, 'useAds');
       setTimeout(() => {
@@ -667,6 +705,8 @@ export function useAds({
     }
 
     adLog('log', `[useAds Effect] Processing pendingAdDisplay: ${pendingAdDisplay}. Current state: isShowingAd=${adState.isShowingAd}, pendingAds=${adState.pendingAds.length}`);
+
+    const { genericInterstitial, levelUpInterstitial, gameOverInterstitial, rewardedAd } = getAds();
 
     if (adState.isShowingAd) {
       adLog('log', `[useAds Effect] Ad already showing, ignoring trigger for ${pendingAdDisplay}. It might be queued.`);
@@ -863,6 +903,7 @@ export function useAds({
 
   const showRewardedAd = useCallback(() => {
 
+    const { rewardedAd } = getAds();
     const currentLevel = user?.level || 0;
 
 
@@ -956,6 +997,7 @@ export function useAds({
 
     try {
       adLog('log', "Forcing reload of all ad instances after reset...");
+      const { genericInterstitial, levelUpInterstitial, gameOverInterstitial, rewardedAd } = getAds();
       genericInterstitial.load();
       levelUpInterstitial.load();
       gameOverInterstitial.load();
@@ -967,8 +1009,24 @@ export function useAds({
     }
   }, []);
 
+  // Force un rechargement de la pub récompensée si elle n'est pas prête
+  // (utilisé quand l'offre "vie supplémentaire" s'affiche sans pub chargée)
+  const reloadRewardedAd = useCallback(() => {
+    const { rewardedAd } = getAds();
+    if (rewardedAd.loaded) {
+      return;
+    }
+    try {
+      adLog('log', "Reloading rewarded ad on explicit request.");
+      rewardedAd.load();
+    } catch (error) {
+      adLog('warn', "Error while reloading rewarded ad:", error);
+    }
+  }, []);
+
   // Helper pour vérifier si une pub est chargée (utilise l'instance native)
   const isAdLoaded = useCallback((adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => {
+    const { rewardedAd, genericInterstitial, levelUpInterstitial, gameOverInterstitial } = getAds();
     switch (adType) {
       case 'rewarded':
         return rewardedAd.loaded;
@@ -981,7 +1039,7 @@ export function useAds({
       default:
         return false;
     }
-  }, [rewardedAd, genericInterstitial, levelUpInterstitial, gameOverInterstitial]);
+  }, []);
 
   return {
     adState: {
@@ -999,6 +1057,7 @@ export function useAds({
     showGameOverInterstitial,
     resetAdsState,
     isAdLoaded, // Nouvelle fonction helper
+    reloadRewardedAd, // Force un rechargement de la pub récompensée
   };
 }
 

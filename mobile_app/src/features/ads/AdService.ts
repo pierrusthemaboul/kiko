@@ -48,8 +48,19 @@ export const AdService = {
         await MobileAds().initialize();
         await delay(500);
 
-        if (__DEV__) {
-          const testDeviceIdentifiers = ['3D55CC0D2A3E4E6EB5D0F1231DE2E59C'];
+        // Devices de test :
+        // - en dev : device hardcodé ci-dessous
+        // - en prod : liste via EXPO_PUBLIC_AD_TEST_DEVICES="HASH1,HASH2" (inline au bundle)
+        //   L'hash du device s'obtient dans logcat au premier chargement de pub.
+        const testDeviceIdentifiers = [
+          ...(__DEV__ ? ['3D55CC0D2A3E4E6EB5D0F1231DE2E59C'] : []),
+          ...(process.env.EXPO_PUBLIC_AD_TEST_DEVICES ?? '')
+            .split(',')
+            .map((id: string) => id.trim())
+            .filter(Boolean),
+        ];
+
+        if (testDeviceIdentifiers.length > 0) {
           const requestConfig: RequestConfiguration = { testDeviceIdentifiers };
           try {
             await MobileAds().setRequestConfiguration(requestConfig);

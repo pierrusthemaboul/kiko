@@ -29,17 +29,21 @@ export function getAdRequestOptions() {
   };
 }
 
+export function isAdPersonalizationEnabled() {
+  return _canShowPersonalizedAds;
+}
+
 // Tes vrais IDs de prod
 const PRODUCTION_AD_UNITS = {
   BANNER_HOME: 'ca-app-pub-7809209690404525/2401416565',
-  INTERSTITIAL_GAME_OVER: 'ca-app-pub-7809209690404525/2263906247',
-  INTERSTITIAL_LEVEL_UP: 'ca-app-pub-7809209690404525/5890695588',
+  INTERSTITIAL_GAME_OVER: 'ca-app-pub-7809209690404525/3263906247',
+  INTERSTITIAL_LEVEL_UP: 'ca-app-pub-7809209690404525/5890069588',
   REWARDED_EXTRA_LIFE: 'ca-app-pub-7809209690404525/7365559514',
   REWARDED_EXTRA_PLAY: 'ca-app-pub-7809209690404525/9909124779',
   INTERSTITIAL_PRECISION_GAME_OVER: 'ca-app-pub-7809209690404525/9234461062',
   REWARDED_CONTINUE_PRECISION: 'ca-app-pub-7809209690404525/2884675132',
-  // Fallback generic interstitial (uses GAME_OVER ID)
-  INTERSTITIAL_GENERIC: 'ca-app-pub-7809209690404525/2263906247',
+  // Dedicated generic interstitial ad unit
+  INTERSTITIAL_GENERIC: 'ca-app-pub-7809209690404525/3617886191',
 };
 
 export const getAdUnitId = (type: keyof typeof PRODUCTION_AD_UNITS): string => {
@@ -54,6 +58,8 @@ export const getAdUnitId = (type: keyof typeof PRODUCTION_AD_UNITS): string => {
       case 'INTERSTITIAL_GENERIC':
         return TestIds.INTERSTITIAL;
       case 'REWARDED_EXTRA_LIFE':
+        // Le bloc prod /7365559514 est au format "interstitiel à récompense"
+        return TestIds.REWARDED_INTERSTITIAL;
       case 'REWARDED_EXTRA_PLAY':
       case 'REWARDED_CONTINUE_PRECISION':
         return TestIds.REWARDED;
