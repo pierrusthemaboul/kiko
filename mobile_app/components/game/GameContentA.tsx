@@ -104,6 +104,7 @@ interface GameContentAProps {
   levelCompletedEvents: LevelEventSummary[];
   levelsHistory: LevelHistory[];
   showRewardedAd?: () => boolean;
+  showGameOverInterstitial?: () => boolean;
   reloadRewardedAd?: () => void;
   adState: AdStateForContent;
   resetAdsState?: () => void;
@@ -158,6 +159,7 @@ function GameContentA({
   levelCompletedEvents,
   levelsHistory,
   showRewardedAd,
+  showGameOverInterstitial,
   reloadRewardedAd,
   adState,
   resetAdsState, // Reçu du parent
@@ -528,6 +530,12 @@ function GameContentA({
   const handleDeclineWatchAd = () => {
     setShowWatchAdOffer(false);
     setShowScoreboard(true); // Afficher le scoreboard si le joueur refuse
+    // La partie est définitivement terminée : déclencher l'interstitiel
+    // de game over, qui avait été retenu tant que l'offre de régénération
+    // était affichée (même comportement que le mode précision).
+    setTimeout(() => {
+      showGameOverInterstitial?.();
+    }, 1500);
   };
 
   // Relance le chargement de la pub récompensée après un échec (no-fill, réseau...)

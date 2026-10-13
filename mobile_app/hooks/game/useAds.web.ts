@@ -243,9 +243,9 @@ export function useAds({
       return true;
     }
 
-    if (adType === 'levelUp' && (currentLevel === 2 || currentLevel === 6 || currentLevel % 5 === 0)) {
-      // ✅ MODIF : Désactiver la pub après le niveau 1 en mode DEV pour les enregistrements
-      if (__DEV__ && currentLevel === 2) {
+    if (adType === 'levelUp' && (currentLevel === 3 || currentLevel === 7)) {
+      // ✅ MODIF : Désactiver la pub après le niveau 2 en mode DEV pour les enregistrements
+      if (__DEV__ && currentLevel === 3) {
         adLog('log', `canShowAd (${adType}): Bloquée en mode DEV pour enregistrement (level: ${currentLevel})`);
         return false;
       }

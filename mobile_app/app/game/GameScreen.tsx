@@ -428,6 +428,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             onActualMenu={handleActualMenu}       // <- Fonction Menu
             onShareReward={handleShareReward}     // <- Nouvelle prop Récompense Partage
             showRewardedAd={gameLogic?.showRewardedAd}
+            showGameOverInterstitial={gameLogic?.showGameOverInterstitial}
             resetAdsState={gameLogic?.resetAdsState} // Fonction reset pubs
             isAdLoaded={gameLogic?.isAdLoaded} // Vérification native de chargement des pubs
             reloadRewardedAd={gameLogic?.reloadRewardedAd} // Rechargement forcé de la pub récompensée

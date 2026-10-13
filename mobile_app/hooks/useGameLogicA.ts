@@ -252,6 +252,16 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     maxLives: gameMode.maxLives,
   });
 
+  // Refs miroirs : endGame est déclenché juste après setUser (dernière vie
+  // perdue) — le state serait encore stale dans les timeouts. Les refs
+  // reflètent toujours la valeur post-render.
+  const userLivesRef = useRef(user?.lives ?? 0);
+  const hasWatchedRewardedRef = useRef(adState.hasWatchedRewardedAd);
+  useEffect(() => {
+    userLivesRef.current = user?.lives ?? 0;
+    hasWatchedRewardedRef.current = adState.hasWatchedRewardedAd;
+  }, [user?.lives, adState.hasWatchedRewardedAd]);
+
   // Détecter la sortie de l'application pendant une partie active
   const isDetectionActive = !isGameOver && !isLevelPaused && !isWaitingForCountdown && !!newEvent && isImageLoaded;
   useAppStateDetection({
@@ -1156,8 +1166,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           setTriggerLevelEndAnim(true);
 
           const completedLevel = user.level;
-          const isDevAndLevel1 = __DEV__ && completedLevel === 1;
-          const shouldShowAd = (completedLevel === 1 || completedLevel % 5 === 0) && !isDevAndLevel1;
+          const isDevAndLevel2 = __DEV__ && completedLevel === 2;
+          // Pub à la fin des niveaux 2 et 6 (entrées niveaux 3 et 7),
+          // puis tous les 5 niveaux : fins 11, 16, 21... (entrées 12, 17, 22...)
+          const shouldShowAd = (completedLevel === 2 || (completedLevel > 1 && completedLevel % 5 === 1)) && !isDevAndLevel2;
 
           traceGameRender('logic.levelup.modal-schedule', { delayMs: 1500, shouldShowAd });
           setTimeout(() => {
@@ -1339,7 +1351,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     console.log(`[GAME_OVER] Finalizing history for level ${user.level} with ${latestLevelEvents.current.length} events`);
 
     setTimeout(() => {
-      if (canShowAd('gameOver')) {
+      // Si l'offre "regarder une pub pour gagner une vie" va s'afficher
+      // (dernière vie perdue et régénération pas encore utilisée), ne pas
+      // déclencher l'interstitiel de game over : il partirait juste avant
+      // l'offre et forcerait deux pubs d'affilée. Il est déclenché
+      // uniquement si le joueur refuse l'offre (voir handleDeclineWatchAd).
+      const reviveOfferWillShow =
+        userLivesRef.current === 0 && !hasWatchedRewardedRef.current;
+      if (!reviveOfferWillShow && canShowAd('gameOver')) {
         setPendingAdDisplay('gameOver');
       }
     }, 1500); // Delay ad trigger slightly
@@ -1892,6 +1911,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     levelCompletedEvents, // from usePerformance (read-only access for display)
     levelsHistory, // from useInitGame (read-only access for display)
     resetAdsState, // from useAds
+    showGameOverInterstitial, // from useAds - déclenché quand le joueur refuse l'offre de régénération
     resetGameFlowState, // <-- EXPOSER LA NOUVELLE FONCTION
     isAdLoaded, // from useAds - helper pour vérifier le chargement des pubs
     reloadRewardedAd, // from useAds - force le rechargement de la pub récompensée
