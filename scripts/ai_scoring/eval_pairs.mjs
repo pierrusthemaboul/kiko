@@ -8,31 +8,11 @@
 //         MIN_INTERVAL_MS (throttle, défaut 1100 — plan gratuit Mistral ≈ 1 req/s)
 import {
   supabaseClient, fetchAll, aiJson, mapPool, AI_PROVIDER, AI_MODEL,
-  makeRng, writeJsonl, periodOf, yearOf, trunc,
+  makeRng, writeJsonl, periodOf, yearOf, PAIR_SYSTEM, pairUserPrompt,
 } from './lib.mjs';
 
 const TOTAL_PAIRS = Number(process.argv[2]) || 200;
 const STRATA = 5; // paires par strate = TOTAL_PAIRS / STRATA
-
-const SYSTEM = `Tu es un expert en culture générale française et en conception de quiz chronologiques.
-Tu évalues des paires d'événements historiques pour un jeu mobile grand public francophone
-(le joueur doit dire lequel des deux événements est arrivé en premier).
-"Joueur français moyen" = culture générale de base, PAS un historien.
-Réponds UNIQUEMENT en JSON valide, sans markdown ni texte autour.`;
-
-const pairPrompt = (a, b) => `Événement A : "${a.titre}" (${a.date_formatee || a.date})${a.description_detaillee ? ' — ' + trunc(a.description_detaillee) : ''}
-Événement B : "${b.titre}" (${b.date_formatee || b.date})${b.description_detaillee ? ' — ' + trunc(b.description_detaillee) : ''}
-
-Réponds en JSON :
-{
-  "guessability": <0-100 : probabilité qu'un joueur FR moyen ordonne correctement>,
-  "confusability": <0-100 : risque de confusion entre les deux événements>,
-  "interest": <0-100 : la paire est-elle intéressante/instructive pour un quiz>,
-  "known_a": <0-100 : notoriété de A en France>,
-  "known_b": <0-100 : notoriété de B en France>,
-  "confidence": <0-100 : ta confiance dans l'évaluation>,
-  "reason": "<1 phrase max>"
-}`;
 
 const yearDiff = (a, b) => Math.abs(yearOf(a.date) - yearOf(b.date));
 
@@ -121,7 +101,7 @@ async function main() {
   const results = await mapPool(pairs, 6, async ({ stratum, a, b }) => {
     let out;
     try {
-      out = await aiJson(SYSTEM, pairPrompt(a, b));
+      out = await aiJson(PAIR_SYSTEM, pairUserPrompt(a, b));
     } catch (err) {
       out = { error: err.message };
     }

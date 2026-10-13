@@ -35,6 +35,11 @@ const TIER_THRESHOLDS = {
   TIER_3_EXPERT: 0      // Détails pointus
 };
 
+// Anti-répétition : au-delà de REPEAT_HARD_LIMIT vues personnelles, l'événement
+// est écarté des candidats tant que le pool reste suffisamment large.
+const REPEAT_HARD_LIMIT = 10;
+const MIN_POOL_AFTER_REPEAT = 50;
+
 // Périodes Clés pour la difficulté sémantique
 const KEY_PERIODS = [
   { id: 'WWI', start: 1914, end: 1918, traps: ['WWII'] },
@@ -477,6 +482,15 @@ export function useEventSelector({
       if (afterDiversity.length >= 10) {
         filtered = afterDiversity;
       }
+    }
+
+    // 4.7 Anti-répétition : exclure les événements déjà vus REPEAT_HARD_LIMIT fois+
+    // par ce joueur, tant que le pool reste confortable
+    const underRepeatLimit = filtered.filter(
+      e => (personalHistory.get(e.id)?.times_seen ?? 0) < REPEAT_HARD_LIMIT
+    );
+    if (underRepeatLimit.length >= MIN_POOL_AFTER_REPEAT) {
+      filtered = underRepeatLimit;
     }
 
     // 5. Mélange et Priorisation des événements moins utilisés
@@ -1006,6 +1020,14 @@ export function useEventSelector({
         })
         .slice(0, 50); // Augmenter la limite pour avoir plus de choix
 
+      // Anti-répétition : préférer les événements peu vus par ce joueur pour le saut
+      const freshJumpCandidates = jumpCandidates.filter(
+        e => (personalHistory.get(e.id)?.times_seen ?? 0) < REPEAT_HARD_LIMIT
+      );
+      if (freshJumpCandidates.length > 0) {
+        jumpCandidates.splice(0, jumpCandidates.length, ...freshJumpCandidates);
+      }
+
 
 
       if (jumpCandidates.length > 0) {
@@ -1343,6 +1365,14 @@ export function useEventSelector({
         return true;
       });
 
+      // Anti-répétition : prioriser les événements les moins vus par ce joueur
+      // (jitter pour varier le sous-ensemble retenu d'une partie à l'autre)
+      allUnusedEvents.sort((a, b) => {
+        const ta = (personalHistory.get(a.id)?.times_seen ?? 0) + Math.random() * 2;
+        const tb = (personalHistory.get(b.id)?.times_seen ?? 0) + Math.random() * 2;
+        return ta - tb;
+      });
+
       finalEvents = allUnusedEvents.slice(0, 50).map(evt => ({
         event: evt,
         score: Math.random() * 100,
@@ -1370,6 +1400,14 @@ export function useEventSelector({
         if (info.year === refInfo.year) return false;
         return true;
       });
+
+      // Anti-répétition : prioriser les événements les moins vus par ce joueur
+      resetEvents.sort((a, b) => {
+        const ta = (personalHistory.get(a.id)?.times_seen ?? 0) + Math.random() * 2;
+        const tb = (personalHistory.get(b.id)?.times_seen ?? 0) + Math.random() * 2;
+        return ta - tb;
+      });
+
       finalEvents = resetEvents.slice(0, 50).map(evt => ({
         event: evt,
         score: Math.random() * 100,

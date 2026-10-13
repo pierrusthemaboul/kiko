@@ -181,3 +181,63 @@ export const trunc = (s, n = 300) => {
   const t = String(s || '').trim();
   return t.length > n ? t.slice(0, n - 1) + '…' : t;
 };
+
+// ---------------------------------------------------------------------------
+// PROMPTS partagés (eval + batch — ne pas diverger, sinon résultats non comparables)
+// ---------------------------------------------------------------------------
+
+export const NOTO_SYSTEM = `Tu es un expert en culture générale française.
+Tu notes la notoriété d'événements historiques pour un joueur français moyen
+(culture générale de base, PAS un historien) — celle d'un quiz chronologique mobile.
+Réponds UNIQUEMENT en JSON valide, sans markdown ni texte autour.`;
+
+const NOTO_RUBRIC = `Barème de notoriété (0-100), jugé sur la capacité d'un joueur FR moyen
+à situer l'événement dans le temps :
+- 90-100 : tout le monde connaît (premier pas sur la Lune, chute du mur de Berlin)
+- 70-89 : culture générale courante (bataille de Waterloo, peste noire)
+- 40-69 : connu des personnes cultivées (paix de Westphalie, édit de Nantes)
+- 10-39 : connu des amateurs d'histoire
+- 0-9 : quasi inconnu du grand public`;
+
+export const notoUserPrompt = (e) => `Événement : "${e.titre}" (${e.date_formatee || e.date})${e.description_detaillee ? ' — ' + trunc(e.description_detaillee) : ''}
+
+${NOTO_RUBRIC}
+
+Réponds en JSON : { "notoriety": <0-100>, "confidence": <0-100>, "reason": "<1 phrase max>" }`;
+
+export const PAIR_SYSTEM = `Tu es un expert en culture générale française et en conception de quiz chronologiques.
+Tu évalues des paires d'événements historiques pour un jeu mobile grand public francophone
+(le joueur doit dire lequel des deux événements est arrivé en premier).
+"Joueur français moyen" = culture générale de base, PAS un historien.
+Réponds UNIQUEMENT en JSON valide, sans markdown ni texte autour.`;
+
+export const pairUserPrompt = (a, b) => `Événement A : "${a.titre}" (${a.date_formatee || a.date})${a.description_detaillee ? ' — ' + trunc(a.description_detaillee) : ''}
+Événement B : "${b.titre}" (${b.date_formatee || b.date})${b.description_detaillee ? ' — ' + trunc(b.description_detaillee) : ''}
+
+Réponds en JSON :
+{
+  "guessability": <0-100 : probabilité qu'un joueur FR moyen ordonne correctement>,
+  "confusability": <0-100 : risque de confusion entre les deux événements>,
+  "interest": <0-100 : la paire est-elle intéressante/instructive pour un quiz>,
+  "known_a": <0-100 : notoriété de A en France>,
+  "known_b": <0-100 : notoriété de B en France>,
+  "confidence": <0-100 : ta confiance dans l'évaluation>,
+  "reason": "<1 phrase max>"
+}`;
+
+// Charge un fichier de progression JSONL (resume) → Set des clés déjà traitées
+export function loadProgress(file, keyFn) {
+  const done = new Set();
+  if (fs.existsSync(file)) {
+    for (const line of fs.readFileSync(file, 'utf8').split('\n')) {
+      if (!line.trim()) continue;
+      try { done.add(keyFn(JSON.parse(line))); } catch { }
+    }
+  }
+  return done;
+}
+
+export function appendJsonl(file, row) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.appendFileSync(file, JSON.stringify(row) + '\n');
+}
