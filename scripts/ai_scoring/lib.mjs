@@ -8,7 +8,7 @@ import path from 'node:path';
 dotenv.config({ path: './admin_web/.env' });
 dotenv.config();
 
-// Providers supportés : 'mistral' (défaut) | 'openai'. Override via AI_PROVIDER.
+// Providers supportés : 'mistral' (défaut) | 'openai' | 'gemini'. Override via AI_PROVIDER.
 export const AI_PROVIDER = (process.env.AI_PROVIDER || 'mistral').toLowerCase();
 
 const PROVIDERS = {
@@ -21,6 +21,12 @@ const PROVIDERS = {
     url: 'https://api.openai.com/v1/chat/completions',
     envKey: 'OPENAI_API_KEY',
     model: process.env.OPENAI_MODEL || 'gpt-4.1-nano',
+  },
+  gemini: {
+    // Endpoint compatible OpenAI de Google AI Studio (clé gratuite, sans CB)
+    url: 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',
+    envKey: 'GEMINI_API_KEY',
+    model: process.env.GEMINI_MODEL_SCORING || 'gemini-3.8-flash',
   },
 };
 
@@ -49,6 +55,7 @@ export function requireApiKey() {
   if (!process.env[provider.envKey]) {
     console.error(`Missing ${provider.envKey} (ajoute-la dans admin_web/.env ou en variable d'environnement)`);
     if (AI_PROVIDER === 'mistral') console.error('  → clé sur https://console.mistral.ai');
+    if (AI_PROVIDER === 'gemini') console.error('  → clé gratuite sur https://aistudio.google.com');
     process.exit(1);
   }
 }

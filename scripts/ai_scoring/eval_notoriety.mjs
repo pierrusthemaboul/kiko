@@ -72,12 +72,12 @@ async function main() {
     }
     done++;
     if (done % 20 === 0) console.log(`  ${done}/${sample.length}`);
-    const mistralNoto = out.parsed?.notoriety;
+    const aiNoto = out.parsed?.notoriety;
     return {
       id: e.id, titre: e.titre, year: yearOf(e.date),
       notoriete_fr: e.notoriete_fr, bucket: e._bucket,
-      mistral_notoriety: mistralNoto,
-      delta: typeof mistralNoto === 'number' ? mistralNoto - (e.notoriete_fr ?? 0) : null,
+      ai_notoriety: aiNoto,
+      delta: typeof aiNoto === 'number' ? aiNoto - (e.notoriete_fr ?? 0) : null,
       confidence: out.parsed?.confidence,
       reason: out.parsed?.reason,
       error: out.parsed ? undefined : (out.error || 'json_parse_failed'),
@@ -90,15 +90,15 @@ async function main() {
   const valid = results.filter(r => typeof r.delta === 'number');
   const meanDelta = valid.reduce((s, r) => s + r.delta, 0) / Math.max(1, valid.length);
   console.log(`\n=== RÉSUMÉ ===`);
-  console.log(`Delta moyen (Mistral - notoriete_fr): ${meanDelta.toFixed(1)} pts sur ${valid.length} événements`);
+  console.log(`Delta moyen (IA - notoriete_fr): ${meanDelta.toFixed(1)} pts sur ${valid.length} événements`);
 
-  console.log('\n--- SURÉVALUÉS (Mistral << notoriete_fr) ---');
-  valid.sort((a, b) => a.delta - b.delta).slice(0, 15)
-    .forEach(r => console.log(`  ${String(r.delta).padStart(4)} | ${r.notoriete_fr}→${r.mistral_notoriety} | ${r.titre}`));
+  console.log('\n--- SURÉVALUÉS (score IA << notoriete_fr) ---');
+  valid.filter(r => r.delta < 0).sort((a, b) => a.delta - b.delta).slice(0, 15)
+    .forEach(r => console.log(`  ${String(r.delta).padStart(4)} | ${r.notoriete_fr}→${r.ai_notoriety} | ${r.titre}`));
 
-  console.log('\n--- SOUS-ÉVALUÉS (Mistral >> notoriete_fr) ---');
-  valid.sort((a, b) => b.delta - a.delta).slice(0, 15)
-    .forEach(r => console.log(`  +${String(r.delta).padStart(3)} | ${r.notoriete_fr}→${r.mistral_notoriety} | ${r.titre}`));
+  console.log('\n--- SOUS-ÉVALUÉS (score IA >> notoriete_fr) ---');
+  valid.filter(r => r.delta > 0).sort((a, b) => b.delta - a.delta).slice(0, 15)
+    .forEach(r => console.log(`  +${String(r.delta).padStart(3)} | ${r.notoriete_fr}→${r.ai_notoriety} | ${r.titre}`));
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
