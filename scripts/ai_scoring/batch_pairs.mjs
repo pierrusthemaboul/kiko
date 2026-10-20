@@ -75,7 +75,7 @@ async function main() {
   if (!todo.length) { console.log('Rien à faire — liste complète.'); return; }
 
   let ok = 0, err = 0;
-  await mapPool(todo, 6, async ({ a, b, tag }) => {
+  await mapPool(todo, Number(process.env.PAIR_CONCURRENCY) || 6, async ({ a, b, tag }) => {
     let out;
     try {
       out = await aiJson(PAIR_SYSTEM, pairUserPrompt(a, b));

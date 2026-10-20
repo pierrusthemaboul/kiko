@@ -28,11 +28,17 @@ const PROVIDERS = {
     envKey: 'GEMINI_API_KEY',
     model: process.env.GEMINI_MODEL_SCORING || 'gemini-3.8-flash',
   },
+  deepseek: {
+    // Endpoint compatible OpenAI (deepseek-chat, JSON mode supporté)
+    url: 'https://api.deepseek.com/chat/completions',
+    envKey: 'DEEPSEEK_API_KEY',
+    model: process.env.DEEPSEEK_MODEL || 'deepseek-chat',
+  },
 };
 
 const provider = PROVIDERS[AI_PROVIDER];
 if (!provider) {
-  console.error(`AI_PROVIDER inconnu: ${AI_PROVIDER} (attendu: mistral|openai)`);
+  console.error(`AI_PROVIDER inconnu: ${AI_PROVIDER} (attendu: mistral|openai|gemini|deepseek)`);
   process.exit(1);
 }
 export const AI_MODEL = provider.model;
