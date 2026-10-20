@@ -721,7 +721,7 @@ export function useEventSelector({
     usedEvents: Set<string>,
     currentStreak: number = 0
   ): Promise<Event | null> => {
-    const explainOn = false; // Activer les logs en dev
+    const explainOn = process.env.EXPO_PUBLIC_DEBUG_SELECTION === '1'; // Activer les logs en dev (EXPO_PUBLIC_DEBUG_SELECTION=1)
     const explainStartTs = Date.now();
     const exclusionAcc = { logExclusion: (..._args: any[]) => { }, flush: () => ({ truncated: 0 }), size: () => 0 };
 
@@ -834,6 +834,7 @@ export function useEventSelector({
     if (explainOn) {
       console.log(`\n🎲 [selectNewEvent] === NOUVELLE SELECTION ===`);
       console.log(`   Niveau: ${userLevel} | Events vus: ${usedEvents.size} | Streak: ${currentStreak}`);
+      console.log(`   IA: ${USE_AI_SCORING ? 'ON' : 'off'} | Paires: ${USE_AI_PAIRS ? 'ON' : 'off'} | Pool IA: ${events.filter((e: any) => hasAiScore(e)).length}/${events.length}`);
       console.log(`   Event référence: ${referenceEvent?.titre} (${referenceEvent?.date})`);
       console.log(`   Compteur saut forcé: ${eventCountRef.current}/${forcedJumpEventCount}`);
     }
@@ -1518,6 +1519,7 @@ export function useEventSelector({
           let roll = Math.random() * total;
           pickedIndex = weights.findIndex(w => (roll -= w) <= 0);
           if (pickedIndex < 0) pickedIndex = topEvents.length - 1;
+          if (explainOn) console.log(`   🔗 Paires IA: ${pairRows.length}/${topEvents.length} candidats scorés | poids: [${weights.map(w => w.toFixed(2)).join(', ')}]`);
         }
       } catch (pairEx) {
         Logger.warn('GameLogic', 'Pair scoring lookup failed, keeping uniform pick', pairEx);
@@ -1555,14 +1557,14 @@ export function useEventSelector({
       console.log(`\n✅ [SÉLECTION FINALE] === ÉVÉNEMENT CHOISI ===`);
       console.log(`   Titre: "${(selected as any)?.titre}"`);
       console.log(`   Année: ${selYear} | Écart temps: ${actualGap}ans (réf: ${refYearLog})`);
-      console.log(`   Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
+      console.log(`   Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'} | AI: ${Number.isFinite(Number((selected as any)?.notoriety_ai)) ? (selected as any).notoriety_ai : 'N/A'}`);
       console.log(`   Période: ${getPeriod((selected as any)?.date)} | Chemin: ${selectionPath}`);
       console.log(`   Bonus: ${wasBonusEvent ? 'OUI' : 'non'} | Saut temporel: ${(selected as any)?._isTemporalJump ? 'OUI' : 'non'}`);
       console.log(`   Déjà vu: ${personalHistory.get((selected as any)?.id)?.times_seen || 0}x`);
       console.log(`   Prochain saut forcé: ${forcedJumpEventCount} (actuel: ${localEventCount})`);
       console.log(`   Durée totale: ${Date.now() - explainStartTs}ms\n`);
     } else {
-      console.log(`✅ [Sélection] "${(selected as any)?.titre}" (${selYear}) - Période: ${getPeriod((selected as any)?.date)} | Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
+      console.log(`✅ [Sélection] "${(selected as any)?.titre}" (${selYear}) - Période: ${getPeriod((selected as any)?.date)} | Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'} | AI: ${Number.isFinite(Number((selected as any)?.notoriety_ai)) ? (selected as any).notoriety_ai : 'N/A'}`);
     }
 
 

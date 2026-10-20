@@ -175,6 +175,8 @@ export function useInitGame() {
           if (isRightVersion && isFresh && Array.isArray(cached.data)) {
             // console.log(`[InitGame - Instance ${currentInstanceId}] Using cached events (${cached.data.length})`);
             try { devLog('CACHE', { used: 'hit', version: EVENTS_CACHE_VERSION, count: Array.isArray(cached.data) ? cached.data.length : 0 }); } catch { }
+            const withAi = cached.data.filter((e: any) => Number.isFinite(Number(e?.notoriety_ai))).length;
+            console.log(`[InitGame] Cache v${EVENTS_CACHE_VERSION} : ${cached.data.length} événements (${withAi} avec notoriety_ai)`);
             allEventsData = cached.data;
           }
         }
@@ -204,8 +206,9 @@ export function useInitGame() {
             .filter(Boolean);
           if (flat.length < 50) throw new Error(`Scores IA insuffisants (${flat.length})`);
           allEventsData = flat;
+          console.log(`[InitGame] 🧠 Pool IA actif : ${flat.length} événements chargés via evenements_scores_ia (notoriety_ai >= 40)`);
         } catch (aiErr) {
-          console.warn('[InitGame] Scores IA indisponibles, fallback Zone A :', aiErr);
+          console.warn('[InitGame] ⚠️ Scores IA indisponibles, fallback Zone A legacy :', aiErr);
           const { data, error: eventsError } = await supabase
             .from('evenements')
             .select(EVENT_FIELDS)
@@ -219,6 +222,7 @@ export function useInitGame() {
             ...e,
             notoriete: e.notoriete_fr ?? e.notoriete,
           }));
+          console.log(`[InitGame] Pool legacy chargé : ${allEventsData.length} événements (notoriete_fr >= 70)`);
         }
         try {
           await AsyncStorage.setItem(EVENTS_CACHE_KEY, JSON.stringify({ version: EVENTS_CACHE_VERSION, ts: Date.now(), data: allEventsData }));
@@ -360,6 +364,9 @@ export function useInitGame() {
       // --- FIN MODIFICATION ---
 
       if (!firstEvent || !secondEvent) throw new Error("Erreur interne: échec de la sélection aléatoire des événements initiaux.");
+
+      const fmtAi = (e: any) => Number.isFinite(Number(e?.notoriety_ai)) ? `ai:${e.notoriety_ai}` : `fr:${e?.notoriete_fr ?? e?.notoriete ?? '?'}`;
+      console.log(`[InitGame] Paire initiale : "${firstEvent.titre}" (${new Date(firstEvent.date).getFullYear()}, ${fmtAi(firstEvent)}) vs "${secondEvent.titre}" (${new Date(secondEvent.date).getFullYear()}, ${fmtAi(secondEvent)}) | candidats: ${initialCandidates.length}`);
 
       // Prefetch les images de la paire initiale pour réduire le délai d'affichage
       // secondEvent est prioritaire car c'est la carte du bas qui bloque le timer (onImageLoad)
