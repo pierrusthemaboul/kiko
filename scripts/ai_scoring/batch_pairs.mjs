@@ -14,12 +14,31 @@ import {
 } from './lib.mjs';
 
 const MAX_CALLS = Number(process.argv[2]) || Number(process.env.MAX_CALLS) || 800;
+const HOTSET_TOP_N = Number(process.env.HOTSET_TOP_N) || 0; // >0 : mode triangle dense des top-N par notoriety_ai
 const PARTNERS_PER_KIND = 4; // par événement Zone A, par type de partenaire
 const PROGRESS = path.join(OUT_DIR, 'pairs_progress.jsonl');
 const pairKey = (aId, bId) => [aId, bId].sort().join('|');
 const keyOf = (r) => pairKey(r.a_id, r.b_id);
 
 const yearDiff = (a, b) => Math.abs(yearOf(a.date) - yearOf(b.date));
+
+// Mode "hot core" : toutes les paires C(N,2) parmi les N événements au plus
+// haut score IA — les matchups les plus probables en jeu. Dedup vs PROGRESS.
+function buildHotsetPairs(events) {
+  const used = new Set();
+  const pairs = [];
+  for (let i = 0; i < events.length; i++) {
+    for (let j = i + 1; j < events.length; j++) {
+      const a = events[i], b = events[j];
+      if (yearOf(a.date) === yearOf(b.date)) continue;
+      const key = pairKey(a.id, b.id);
+      if (used.has(key)) continue;
+      used.add(key);
+      pairs.push({ a, b, tag: 'hot_core' });
+    }
+  }
+  return pairs;
+}
 
 // Liste déterministe des paires (seed fixe → stable entre les runs)
 function buildPairList(zoneA, outside, allAd) {
@@ -58,17 +77,34 @@ function buildPairList(zoneA, outside, allAd) {
 
 async function main() {
   const supabase = supabaseClient();
-  const events = await fetchAll(
-    supabase, 'evenements',
-    'id, titre, date, date_formatee, description_detaillee, notoriete_fr'
-  );
-  const allAd = events.filter(e => e.date && e.date >= '0001-01-01' && e.titre);
-  const zoneA = allAd.filter(e => (e.notoriete_fr ?? 0) >= 70);
-  const outside = allAd.filter(e => (e.notoriete_fr ?? 0) < 70);
-  console.log(`Catalogue AD: ${allAd.length} | Zone A: ${zoneA.length} | hors: ${outside.length}`);
-
   const done = loadProgress(PROGRESS, keyOf);
-  const allPairs = buildPairList(zoneA, outside, allAd);
+  let allPairs;
+
+  if (HOTSET_TOP_N > 0) {
+    // Triangle dense des top-N événements par score IA (les plus tirés en jeu)
+    const { data: rows, error } = await supabase
+      .from('evenements_scores_ia')
+      .select('notoriety_ai, evenements!inner(id, titre, date, date_formatee, description_detaillee, notoriete_fr)')
+      .order('notoriety_ai', { ascending: false })
+      .limit(HOTSET_TOP_N);
+    if (error) throw error;
+    const hot = (rows || [])
+      .map(r => ({ ...r.evenements, notoriety_ai: r.notoriety_ai }))
+      .filter(e => e.date && e.titre);
+    console.log(`Hotset: ${hot.length} événements (top ${HOTSET_TOP_N} notoriety_ai, min=${hot.at(-1)?.notoriety_ai})`);
+    allPairs = buildHotsetPairs(hot);
+  } else {
+    const events = await fetchAll(
+      supabase, 'evenements',
+      'id, titre, date, date_formatee, description_detaillee, notoriete_fr'
+    );
+    const allAd = events.filter(e => e.date && e.date >= '0001-01-01' && e.titre);
+    const zoneA = allAd.filter(e => (e.notoriete_fr ?? 0) >= 70);
+    const outside = allAd.filter(e => (e.notoriete_fr ?? 0) < 70);
+    console.log(`Catalogue AD: ${allAd.length} | Zone A: ${zoneA.length} | hors: ${outside.length}`);
+    allPairs = buildPairList(zoneA, outside, allAd);
+  }
+
   const todo = allPairs.filter(p => !done.has(pairKey(p.a.id, p.b.id))).slice(0, MAX_CALLS);
 
   console.log(`Paires totales: ${allPairs.length} | déjà faites: ${done.size} | ce run: ${todo.length}`);
