@@ -35,6 +35,35 @@ const TIER_THRESHOLDS = {
   TIER_3_EXPERT: 0      // Détails pointus
 };
 
+// --- SCORES IA (pré-calculés hors-ligne, table evenements_scores_ia) ---
+// Quand l'événement porte `notoriety_ai`, il remplace notoriete_fr pour les
+// tiers et la formule de score. L'échelle IA est plus sévère (moyenne ~34) :
+// les seuils de tiers sont recalibrés en conséquence. Pour revenir à
+// l'ancien comportement : USE_AI_SCORING = false.
+const USE_AI_SCORING = true;
+const AI_TIER_THRESHOLDS = {
+  TIER_1_STAR: 68,      // ~230 événements réellement incontournables
+  TIER_2_CLASSIC: 40,   // ~860 événements de culture générale
+};
+
+// Scores de paires (table evenements_paires) : jouabilité mesurée de la
+// question "candidat vs événement de référence" au moment du tirage final.
+const USE_AI_PAIRS = true;
+
+const hasAiScore = (e: any): boolean =>
+  USE_AI_SCORING && Number.isFinite(Number(e?.notoriety_ai));
+
+// Notoriété effective d'un événement : score IA si présent, sinon notoriete_fr.
+const effectiveNotoriety = (e: any): number => {
+  const ai = Number(e?.notoriety_ai);
+  if (USE_AI_SCORING && Number.isFinite(ai)) return ai;
+  return Number(e?.notoriete_fr ?? e?.notoriete ?? 0);
+};
+
+// Transposition d'un plancher legacy (échelle noto_fr) vers l'échelle IA
+// (équivalence approx. par percentiles du catalogue).
+const aiFloorFor = (legacy: number): number => Math.max(0, Math.round(legacy * 0.55));
+
 // Anti-répétition : au-delà de REPEAT_HARD_LIMIT vues personnelles, l'événement
 // est écarté des candidats tant que le pool reste suffisamment large.
 const REPEAT_HARD_LIMIT = 10;
@@ -441,14 +470,16 @@ export function useEventSelector({
     else if (rand < probs.t1 + probs.t2) targetTier = 2;
 
     const afterPoolFilter = filtered.filter(e => {
-      // NOUVEAU: Utilisation exclusive de la notoriété objective francophone
-      const rawNotoriety = (e as any).notoriete_fr ?? 0;
+      // Notoriété effective : score IA si disponible, sinon notoriete_fr
+      const rawNotoriety = effectiveNotoriety(e);
       const { year } = getCachedDateInfo(e.date);
       const adjustedNotoriety = getAdjustedNotoriety(rawNotoriety, year, userLevel);
 
-      // Vérification du Tier
-      if (targetTier === 1) return adjustedNotoriety >= TIER_THRESHOLDS.TIER_1_STAR;
-      if (targetTier === 2) return adjustedNotoriety >= TIER_THRESHOLDS.TIER_2_CLASSIC;
+      // Vérification du Tier (seuils recalibrés sur l'échelle IA)
+      const t1 = hasAiScore(e) ? AI_TIER_THRESHOLDS.TIER_1_STAR : TIER_THRESHOLDS.TIER_1_STAR;
+      const t2 = hasAiScore(e) ? AI_TIER_THRESHOLDS.TIER_2_CLASSIC : TIER_THRESHOLDS.TIER_2_CLASSIC;
+      if (targetTier === 1) return adjustedNotoriety >= t1;
+      if (targetTier === 2) return adjustedNotoriety >= t2;
       return true; // Tier 3 accepte tout (mais sera filtré par le sort score plus tard)
     });
 
@@ -592,8 +623,8 @@ export function useEventSelector({
       gapScore = baseGapScore * weights.alphaProximity;
     }
 
-    // Pondération par notoriété pour contrôler la difficulté
-    const notorieteValue = Math.max(0, Math.min(100, Number((evt as any).notoriete_fr ?? 60)));
+    // Pondération par notoriété pour contrôler la difficulté (score IA si dispo)
+    const notorieteValue = Math.max(0, Math.min(100, effectiveNotoriety(evt) || 60));
     const notorieteNormalized = notorieteValue / 100;
     const { target, tolerance } = notorieteProfileForLevel(userLevel);
     const notorieteDistance = Math.abs(notorieteNormalized - target);
@@ -998,12 +1029,14 @@ export function useEventSelector({
         })
         .filter(e => {
           const { year: eventYear } = getCachedDateInfo(e.date);
-          const notoriete = (e as any).notoriete ?? 0;
+          const notoriete = effectiveNotoriety(e);
 
           // Respecter la notoriété minimale pour les bas niveaux via le système de Tier simplifié pour les sauts
           const adjustedNotoriety = getAdjustedNotoriety(notoriete, eventYear, userLevel);
-          if (userLevel <= 2 && adjustedNotoriety < TIER_THRESHOLDS.TIER_1_STAR) return false;
-          if (userLevel <= 5 && adjustedNotoriety < TIER_THRESHOLDS.TIER_2_CLASSIC) return false;
+          const t1 = hasAiScore(e) ? AI_TIER_THRESHOLDS.TIER_1_STAR : TIER_THRESHOLDS.TIER_1_STAR;
+          const t2 = hasAiScore(e) ? AI_TIER_THRESHOLDS.TIER_2_CLASSIC : TIER_THRESHOLDS.TIER_2_CLASSIC;
+          if (userLevel <= 2 && adjustedNotoriety < t1) return false;
+          if (userLevel <= 5 && adjustedNotoriety < t2) return false;
 
           // CRUCIAL : Même pour un saut, on respecte l'écart minimum adaptatif
           // pour éviter des situations trop dures (ex: 881 vs 1081 au niveau 1)
@@ -1193,7 +1226,7 @@ export function useEventSelector({
 
     if (minNotoriete > 0) {
       const filteredByNotoriete = preFilteredEvents.filter(
-        evt => ((evt as any).notoriete ?? 0) >= minNotoriete
+        evt => effectiveNotoriety(evt) >= (hasAiScore(evt) ? aiFloorFor(minNotoriete) : minNotoriete)
       );
 
       // Si le filtre est trop strict, on revient au set initial pour garder de la diversité
@@ -1459,7 +1492,37 @@ export function useEventSelector({
       console.log(`   Top ${topEvents.length} mélangés: ${topEvents.map((e,i) => `${i+1}.${e.event.titre?.substring(0,15)}..`).join(', ')}`);
     }
 
+    // --- AJUSTEMENT PAR SCORES DE PAIRES (IA) ---
+    // La paire (candidat × événement de référence) a un score de jouabilité
+    // pré-calculé : en bas niveau on évite les questions indévinables, en haut
+    // niveau on favorise les pièges. Paire non scorée = neutre.
     let pickedIndex = Math.floor(Math.random() * topEvents.length);
+    if (USE_AI_PAIRS && referenceEvent?.id && topEvents.length > 1) {
+      try {
+        const ids = topEvents.map(x => x.event.id);
+        const idList = `(${ids.join(',')})`;
+        const { data: pairRows, error: pairErr } = await supabase
+          .from('evenements_paires')
+          .select('a_id,b_id,guessability,confusability')
+          .or(`and(a_id.in.${idList},b_id.eq.${referenceEvent.id}),and(b_id.in.${idList},a_id.eq.${referenceEvent.id})`);
+        if (!pairErr && pairRows?.length) {
+          const pairBy = new Map(pairRows.map((r: any) => [[r.a_id, r.b_id].sort().join('|'), r] as const));
+          const weights = topEvents.map(x => {
+            const key = [x.event.id, referenceEvent.id].sort().join('|');
+            const p: any = pairBy.get(key);
+            if (!p) return 1; // pas de donnée : poids neutre
+            if (userLevel <= 4) return Math.max(0.15, p.guessability / 70);
+            return 1 + (p.confusability / 50);
+          });
+          const total = weights.reduce((s, w) => s + w, 0);
+          let roll = Math.random() * total;
+          pickedIndex = weights.findIndex(w => (roll -= w) <= 0);
+          if (pickedIndex < 0) pickedIndex = topEvents.length - 1;
+        }
+      } catch (pairEx) {
+        Logger.warn('GameLogic', 'Pair scoring lookup failed, keeping uniform pick', pairEx);
+      }
+    }
     const selectedEvent = topEvents[pickedIndex].event;
     if (explainOn) console.log(`   🎯 Index tiré: ${pickedIndex}/${topEvents.length}`);
 

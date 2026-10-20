@@ -13,7 +13,7 @@ import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessa
 import { useEventSelector, getCachedDateInfo } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 15;
+const EVENTS_CACHE_VERSION = 16;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 interface InitGameOptions {
@@ -184,19 +184,42 @@ export function useInitGame() {
 
       if (!allEventsData) {
         // console.log(`[InitGame - Instance ${currentInstanceId}] Cache miss/expired. Fetching events from Supabase...`);
-        const { data, error: eventsError } = await supabase
-          .from('evenements')
-          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used')
-          .gte('notoriete_fr', 70) // Zone A : Charge les événements les plus connus (664 événements)
-          .gte('date', '0001-01-01') // Exclure strictement les années BC
-          .order('notoriete_fr', { ascending: false })
-          .limit(800);
-        if (eventsError) throw eventsError;
-        // Utiliser notoriete_fr (notoriété française révisée) à la place de notoriete
-        allEventsData = (data || []).map((e: any) => ({
-          ...e,
-          notoriete: e.notoriete_fr ?? e.notoriete,
-        }));
+        // Pool piloté par les scores IA (evenements_scores_ia) : couvre les stars
+        // recalibrées ET les événements historiquement sous-exposés que l'IA
+        // juge jouables (expansion). Fallback sur l'ancienne requête Zone A.
+        const EVENT_FIELDS = 'id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used';
+        try {
+          const { data: scoredRows, error: scoresError } = await supabase
+            .from('evenements_scores_ia')
+            .select(`notoriety_ai, evenements!inner(${EVENT_FIELDS})`)
+            .gte('notoriety_ai', 40) // seuil pool IA (~860 événements, expansion incluse)
+            .limit(1300);
+          if (scoresError) throw scoresError;
+          const flat = (scoredRows || [])
+            .map((r: any) => r.evenements ? ({
+              ...r.evenements,
+              notoriety_ai: r.notoriety_ai,
+              notoriete: r.evenements.notoriete_fr ?? r.evenements.notoriete,
+            }) : null)
+            .filter(Boolean);
+          if (flat.length < 50) throw new Error(`Scores IA insuffisants (${flat.length})`);
+          allEventsData = flat;
+        } catch (aiErr) {
+          console.warn('[InitGame] Scores IA indisponibles, fallback Zone A :', aiErr);
+          const { data, error: eventsError } = await supabase
+            .from('evenements')
+            .select(EVENT_FIELDS)
+            .gte('notoriete_fr', 70) // Zone A : Charge les événements les plus connus (664 événements)
+            .gte('date', '0001-01-01') // Exclure strictement les années BC
+            .order('notoriete_fr', { ascending: false })
+            .limit(800);
+          if (eventsError) throw eventsError;
+          // Utiliser notoriete_fr (notoriété française révisée) à la place de notoriete
+          allEventsData = (data || []).map((e: any) => ({
+            ...e,
+            notoriete: e.notoriete_fr ?? e.notoriete,
+          }));
+        }
         try {
           await AsyncStorage.setItem(EVENTS_CACHE_KEY, JSON.stringify({ version: EVENTS_CACHE_VERSION, ts: Date.now(), data: allEventsData }));
         } catch (e) {
@@ -223,8 +246,10 @@ export function useInitGame() {
       const initialCandidates = validEvents.filter(e => {
         if (!e.date) return false;
         const year = new Date(e.date).getFullYear();
-        const notoriete = (e as any).notoriete ?? 0;
-        return notoriete >= 80 && year >= 1850;
+        const aiScore = Number((e as any).notoriety_ai);
+        const hasAi = Number.isFinite(aiScore);
+        const notoriete = hasAi ? aiScore : ((e as any).notoriete ?? 0);
+        return notoriete >= (hasAi ? 65 : 80) && year >= 1850;
       });
 
       let firstEvent: Event;
@@ -236,8 +261,10 @@ export function useInitGame() {
         const fallbackCandidates = validEvents.filter(e => {
           if (!e.date) return false;
           const year = new Date(e.date).getFullYear();
-          const notoriete = (e as any).notoriete ?? 50;
-          return notoriete >= 60 && year >= 1800;
+          const aiScore = Number((e as any).notoriety_ai);
+          const hasAi = Number.isFinite(aiScore);
+          const notoriete = hasAi ? aiScore : ((e as any).notoriete ?? 50);
+          return notoriete >= (hasAi ? 50 : 60) && year >= 1800;
         });
         const shuffled = [...fallbackCandidates].sort(() => 0.5 - Math.random());
         firstEvent = shuffled[0];
