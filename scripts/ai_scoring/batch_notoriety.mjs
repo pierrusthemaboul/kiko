@@ -14,7 +14,7 @@ import {
 } from './lib.mjs';
 
 const MAX_CALLS = Number(process.argv[2]) || Number(process.env.MAX_CALLS) || 400;
-const PROGRESS = path.join(OUT_DIR, 'notoriety_progress.jsonl');
+const PROGRESS = path.join(OUT_DIR, process.env.PROGRESS_FILE || 'notoriety_progress.jsonl');
 const keyOf = (r) => r.id;
 
 async function main() {
@@ -34,7 +34,7 @@ async function main() {
   if (!todo.length) { console.log('Rien à faire — catalogue complet.'); return; }
 
   let ok = 0, err = 0;
-  const results = await mapPool(todo, 6, async (e) => {
+  const results = await mapPool(todo, Number(process.env.NOTO_CONCURRENCY) || 6, async (e) => {
     let out;
     try {
       out = await aiJson(NOTO_SYSTEM, notoUserPrompt(e));
@@ -54,7 +54,7 @@ async function main() {
       ts: new Date().toISOString(),
     };
     // N'écrire que les succès : les erreurs seront retentées au prochain run.
-    if (row.error) err++; else { appendJsonl(PROGRESS, row); ok++; }
+    if (row.error || typeof aiNoto !== 'number') err++; else { appendJsonl(PROGRESS, row); ok++; }
     if ((ok + err) % 25 === 0) console.log(`  ${ok + err}/${todo.length} (ok=${ok} err=${err})`);
     return row;
   });
